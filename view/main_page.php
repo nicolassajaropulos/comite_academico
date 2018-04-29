@@ -8,6 +8,7 @@
     	<link href="https://sitec.itculiacan.edu.mx/wp-content/themes/fuente/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     	<link rel="stylesheet" href="../librerias/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+		<link rel="stylesheet" href="../css/fullcalendar.min.css">
 		<link rel="stylesheet" href="../css/general.css">
   	</head>
   	<body>
@@ -36,9 +37,9 @@
 			
 				<nav class="nav nav_bar_presidente">
 				
-					<a class="nav-link active" href="#"><i class="fa fa-calendar-alt"></i> Agendar Reuniones</a>
+					<a class="nav-link active" href="#" data-navi="agendar_reuniones"><i class="fa fa-calendar-alt"></i> Agendar Reuniones</a>
 					<img src="../imagenes/dot.png">
-					<a class="nav-link" href="#"><i class="fa fa-folder-open"></i> Orden del día</a>
+					<a class="nav-link" href="#" data-navi="orden_del_dia"><i class="fa fa-folder-open"></i> Orden del día</a>
 					
 					<div class="dropdown ml-auto dropdown_user">
 						<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -55,9 +56,9 @@
 				
 				<nav class="nav nav_bar_secretario">
 				
-					<a class="nav-link active" href="#"><i class="fa fa-clipboard"></i> Acta de acuerdos</a>
+					<a class="nav-link active" href="#" data-navi="acta_de_acuerdos"><i class="fa fa-clipboard"></i> Acta de acuerdos</a>
 					<img src="../imagenes/dot.png">
-					<a class="nav-link" href="#"><i class="fa fa-list-alt"></i> Control de asistencia</a>
+					<a class="nav-link" href="#" data-navi="asistencia"><i class="fa fa-list-alt"></i> Control de asistencia</a>
 					
 					<div class="dropdown ml-auto dropdown_user">
 						<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,9 +75,9 @@
 				
 				<nav class="nav nav_bar_miembro">
 				
-					<a class="nav-link active" href="#"><i class="fa fa-calendar-check"></i> Revisar agenda de reuniones</a>
+					<a class="nav-link active" href="#" data-navi="reportes_agenda"><i class="fa fa-calendar-check"></i> Revisar agenda de reuniones</a>
 					<img src="../imagenes/dot.png">
-					<a class="nav-link" href="#"><i class="fa fa-upload"></i> Registro de evidencias</a>
+					<a class="nav-link" href="#" data-navi="evidencias"><i class="fa fa-upload"></i> Registro de evidencias</a>
 					
 					<div class="dropdown ml-auto dropdown_user">
 						<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -93,9 +94,9 @@
 				
 				<nav class="nav nav_bar_interesado">
 				
-					<a class="nav-link active" href="#"><i class="fa fa-newspaper"></i> Ingresar nueva solicitud</a>
+					<a class="nav-link active" href="#" data-navi="solicitud"><i class="fa fa-newspaper"></i> Ingresar nueva solicitud</a>
 					<img src="../imagenes/dot.png">
-					<a class="nav-link" href="#"><i class="fa fa-tasks"></i> Estado de solicidud</a>
+					<a class="nav-link" href="#" data-navi="reportes_solicitud"><i class="fa fa-tasks"></i> Estado de solicidud</a>
 					
 					<div class="dropdown ml-auto dropdown_user">
 						<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -114,8 +115,16 @@
 			<div class="col-md-2 col-2">
 			</div>
 		</div>
-		
+		<div id="cuerpo">
+			
+		</div>
   	</body>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="../librerias/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src='../js/moment.min.js'></script>
+	<script type="text/javascript" src='../js/fullcalendar.min.js'></script>
+	<script type="text/javascript" src='../js/es.js'></script>
+  	<script src="../js/main_page.js"></script>
+	
 </html>
