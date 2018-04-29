@@ -1,0 +1,195 @@
+
+html { 
+	overflow:hidden;
+	min-height: 100%;
+}
+
+body{
+	font: "Times New Roman",Times,serif;
+    color: #515151;
+	background: rgba(255,255,255,0.98);
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.98) 0%, rgba(245,245,245,0.98) 19%, rgba(237,237,237,0.99) 42%, rgba(237,237,237,1) 83%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0.98)), color-stop(19%, rgba(245,245,245,0.98)), color-stop(42%, rgba(237,237,237,0.99)), color-stop(83%, rgba(237,237,237,1)));
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0.98) 0%, rgba(245,245,245,0.98) 19%, rgba(237,237,237,0.99) 42%, rgba(237,237,237,1) 83%);
+	background: -o-linear-gradient(top, rgba(255,255,255,0.98) 0%, rgba(245,245,245,0.98) 19%, rgba(237,237,237,0.99) 42%, rgba(237,237,237,1) 83%);
+	background: -ms-linear-gradient(top, rgba(255,255,255,0.98) 0%, rgba(245,245,245,0.98) 19%, rgba(237,237,237,0.99) 42%, rgba(237,237,237,1) 83%);
+	background: linear-gradient(to bottom, rgba(255,255,255,0.98) 0%, rgba(245,245,245,0.98) 19%, rgba(237,237,237,0.99) 42%, rgba(237,237,237,1) 83%);
+}
+
+.login_header{
+	background-image: url("https://sitec.itculiacan.edu.mx/wp-content/uploads/2015/01/fondo.jpg");
+} 
+
+.text-tnm {
+    float: left;
+    font-size: 28px;
+	font-family: Verdana, Geneva, sans-serif;
+    color: #616161;
+	transform: scaleY(1.1);
+}
+
+.title{
+	font-weight: 600;
+}
+
+.logo_sep img{
+	margin: 1% 0 0 40%;
+}
+
+.logo_itc img{
+	height: 90px;
+	width: 90px;
+	margin: 5% 0 0 0;
+}
+
+.login_panel{
+	background: url(../imagenes/navbar_gris.png); 
+	background-repeat: no-repeat;
+    background-size: cover;
+	height: 40px;
+	margin-top: -50px;
+	opacity: 0.75;
+}
+
+.banner_izq_div{
+	margin: 0.6% 0 0 0;
+}
+
+.banner_der_div{
+	margin: 0.6% 0 0 0;
+}
+
+.banner_izq{
+	margin: 0 0 0 60%;
+}
+
+.banner_der{
+	margin: 0 0 0 -77%;
+}
+
+a {
+	color: #616161;
+}
+
+a:hover{
+	font-size: 17px;
+	color: #212121;
+	font-weight: 600;
+	transition: font-size 0.2s;
+	transition: color 0.2s;
+	transition: font-weight 0.1s;
+}
+
+a:visited, a:link, a:active{
+	text-decoration: none;
+}
+
+.body_text{
+	font: 13px/1.2em "Times New Roman",Times,serif;
+	text-align: justify;
+}
+
+.separator:after {
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 79%;
+    border-right: 2px solid #b6b6b6;
+    transform: translate(-50%);
+}
+
+.checkbox label:after, 
+.radio label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox .cr,
+.radio .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+
+.radio .cr {
+    border-radius: 50%;
+}
+
+.checkbox .cr .cr-icon,
+.radio .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+}
+
+.radio .cr .cr-icon {
+    margin-left: 0.04em;
+}
+
+.checkbox label input[type="checkbox"],
+.radio label input[type="radio"] {
+    display: none;
+}
+
+.checkbox label input[type="checkbox"] + .cr > .cr-icon,
+.radio label input[type="radio"] + .cr > .cr-icon {
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+.checkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
+.radio label input[type="radio"]:checked + .cr > .cr-icon {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled + .cr,
+.radio label input[type="radio"]:disabled + .cr {
+    opacity: .5;
+}
+
+.recatcha img{
+	height: 50px;
+	width: 50px;
+	margin-top: -5px;
+	margin-left: 75px;
+}
+
+.footer{
+	position: fixed;
+    left: 0;
+    bottom: 2px;
+    width: 100%;
+	border-top: 1px solid #b6b6b6;
+	padding-top: 10px;
+	-webkit-box-shadow: 0px -4px 3px rgba(152, 152, 152, 0.75);
+	-moz-box-shadow: 0px -4px 3px rgba(152, 152, 152, 0.75);
+	box-shadow: 0px -4px 3px rgba(152, 152, 152, 0.75);
+}
+
+.login_head{
+	background-color: #e9e9e9;
+}
+
+.login_body{
+	background-color: #f5f5f5;
+}
+
+.dropdown_user:hover{
+	text-decoration: none;
+}
+
+.dropdown_user:visited {
+    text-decoration: none;
+}
