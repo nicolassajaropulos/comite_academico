@@ -1,0 +1,3 @@
+<?php
+	$respuesta = 'Update cliente';
+?>
