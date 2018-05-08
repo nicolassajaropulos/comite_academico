@@ -1,0 +1,28 @@
+﻿
+INSERT INTO `prioridad` (`id_prioridad`, `prioridad`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Presidente', CURRENT_DATE(), b'1');
+INSERT INTO `prioridad` (`id_prioridad`, `prioridad`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Secretario', CURRENT_DATE(), b'1');
+INSERT INTO `prioridad` (`id_prioridad`, `prioridad`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Miembro', CURRENT_DATE(), b'1');
+INSERT INTO `prioridad` (`id_prioridad`, `prioridad`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Alumno', CURRENT_DATE(), b'1');
+INSERT INTO `prioridad` (`id_prioridad`, `prioridad`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Profesor', CURRENT_DATE(), b'1');
+
+INSERT INTO `carrera` (`id_carrera`, `nombre_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Sistemas Computacionales', CURRENT_DATE(), b'1');
+INSERT INTO `carrera` (`id_carrera`, `nombre_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Mecatronica', CURRENT_DATE(), b'1');
+INSERT INTO `carrera` (`id_carrera`, `nombre_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Electrica', CURRENT_DATE(), b'1');
+INSERT INTO `carrera` (`id_carrera`, `nombre_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Industrial', CURRENT_DATE(), b'1');
+
+INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_paterno`, `apellido_materno`, `numero_control`, `prioridad`, `contraseña`, `fecha_creacion`, `estatus`) 
+	VALUES (NULL, 'Diego', 'Payan', 'Lopez', '15171182', '1', '123', CURRENT_DATE(), b'1');
+INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_paterno`, `apellido_materno`, `numero_control`, `prioridad`, `contraseña`, `fecha_creacion`, `estatus`) 
+	VALUES (NULL, 'Mayela', 'Madrid', 'Gutierrez', '15171156', '2', '123', CURRENT_DATE(), b'1');
+INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_paterno`, `apellido_materno`, `numero_control`, `prioridad`, `contraseña`, `fecha_creacion`, `estatus`) 
+	VALUES (NULL, 'Nicolas', 'Zavala', 'Sajaropulos', '15171229', '3', '123', CURRENT_DATE(), b'1');
+INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_paterno`, `apellido_materno`, `numero_control`, `prioridad`, `contraseña`, `fecha_creacion`, `estatus`) 
+	VALUES (NULL, 'Armando', 'Beltran', 'Medina', '15171078', '4', '123', CURRENT_DATE(), b'1');
+INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_paterno`, `apellido_materno`, `numero_control`, `prioridad`, `contraseña`, `fecha_creacion`, `estatus`) 
+	VALUES (NULL, 'Norma', 'Rebeca', 'Godoy', '8870560', '5', '123', CURRENT_DATE(), b'1');
+	
+INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `id_usuario`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '1', '1', CURRENT_DATE(), b'1');
+INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `id_usuario`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '2', '1', CURRENT_DATE(), b'1');
+INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `id_usuario`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '3', '4', CURRENT_DATE(), b'1');
+INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `id_usuario`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '4', '1', CURRENT_DATE(), b'1');
+INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `id_usuario`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '5', '1', CURRENT_DATE(), b'1');

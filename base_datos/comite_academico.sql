@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-05-2018 a las 04:38:52
+-- Tiempo de generación: 08-05-2018 a las 05:52:16
 -- Versión del servidor: 10.1.31-MariaDB
 -- Versión de PHP: 7.0.29
 
@@ -114,6 +114,19 @@ CREATE TABLE `lugar` (
   `calle` varchar(20) DEFAULT NULL,
   `numero_exterior` varchar(7) DEFAULT NULL,
   `colonia` varchar(20) DEFAULT NULL,
+  `fecha_creacion` datetime DEFAULT NULL,
+  `estatus` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `prioridad`
+--
+
+CREATE TABLE `prioridad` (
+  `id_prioridad` int(11) NOT NULL,
+  `prioridad` varchar(30) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
   `estatus` bit(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -290,6 +303,12 @@ ALTER TABLE `lugar`
   ADD PRIMARY KEY (`id_lugar`);
 
 --
+-- Indices de la tabla `prioridad`
+--
+ALTER TABLE `prioridad`
+  ADD PRIMARY KEY (`id_prioridad`);
+
+--
 -- Indices de la tabla `reunion`
 --
 ALTER TABLE `reunion`
@@ -336,7 +355,8 @@ ALTER TABLE `solicitud_detalle_validacion`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD KEY `FK_usuario_prioridad` (`prioridad`);
 
 --
 -- Indices de la tabla `usuario_carrera`
@@ -399,6 +419,12 @@ ALTER TABLE `firma`
 --
 ALTER TABLE `lugar`
   MODIFY `id_lugar` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `prioridad`
+--
+ALTER TABLE `prioridad`
+  MODIFY `id_prioridad` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `reunion`
@@ -503,6 +529,12 @@ ALTER TABLE `solicitud_detalle_validacion`
   ADD CONSTRAINT `FK_solicitud_detalle_validacion_firma` FOREIGN KEY (`id_firma`) REFERENCES `firma` (`id_firma`),
   ADD CONSTRAINT `FK_solicitud_detalle_validacion_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`),
   ADD CONSTRAINT `FK_solicitud_detalle_validacion_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
+
+--
+-- Filtros para la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `FK_usuario_prioridad` FOREIGN KEY (`prioridad`) REFERENCES `prioridad` (`id_prioridad`);
 
 --
 -- Filtros para la tabla `usuario_carrera`
