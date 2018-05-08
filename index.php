@@ -93,7 +93,7 @@
 																	<span class="cr"><i class="cr-icon fa fa-check"></i></span>
 																</label>
 															</div>
-															<h5 class="mt-2"> No soy un robot <i class="fas fa-male"></i> <i class="fas fa-female"></i></h5>
+															<h5 class="mt-2"> I'm not a robot <i class="fas fa-male"></i> <i class="fas fa-female"></i></h5>
 															<img src="imagenes/RecaptchaLogo.png">
 														</div>
 													</div>
