@@ -8,6 +8,7 @@
     	<link href="https://sitec.itculiacan.edu.mx/wp-content/themes/fuente/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     	<link rel="stylesheet" href="librerias/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+		<link rel="stylesheet" type="text/css" href="css/sweetalert.css">
 		<link rel="stylesheet" href="css/general.css">
   	</head>
   	<body>
@@ -73,13 +74,13 @@
 										<div class="col-md-12 col-12 col-sm-12">
 											<div class="form-group">
 												<h5><i class="fas fa-user"></i> Número de control </h5>
-												<input type="text" class="form-control" id="txt_usuario" placeholder="Número de control">
+												<input type="text" class="form-control" id="txt_usuario" placeholder="Número de control" autocomplete="off">
 											</div>
 										</div>
 										<div class="col-md-12 col-12 col-sm-12">
 											<div class="form-group">
 												<h5><i class="fas fa-key"></i> Contraseña </h5>
-												<input type="password" class="form-control" id="txt_password" placeholder="Contraseña">
+												<input type="password" class="form-control" id="txt_password" placeholder="Contraseña" autocomplete="new-password">
 											</div>
 										</div>
 										<div class="col-md-12 col-12 col-sm-12"><hr>
@@ -101,7 +102,7 @@
 											</div>
 										</div>
 										<div class="col-md-12 col-12 col-sm-12"><hr>
-											<button class="btn btn-outline-primary mb-3"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</button>
+											<button class="btn btn-outline-primary mb-3" id="btn_iniciar_sesion"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</button>
 										</div>
 									</div>
 									<div class="col-md-1 col-1"></div>
@@ -124,5 +125,9 @@
 			</div>
 		</div>
   	</body>
-  	<!--script src="librerias/js/app.js"></script-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+  	<script src="librerias/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<script src="js/sweetalert.min.js"></script>
+  	<script src="js/index.js"></script>
 </html>

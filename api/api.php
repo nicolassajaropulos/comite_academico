@@ -6,6 +6,10 @@
 	* @Desarrollador: Payan Lopez Diego
 	**/
 	
+	require ('../modelo/conexion.php');
+	
+	session_start();
+	
 	header("Access-Control-Allow-Origin: *");
 	header('Access-Control-Allow-Credentials: true');
 	header('Access-Control-Allow-Methods: PUT, GET, POST');

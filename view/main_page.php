@@ -9,9 +9,11 @@
     	<link rel="stylesheet" href="../librerias/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
 		<link rel="stylesheet" href="../css/fullcalendar.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/sweetalert.css">
 		<link rel="stylesheet" href="../css/general.css">
   	</head>
   	<body>
+		<?php session_start();?>
   		<div class="row login_header hidden-sm-down">
 	   		<div class="col-md-12 col-12"><br>
 	   			<div class="row">
@@ -34,83 +36,83 @@
 			<div class="col-md-2 col-2">
 			</div>
 			<div class="col-md-8 col-8 login_panel">
-			
-				<nav class="nav nav_bar_presidente">
-				
-					<a class="nav-link active" href="#" data-navi="agendar_reuniones"><i class="fa fa-calendar-alt"></i> Agendar Reuniones</a>
-					<img src="../imagenes/dot.png">
-					<a class="nav-link" href="#" data-navi="orden_del_dia"><i class="fa fa-folder-open"></i> Orden del día</a>
+				<?php if($_SESSION['prioridad'] == 1){?>
+					<nav class="nav nav_bar_presidente">
 					
-					<div class="dropdown ml-auto dropdown_user">
-						<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fa fa-user"></i> Presidente
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
-							<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
-							<a class="dropdown-item" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
+						<a class="nav-link active" href="#" data-navi="agendar_reuniones"><i class="fa fa-calendar-alt"></i> Agendar Reuniones</a>
+						<img src="../imagenes/dot.png">
+						<a class="nav-link" href="#" data-navi="orden_del_dia"><i class="fa fa-folder-open"></i> Orden del día</a>
+						
+						<div class="dropdown ml-auto dropdown_user">
+							<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-user"></i> Presidente
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
+								<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
+								<a class="dropdown-item logout" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
+							</div>
 						</div>
-					</div>
+						
+					</nav>
+				<?php }else if($_SESSION['prioridad'] == 2){?>
+					<nav class="nav nav_bar_secretario">
 					
-				</nav>
-				
-				<nav class="nav nav_bar_secretario">
-				
-					<a class="nav-link active" href="#" data-navi="acta_de_acuerdos"><i class="fa fa-clipboard"></i> Acta de acuerdos</a>
-					<img src="../imagenes/dot.png">
-					<a class="nav-link" href="#" data-navi="asistencia"><i class="fa fa-list-alt"></i> Control de asistencia</a>
-					
-					<div class="dropdown ml-auto dropdown_user">
-						<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fa fa-user"></i> Secretario
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
-							<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
-							<a class="dropdown-item" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
+						<a class="nav-link active" href="#" data-navi="acta_de_acuerdos"><i class="fa fa-clipboard"></i> Acta de acuerdos</a>
+						<img src="../imagenes/dot.png">
+						<a class="nav-link" href="#" data-navi="asistencia"><i class="fa fa-list-alt"></i> Control de asistencia</a>
+						
+						<div class="dropdown ml-auto dropdown_user">
+							<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-user"></i> Secretario
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
+								<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
+								<a class="dropdown-item logout" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
+							</div>
 						</div>
-					</div>
+						
+					</nav>
+				<?php }else if($_SESSION['prioridad'] == 3){?>
+					<nav class="nav nav_bar_miembro">
 					
-				</nav>
-				
-				<nav class="nav nav_bar_miembro">
-				
-					<a class="nav-link active" href="#" data-navi="reportes_agenda"><i class="fa fa-calendar-check"></i> Revisar agenda de reuniones</a>
-					<img src="../imagenes/dot.png">
-					<a class="nav-link" href="#" data-navi="evidencias"><i class="fa fa-upload"></i> Registro de evidencias</a>
-					
-					<div class="dropdown ml-auto dropdown_user">
-						<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fa fa-user"></i> Miembro
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
-							<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
-							<a class="dropdown-item" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
+						<a class="nav-link active" href="#" data-navi="reportes_agenda"><i class="fa fa-calendar-check"></i> Revisar agenda de reuniones</a>
+						<img src="../imagenes/dot.png">
+						<a class="nav-link" href="#" data-navi="evidencias"><i class="fa fa-upload"></i> Registro de evidencias</a>
+						
+						<div class="dropdown ml-auto dropdown_user">
+							<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-user"></i> Miembro
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
+								<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
+								<a class="dropdown-item logout" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
+							</div>
 						</div>
-					</div>
+						
+					</nav>
+				<?php }else if($_SESSION['prioridad'] == 4 || $_SESSION['prioridad'] == 5){?>
+					<nav class="nav nav_bar_interesado">
 					
-				</nav>
-				
-				<nav class="nav nav_bar_interesado">
-				
-					<a class="nav-link active" href="#" data-navi="solicitud"><i class="fa fa-newspaper"></i> Ingresar nueva solicitud</a>
-					<img src="../imagenes/dot.png">
-					<a class="nav-link" href="#" data-navi="reportes_solicitud"><i class="fa fa-tasks"></i> Estado de solicidud</a>
-					
-					<div class="dropdown ml-auto dropdown_user">
-						<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fa fa-user"></i> Interesado
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
-							<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
-							<a class="dropdown-item" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
+						<a class="nav-link active" href="#" data-navi="solicitud"><i class="fa fa-newspaper"></i> Ingresar nueva solicitud</a>
+						<img src="../imagenes/dot.png">
+						<a class="nav-link" href="#" data-navi="reportes_solicitud"><i class="fa fa-tasks"></i> Estado de solicidud</a>
+						
+						<div class="dropdown ml-auto dropdown_user">
+							<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-user"></i> Interesado
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
+								<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
+								<a class="dropdown-item logout" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
+							</div>
 						</div>
-					</div>
-					
-				</nav>
-				
+						
+					</nav>
+				<?php }?>
 			</div>
 			<div class="col-md-2 col-2">
 			</div>
@@ -121,10 +123,12 @@
   	</body>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
   	<script src="../librerias/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src='../js/moment.min.js'></script>
 	<script type="text/javascript" src='../js/fullcalendar.min.js'></script>
 	<script type="text/javascript" src='../js/es.js'></script>
+	<script src="../js/sweetalert.min.js"></script>
   	<script src="../js/main_page.js"></script>
 	
 </html>
