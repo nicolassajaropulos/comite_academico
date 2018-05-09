@@ -12,7 +12,7 @@
 	
 		<div class="col-md-12 mt-2">
 		
-			<div class="card">
+			<div class="card mod_panel">
 				
 				<div class="row ml-2">
 					<div class="col-md-11 ml-5">

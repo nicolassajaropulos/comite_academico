@@ -11,22 +11,11 @@
 		<div class="col-md-10 mt-2 mp-1">
 		
 			<div class="card mod_panel">
-			
-				<div class="col-md-12 col-12 text-center">
-					<div class="row mt-2">
-						<div class="col-md-6 col-6">
-							<button class="btn btn-outline-primary btn-block" id="btn_profesor">Soy un Profesor</button>
-						</div>
-						<div class="col-md-6 col-6">
-							<button class="btn btn-outline-primary btn-block" id="btn_estudiante">Soy un Estudiante</button>
-						</div>
-					</div><hr>
-				</div>
 				
-				<div class="row">
-					<div class="col-md-1 col-1 profesor"></div>
-					<div class="col-md-10 col-10" id="profesor">
-						<div class="card m-2 p-4 mod_panel">
+				<?PHP session_start(); if($_SESSION['prioridad'] == 5){ ?>
+					<div class="row">
+						<div class="col-md-1 col-1 profesor"></div>
+						<div class="col-md-10 col-10 mt-3" id="profesor">
 							<div class="row">
 								<div class="col-md-6 col-12 col-sm-12">
 									<div class="form-group">
@@ -59,6 +48,14 @@
 								</div>
 							</div>
 							<div class="row">
+								<div class="col-md-6 col-12 col-sm-12">
+									<div class="form-group">
+										<h5>Evidencias:</h5>
+										<input type="file" class="form-control" id="txt_evidencia" placeholder="Nombre de carrera">
+									</div>
+								</div>
+							</div>
+							<div class="row">
 								<div class="col-md-12 col-12 text-center">
 									<div class="form-group">
 										<h5>Atentamente</h5>
@@ -73,12 +70,10 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				
-				<div class="row">
-					<div class="col-md-1 col-1 estudiante"></div>
-					<div class="col-md-10 col-10" id="estudiante">
-						<div class="card m-2 p-4 mod_panel">
+				<?PHP }else if($_SESSION['prioridad'] == 4){ ?>
+					<div class="row">
+						<div class="col-md-1 col-1 estudiante"></div>
+						<div class="col-md-10 col-10 mt-3" id="estudiante">
 							<div class="row">
 								<div class="col-md-5 col-12 col-sm-12">
 									<div class="form-group">
@@ -133,6 +128,14 @@
 								</div>
 							</div>
 							<div class="row">
+								<div class="col-md-6 col-12 col-sm-12">
+									<div class="form-group">
+										<h5>Evidencias:</h5>
+										<input type="file" class="form-control" id="txt_evidencia" placeholder="Nombre de carrera">
+									</div>
+								</div>
+							</div>
+							<div class="row">
 								<div class="col-md-12 col-12 text-center">
 									<div class="form-group">
 										<h5>Atentamente</h5>
@@ -147,8 +150,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				
+				<?PHP } ?>
 			</div>
 			
 		</div>
