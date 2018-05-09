@@ -4,6 +4,7 @@ INSERT INTO `prioridad` (`id_prioridad`, `prioridad`, `fecha_creacion`, `estatus
 INSERT INTO `prioridad` (`id_prioridad`, `prioridad`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Miembro', CURRENT_DATE(), b'1');
 INSERT INTO `prioridad` (`id_prioridad`, `prioridad`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Alumno', CURRENT_DATE(), b'1');
 INSERT INTO `prioridad` (`id_prioridad`, `prioridad`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Profesor', CURRENT_DATE(), b'1');
+INSERT INTO `prioridad` (`id_prioridad`, `prioridad`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Coordinador', CURRENT_DATE(), b'1');
 
 INSERT INTO `carrera` (`id_carrera`, `nombre_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Sistemas Computacionales', CURRENT_DATE(), b'1');
 INSERT INTO `carrera` (`id_carrera`, `nombre_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Mecatronica', CURRENT_DATE(), b'1');
@@ -20,6 +21,8 @@ INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_paterno`, `apel
 	VALUES (NULL, 'Armando', 'Beltran', 'Medina', '15171078', '4', '123', CURRENT_DATE(), b'1');
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_paterno`, `apellido_materno`, `numero_control`, `prioridad`, `contraseña`, `fecha_creacion`, `estatus`) 
 	VALUES (NULL, 'Norma', 'Rebeca', 'Godoy', '8870560', '5', '123', CURRENT_DATE(), b'1');
+INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_paterno`, `apellido_materno`, `numero_control`, `prioridad`, `contraseña`, `fecha_creacion`, `estatus`) 
+	VALUES (NULL, 'Coordinador', 'de carrera', '', '12345', '6', '123', CURRENT_DATE(), b'1');
 	
 INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `id_usuario`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '1', '1', CURRENT_DATE(), b'1');
 INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `id_usuario`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '2', '1', CURRENT_DATE(), b'1');

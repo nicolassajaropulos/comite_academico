@@ -12,6 +12,20 @@
 		
 			<div class="card">
 				
+				<table class="carga_solicitudes m-3">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Interesado</th>
+							<th scope="col">Comentario</th>
+							<th scope="col">Fecha</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+				
 			</div>
 			
 		</div>
