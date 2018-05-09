@@ -47,7 +47,7 @@
 					
 					<a class="nav-link active" href="#" data-navi="acta_acuerdos"><i class="fa fa-clipboard"></i> Acta de acuerdos</a>
 					<img src="../imagenes/dot.png">
-					<a class="nav-link" href="#" data-navi="asistencia"><i class="fa fa-list-alt"></i> Control de asistencia</a>
+					<a class="nav-link" href="#" data-navi="control_asistencia"><i class="fa fa-list-alt"></i> Control de asistencia</a>
 						
 				<?php }else if($_SESSION['prioridad'] == 3){?>
 					
