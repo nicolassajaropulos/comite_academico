@@ -66,8 +66,8 @@
 					<a class="nav-link active" href="#" data-navi="validar_solicitud"><i class="fas fa-clipboard-check"></i> Validar solicitudes</a>
 
 				<?php } ?>
-					
-					<div class="dropdown ml-auto dropdown_user">
+
+					<div class="dropup ml-auto dropdown_user">
 						<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<i class="fa fa-user"></i> Interesado
 						</button>
