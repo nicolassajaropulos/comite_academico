@@ -36,83 +36,49 @@
 			<div class="col-md-2 col-2">
 			</div>
 			<div class="col-md-8 col-8 login_panel">
+				<nav class="nav">
 				<?php if($_SESSION['prioridad'] == 1){?>
-					<nav class="nav nav_bar_presidente">
 					
-						<a class="nav-link active" href="#" data-navi="agendar_reuniones"><i class="fa fa-calendar-alt"></i> Agendar Reuniones</a>
-						<img src="../imagenes/dot.png">
-						<a class="nav-link" href="#" data-navi="orden_del_dia"><i class="fa fa-folder-open"></i> Orden del día</a>
+					<a class="nav-link active" href="#" data-navi="agendar_reuniones"><i class="fa fa-calendar-alt"></i> Agendar Reuniones</a>
+					<img src="../imagenes/dot.png">
+					<a class="nav-link" href="#" data-navi="orden_del_dia"><i class="fa fa-folder-open"></i> Orden del día</a>
 						
-						<div class="dropdown ml-auto dropdown_user">
-							<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fa fa-user"></i> Presidente
-							</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
-								<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
-								<a class="dropdown-item logout" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
-							</div>
-						</div>
-						
-					</nav>
 				<?php }else if($_SESSION['prioridad'] == 2){?>
-					<nav class="nav nav_bar_secretario">
 					
-						<a class="nav-link active" href="#" data-navi="acta_acuerdos"><i class="fa fa-clipboard"></i> Acta de acuerdos</a>
-						<img src="../imagenes/dot.png">
-						<a class="nav-link" href="#" data-navi="asistencia"><i class="fa fa-list-alt"></i> Control de asistencia</a>
+					<a class="nav-link active" href="#" data-navi="acta_acuerdos"><i class="fa fa-clipboard"></i> Acta de acuerdos</a>
+					<img src="../imagenes/dot.png">
+					<a class="nav-link" href="#" data-navi="asistencia"><i class="fa fa-list-alt"></i> Control de asistencia</a>
 						
-						<div class="dropdown ml-auto dropdown_user">
-							<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fa fa-user"></i> Secretario
-							</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
-								<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
-								<a class="dropdown-item logout" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
-							</div>
-						</div>
-						
-					</nav>
 				<?php }else if($_SESSION['prioridad'] == 3){?>
-					<nav class="nav nav_bar_miembro">
 					
 						<a class="nav-link active" href="#" data-navi="reportes_agenda"><i class="fa fa-calendar-check"></i> Revisar agenda de reuniones</a>
 						<img src="../imagenes/dot.png">
 						<a class="nav-link" href="#" data-navi="evidencias"><i class="fa fa-upload"></i> Registro de evidencias</a>
-						
-						<div class="dropdown ml-auto dropdown_user">
-							<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fa fa-user"></i> Miembro
-							</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
-								<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
-								<a class="dropdown-item logout" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
-							</div>
-						</div>
-						
-					</nav>
+
 				<?php }else if($_SESSION['prioridad'] == 4 || $_SESSION['prioridad'] == 5){?>
-					<nav class="nav nav_bar_interesado">
 					
-						<a class="nav-link active" href="#" data-navi="solicitud"><i class="fa fa-newspaper"></i> Ingresar nueva solicitud</a>
-						<img src="../imagenes/dot.png">
-						<a class="nav-link" href="#" data-navi="reportes_solicitud"><i class="fa fa-tasks"></i> Estado de solicidud</a>
+					<a class="nav-link" href="#" data-navi="solicitud"><i class="fa fa-newspaper"></i> Ingresar nueva solicitud</a>
+					<img src="../imagenes/dot.png">
+					<a class="nav-link" href="#" data-navi="reportes_solicitud"><i class="fa fa-tasks"></i> Estado de solicidud</a>
 						
-						<div class="dropdown ml-auto dropdown_user">
-							<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i class="fa fa-user"></i> Interesado
-							</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
-								<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
-								<a class="dropdown-item logout" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
-							</div>
+				<?php } else if($_SESSION['prioridad'] == 6){?>
+
+					<a class="nav-link active" href="#" data-navi="validar_solicitud"><i class="fas fa-clipboard-check"></i> Validar solicitudes</a>
+
+				<?php } ?>
+					
+					<div class="dropdown ml-auto dropdown_user">
+						<button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-user"></i> Interesado
+						</button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+							<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
+							<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
+							<a class="dropdown-item logout" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
 						</div>
-						
-					</nav>
-				<?php }?>
+					</div>
+
+				</nav>
 			</div>
 			<div class="col-md-2 col-2">
 			</div>
