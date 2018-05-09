@@ -7,39 +7,40 @@
 	</div>
 </div>
 <div class="col-md-12 col-12">
+
 	<div class="row">
-		<div class="col-md-10 mt-2">
+	
+		<div class="col-md-12 mt-2">
 		
 			<div class="card">
 				
-				<table class="carga_solicitudes m-3">
-					<thead>
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Interesado</th>
-							<th scope="col">Comentario</th>
-							<th scope="col">Fecha</th>
-						</tr>
-					</thead>
-					<tbody>
-						
-					</tbody>
-				</table>
+				<div class="row ml-2">
+					<div class="col-md-11 ml-5">
+						<table class="table carga_solicitudes mt-3 table-striped table-hover">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Interesado</th>
+									<th scope="col">Comentario</th>
+									<th scope="col">Fecha</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+								  <th scope="row">1</th>
+								  <td>Jesús Arturo Ayón</td>
+								  <td>Cambio de calificación</td>
+								  <td>09/05/2018</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 				
 			</div>
 			
 		</div>
 		
-		<div class="col-md-2 mt-2">
-			<div class="card text-center">
-				<div class="col-md-12 col-12 mt-2">
-					<h4>Acciones</h4>
-				</div>
-				<div class="col-md-12 col-12 mt-2 mb-2">
-					<button class="btn btn-outline-success btn-block" id="btn_aceptar"> Aceptar</button>
-				</div>
-			</div>
-		</div>
 	</div>
 	
 </div>

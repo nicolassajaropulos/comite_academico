@@ -58,7 +58,7 @@
 				<?php }else if($_SESSION['prioridad'] == 2){?>
 					<nav class="nav nav_bar_secretario">
 					
-						<a class="nav-link active" href="#" data-navi="acta_de_acuerdos"><i class="fa fa-clipboard"></i> Acta de acuerdos</a>
+						<a class="nav-link active" href="#" data-navi="acta_acuerdos"><i class="fa fa-clipboard"></i> Acta de acuerdos</a>
 						<img src="../imagenes/dot.png">
 						<a class="nav-link" href="#" data-navi="asistencia"><i class="fa fa-list-alt"></i> Control de asistencia</a>
 						
