@@ -49,7 +49,7 @@
 					<img src="../imagenes/dot.png">
 					<a class="nav-link" href="#" data-navi="orden_del_dia"><i class="fa fa-folder-open"></i> Orden del día</a>
 					<img src="../imagenes/dot.png">
-					<a class="nav-link" href="#" data-navi="asistencia"><i class="fa fa-list-alt"></i> Control de asistencia</a>
+					<a class="nav-link" href="#" data-navi="control_asistencia"><i class="fa fa-list-alt"></i> Control de asistencia</a>
 						
 				<?php }else if($_SESSION['prioridad'] == 3){ $prioridad = "Miembro";?>
 					
