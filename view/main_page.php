@@ -46,10 +46,14 @@
 				<?php }else if($_SESSION['prioridad'] == 2){ $prioridad = "Secretario";?>
 					
 					<a class="nav-link active" href="#" data-navi="acta_acuerdos"><i class="fa fa-clipboard"></i> Acta de acuerdos</a>
-					<img src="../imagenes/dot.png">
+					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
+					<a class="nav-link active" href="#" data-navi="acta_acuerdos"><i class="fa fa-clipboard"></i> Recomendación</a>
+					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
 					<a class="nav-link" href="#" data-navi="orden_del_dia"><i class="fa fa-folder-open"></i> Orden del día</a>
-					<img src="../imagenes/dot.png">
-					<a class="nav-link" href="#" data-navi="control_asistencia"><i class="fa fa-list-alt"></i> Control de asistencia</a>
+					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
+					<a class="nav-link" href="#" data-navi="control_asistencia"><i class="fa fa-list-alt"></i> Asistencias</a>
+					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
+					<a class="nav-link active" href="#" data-navi="reportes_agenda"><i class="fa fa-calendar-check"></i> Agenda</a>
 						
 				<?php }else if($_SESSION['prioridad'] == 3){ $prioridad = "Miembro";?>
 					

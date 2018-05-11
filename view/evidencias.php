@@ -15,8 +15,48 @@
 			
 				<div class="row mt-3 mb-3">
 					<div class="col-md-1 col-1"></div>
-					<div class="col-md-10 col-10">
-						<div class="row">
+					<div class="col-md-10 col-10">					
+						<table class="table carga_reuniones mt-3 table-striped table-hover">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Convocador</th>
+									<th scope="col">Fecha</th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+								  <th scope="row">1</th>
+								  <td>Diego Payán López</td>
+								  <td>11/05/2018</td>
+								  <td><button class="btn btn-info btn-sm" id="btn_solicitud"> Solicitudes</button></td>
+								</tr>
+							</tbody>
+						</table>
+						
+						<table class="table carga_solicitudes mt-3 table-striped table-hover">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Interesado</th>
+									<th scope="col">Comentario</th>
+									<th scope="col">Fecha</th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+								  <th scope="row">1</th>
+								  <td>Jesús Arturo Ayón</td>
+								  <td>Cambio de calificación</td>
+								  <td>09/05/2018</td>
+								  <td><button class="btn btn-info btn-sm" id="btn_evidencia"> Evidencia</button></td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="row envidencia">
 							<div class="col-md-6 col-12 col-sm-12">
 								<div class="form-group">
 									<h5>Solicitud:</h5>
@@ -32,7 +72,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row envidencia">
 							<div class="col-md-12 col-12 col-sm-12">
 								<div class="form-group">
 									<h5>Comentario:</h5>

@@ -38,7 +38,9 @@
 				</div>
 				
 				<div class="row ml-2 acta_acuerdo">
-					<div class="col-md-11 mt-3 ml-5 mb-3">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-5 col-5 ml-5 mt-3 mb-3">
 						<div class="row">
 							<h5>Fecha : 09 de Mayo de 2018</h5>
 						</div>
@@ -57,23 +59,36 @@
 						<li>Diego Payán López</li>
 						<li>Mayela Madrid Gutierrez</li>
 						<li>Nicolás Zavala</li>
-						<div class="row col-md-6 col-6">
-							<h5><strong>Temas:</strong></h5><input type="text" class="form-control" id="txt_tema" placeholder="temas">
+						<div class="row mt-2">
+							<button class="btn btn-info">Firmas de los miembros</button>
 						</div>
-						<div class="row col-md-6 col-6">
+					</div>
+					<div class="col-md-5 col-5 mt-3 mb-3">
+						<div class="row">
+							<div class="col-md-10 col-10">
+								<h5><strong>Temas:</strong></h5><input type="text" class="form-control" id="txt_tema" placeholder="temas">
+							</div>
+							<div class="col-md-2 col-2 mt-4">
+								<button class="btn btn-success">Añadir</button>
+							</div>
+						</div>
+						<div class="row col-md-12 col-12">
 							<table class="table">
 								<thead>
 									<tr>
 										<th scope="col">#</th>
-										<th scope="col">Temas</th>
+										<th scope="col">Tema</th>
 									</tr>
 								</thead>
 								<tbody>
-								
+									<tr>
+										<th scope="row">1</th>
+										<td>Cambios de calificaciones</td>
+									</tr>
 								</tbody>
 							</table>
 						</div>
-						<div class="row col-md-6 col-6">
+						<div class="row col-md-12 col-12">
 							<h5><strong>Desarrollo:</strong></h5>
 							<textarea type="text" class="form-control" id="txt_desarrollo" placeholder="Desarrollo" row="5"></textarea>
 						</div>

@@ -16,6 +16,26 @@
 				
 				<div class="row ml-2">
 					<div class="col-md-11 ml-5">
+						
+						<table class="table carga_reuniones mt-3 table-striped table-hover">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Convocador</th>
+									<th scope="col">Fecha</th>
+									<th scope="col"></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+								  <th scope="row">1</th>
+								  <td>Diego Payán López</td>
+								  <td>11/05/2018</td>
+								  <td><button class="btn btn-info btn-sm"> Orden del día</button></td>
+								</tr>
+							</tbody>
+						</table>
+						
 						<table class="table carga_solicitudes mt-3 table-striped table-hover">
 							<thead>
 								<tr>
@@ -23,6 +43,7 @@
 									<th scope="col">Interesado</th>
 									<th scope="col">Comentario</th>
 									<th scope="col">Fecha</th>
+									<th scope="col"></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -31,9 +52,11 @@
 								  <td>Jesús Arturo Ayón</td>
 								  <td>Cambio de calificación</td>
 								  <td>09/05/2018</td>
+								  <td><button class="btn btn-info btn-sm"><i class="fa fa-arrow-circle-up"></i></button><button class="btn btn-info btn-sm"><i class="fa fa-arrow-circle-down"></i></button></td>
 								</tr>
 							</tbody>
 						</table>
+						
 					</div>
 				</div>
 				
@@ -44,3 +67,5 @@
 	</div>
 	
 </div>
+
+<script type="text/javascript" src="../js/orden_del_dia.js"></script>

@@ -168,7 +168,6 @@ CREATE TABLE `reunion_usuario` (
 CREATE TABLE `solicitud` (
   `id_solicitud` bigint(20) NOT NULL,
   `interesado` bigint(20) NOT NULL,
-  `id_reunion` bigint(20) NOT NULL,
   `coordinador` bigint(20) NOT NULL,
   `id_comentario` bigint(20) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
@@ -253,6 +252,30 @@ CREATE TABLE `usuario_evidencia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Estructura de tabla para la tabla `reunion_solicitud`
+--
+
+CREATE TABLE `reunion_solicitud` (
+  `id_reunion_solicitud` int(11) NOT NULL,
+  `id_reunion` bigint(20) NOT NULL,
+  `id_solicitud` bigint(20) NOT NULL,
+  `orden` int(11) DEFAULT NULL,
+  `fecha_creacion` datetime DEFAULT NULL,
+  `estatus` bit(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Estructura de tabla para la tabla `recomendacion`
+--
+
+CREATE TABLE `recomendacion` (
+  `id_recomendacion` int(11) NOT NULL,
+  `id_solicitud` bigint(20) NOT NULL,
+  `fecha_creacion` datetime DEFAULT NULL,
+  `estatus` bit(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -330,7 +353,6 @@ ALTER TABLE `solicitud`
   ADD PRIMARY KEY (`id_solicitud`),
   ADD KEY `FK_solicitud_usuario_interesado` (`interesado`),
   ADD KEY `FK_solictud_usuario_coordinador` (`coordinador`),
-  ADD KEY `FK_solicitud_reunion` (`id_reunion`),
   ADD KEY `FK_solicitud_comentario` (`id_comentario`);
 
 --
@@ -373,6 +395,21 @@ ALTER TABLE `usuario_evidencia`
   ADD PRIMARY KEY (`id_usuario_evidencia`),
   ADD KEY `FK_usuario_evidencia_usuario` (`id_usuario`),
   ADD KEY `FK_usuario_evidencia_solicitud` (`id_solicitud`);
+  
+--
+-- Indices de la tabla `reunion_solicitud`
+--
+ALTER TABLE `reunion_solicitud`
+  ADD PRIMARY KEY (`id_reunion_solicitud`),
+  ADD KEY `FK_reunion_solicitud_reunion` (`id_reunion`),
+  ADD KEY `FK_reunion_solicitud_solicitud` (`id_solicitud`);
+  
+--
+-- Indices de la tabla `recomendacion`
+--
+ALTER TABLE `recomendacion`
+  ADD PRIMARY KEY (`id_recomendacion`),
+  ADD KEY `FK_recomendacion_solicitud` (`id_solicitud`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -473,6 +510,18 @@ ALTER TABLE `usuario_carrera`
 --
 ALTER TABLE `usuario_evidencia`
   MODIFY `id_usuario_evidencia` bigint(20) NOT NULL AUTO_INCREMENT;
+  
+--
+-- AUTO_INCREMENT de la tabla `reunion_solicitud`
+--
+ALTER TABLE `reunion_solicitud`
+  MODIFY `id_reunion_solicitud` bigint(20) NOT NULL AUTO_INCREMENT;
+  
+--
+-- AUTO_INCREMENT de la tabla `reunion_solicitud`
+--
+ALTER TABLE `recomendacion`
+  MODIFY `id_recomendacion` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -510,7 +559,6 @@ ALTER TABLE `reunion_usuario`
 --
 ALTER TABLE `solicitud`
   ADD CONSTRAINT `FK_solicitud_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `comentario` (`id_comentario`),
-  ADD CONSTRAINT `FK_solicitud_reunion` FOREIGN KEY (`id_reunion`) REFERENCES `reunion` (`id_reunion`),
   ADD CONSTRAINT `FK_solicitud_usuario_interesado` FOREIGN KEY (`interesado`) REFERENCES `usuario` (`id_usuario`),
   ADD CONSTRAINT `FK_solictud_usuario_coordinador` FOREIGN KEY (`coordinador`) REFERENCES `usuario` (`id_usuario`);
 
@@ -549,6 +597,20 @@ ALTER TABLE `usuario_carrera`
 ALTER TABLE `usuario_evidencia`
   ADD CONSTRAINT `FK_usuario_evidencia_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`),
   ADD CONSTRAINT `FK_usuario_evidencia_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
+  
+--
+-- Filtros para la tabla `reunion_solicitud`
+--
+ALTER TABLE `reunion_solicitud`
+  ADD CONSTRAINT `FK_reunion_solicitud_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`),
+  ADD CONSTRAINT `FK_reunion_solicitud_reunion` FOREIGN KEY (`id_reunion`) REFERENCES `reunion` (`id_reunion`);
+COMMIT;
+
+--
+-- Filtros para la tabla `recomendacion`
+--
+ALTER TABLE `recomendacion`
+  ADD CONSTRAINT `FK_recomendacion_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
