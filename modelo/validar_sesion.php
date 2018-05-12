@@ -7,7 +7,7 @@
 	$numero_control = $_POST['numero_control'];
 	$password = $_POST['password'];
 	
-	$query = "SELECT COUNT(id_usuario)
+	$query = "SELECT COUNT(numero_control)
 				FROM 
 					usuario 
 				WHERE 
@@ -29,7 +29,7 @@
 	
 	if($coincidencias > 0){
 		
-		$query = "SELECT id_usuario, nombre_usuario, apellido_paterno, apellido_materno, numero_control, prioridad 
+		$query = "SELECT numero_control, nombre_usuario, apellido_paterno, apellido_materno, prioridad 
 					FROM 
 						usuario 
 					WHERE 
@@ -42,7 +42,7 @@
 			
 			$stmt->bind_param("is",$numero_control,$password);
 			$stmt->execute();
-			$stmt->bind_result($id_usuario, $nombre_usuario, $apellido_paterno, $apellido_materno, $numero_control, $prioridad);
+			$stmt->bind_result($numero_control, $nombre_usuario, $apellido_paterno, $apellido_materno, $prioridad);
 			while($stmt->fetch()){
 				
 			}
@@ -51,9 +51,8 @@
 		
 		session_start();
 		
-		$_SESSION['id_usuario'] = $id_usuario ;
-		$_SESSION['nombre_usuario'] = $nombre_usuario.' '.$apellido_paterno.' '.$apellido_materno ;
 		$_SESSION['numero_control'] = $numero_control ;
+		$_SESSION['nombre_usuario'] = $nombre_usuario.' '.$apellido_paterno.' '.$apellido_materno ;
 		$_SESSION['prioridad'] = $prioridad ;
 		
 		$response["error"] = false;
