@@ -171,7 +171,16 @@ CREATE TABLE `solicitud` (
   `id_solicitud` bigint(20) NOT NULL,
   `interesado` bigint(20) NOT NULL,
   `coordinador` bigint(20) NOT NULL,
+  `fecha_creacion` datetime DEFAULT NULL,
+  `id_estatus` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE `comentario_solicitud` (
+  `id_comentario_solicitud` bigint(20) NOT NULL,
   `id_comentario` bigint(20) NOT NULL,
+  `id_solicitud` bigint(20) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
   `id_estatus` bit(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -312,6 +321,9 @@ ALTER TABLE `comentario`
 --
 ALTER TABLE `departamento`
   ADD PRIMARY KEY (`id_departamento`);
+  
+  ALTER TABLE `comentario_solicitud`
+  ADD PRIMARY KEY (`id_comentario_solicitud`);
 
 --
 -- Indices de la tabla `departamento_acta`
@@ -448,6 +460,9 @@ ALTER TABLE `comentario`
 ALTER TABLE `departamento`
   MODIFY `id_departamento` bigint(20) NOT NULL AUTO_INCREMENT;
 
+  
+ ALTER TABLE `comentario_solicitud`
+  MODIFY `id_comentario_solicitud`` bigint(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `departamento_acta`
 --
@@ -621,6 +636,12 @@ COMMIT;
 --
 ALTER TABLE `recomendacion`
   ADD CONSTRAINT `FK_recomendacion_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
+  
+  ALTER TABLE `comentario_solicitud``
+  ADD CONSTRAINT `FK_comentario_solicitud_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `comentario` (`id_comentario`),
+  ADD CONSTRAINT `FK_comentario_solicitud_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
+  
+  
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
