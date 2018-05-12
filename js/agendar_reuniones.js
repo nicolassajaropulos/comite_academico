@@ -4,6 +4,42 @@ $(document).ready(function(){
 		$('#calendar').fullCalendar('today');
 	},750);
 	
+	$('#btn_aceptar_reunion').click(function(){
+		
+		alert($('#txt_hora_inicio').val());
+		alert($('#txt_hora_fin').val());
+		
+		$.ajax({
+			url: '../api/api.php/cliente',
+			type: 'POST',
+			dataType: 'JSON',
+			success:function(data){
+				if(data['error'] == false){
+					swal({
+						title: "Sesión aceptada",
+						text: "Enviado a página principal",
+						type: "success",
+						timer: 3000
+					});
+				}else{
+					
+					swal({
+						title: "Datos no válidos",
+						text: "El número de control o la contraseña no coinciden",
+						type: "error",
+						timer: 3000
+					});
+					
+				}
+			},
+			error: function(xhr, desc, err){
+				console.log(xhr);
+				console.log("Detalles: " + desc + "\nError:" + err);
+			}
+
+		});
+		
+	});
 	
 	var calendar = $('#calendar').fullCalendar({
 		
@@ -25,15 +61,18 @@ $(document).ready(function(){
 		},
 		
 		select: function(start) {
-			alert("select");
+			
+			var fecha_seleccionada = $.fullCalendar.moment(start).format("YYYY MMMM DD");
+			
+			$('#fecha_reunion').html('<div class="col-md-12 col-12 alert alert-info text-center" role="alert"><h5> Día seleccionado: <strong>'+fecha_seleccionada+'</strong></h5></div>');
+			
+			$('#modal_reunion').modal('toggle');
+			
 		},
 		
 		eventClick: function(event) {
 			alert("click");
 		},
-		
-		/*eventDrop: function(event, delta, revertFunc) {alert(event.title + " was dropped on " + event.start.format());if (!confirm("Are you sure about this change?")) {revertFunc();}},
-		eventResize: function(event) {swal({title: "Cuidado",text: "No se puede modificar la duración de la reservación",type: "error",timer: "2000"});revertFunc();}*/
 		
 	});
 	

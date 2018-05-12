@@ -8,26 +8,54 @@
 </div>
 <div class="col-md-12 col-12 mb-3">
 	<div class="row">
-		<div class="col-md-10 mt-2 mp-1">
+		<div class="col-md-12 mt-2 mp-1">
 		
 			<div class="card mod_panel">
-				<div id='calendar' class="m-3"></div>
+				<div id="calendar" class="m-3"></div>
 			</div>
 			
 		</div>
-		
-		<div class="col-md-2 mt-2">
-			<div class="card text-center button_panel">
-				<div class="col-md-12 col-12 mt-2">
-					<h4>Acciones</h4><hr>
-				</div>
-				<div class="col-md-12 col-12 mt-2 mb-2">
-					<button class="btn btn-outline-success btn-block" id="btn_aceptar"> Aceptar</button>
-				</div>
-			</div>
 		</div>
 	</div>
 	
+</div>
+
+<div class="modal" id="modal_reunion" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"><i class="fa fa-calendar-alt"></i> Agendar reunión</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				
+				<div class="col-md-12 col-12">
+					<div class="row" id="fecha_reunion"></div>
+					<div class="row">
+						<div class="col-md-6 col-6">
+							<div class="form-group">
+								<label for="txt_hora_inicio"><h5>Hora inicio</h5></label>
+								<input type="time" id="txt_hora_inicio" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-6 col-6">
+							<div class="form-group">
+								<label for="txt_hora_fin"><h5>Hora fin</h5></label>
+								<input type="time" id="txt_hora_fin" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-success" id="btn_aceptar_reunion"><strong><i class="fa fa-check-circle"></i> Aceptar</strong></button>
+			</div>
+		</div>
+	</div>
 </div>
 
 <script src="../js/agendar_reuniones.js"></script>

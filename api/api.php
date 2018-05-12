@@ -59,7 +59,7 @@
 			$response["status"] = "201";
 		}
 		
-		echo json_encode($estatus_code, $response);
+		echo json_encode($response);
 		
 	}else if($metodo == 'PUT'){
 		
@@ -79,7 +79,7 @@
 			$response["status"] = "201";
 		}
 
-		echo json_encode($estatus_code, $response);
+		echo json_encode($response);
 		
 	}else {
 		
