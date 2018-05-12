@@ -139,8 +139,10 @@ CREATE TABLE `prioridad` (
 
 CREATE TABLE `reunion` (
   `id_reunion` bigint(20) NOT NULL,
-  `id_usuario` bigint(20) NOT NULL,
+  `numero_control` bigint(20) NOT NULL,
   `fecha_citada` datetime NOT NULL,
+  `hora_inicio` datetime NOT NULL,
+  `hora_finalizada` datetime NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
   `estatus` bit(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -153,7 +155,7 @@ CREATE TABLE `reunion` (
 
 CREATE TABLE `reunion_usuario` (
   `id_reunion_usuario` bigint(20) NOT NULL,
-  `id_usuario` bigint(20) NOT NULL,
+  `numero_control` bigint(20) NOT NULL,
   `id_reunion` bigint(20) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
   `estatus` bit(1) DEFAULT NULL
@@ -169,9 +171,18 @@ CREATE TABLE `solicitud` (
   `id_solicitud` bigint(20) NOT NULL,
   `interesado` bigint(20) NOT NULL,
   `coordinador` bigint(20) NOT NULL,
-  `id_comentario` bigint(20) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
-  `estatus` bit(1) DEFAULT NULL
+  `id_estatus` bit(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE `comentario_solicitud` (
+  `id_comentario_solicitud` bigint(20) NOT NULL,
+  `id_comentario` bigint(20) NOT NULL,
+  `id_solicitud` bigint(20) NOT NULL,
+  `fecha_creacion` datetime DEFAULT NULL,
+  `id_estatus` bit(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -184,7 +195,7 @@ CREATE TABLE `solicitud_detalle_comentario` (
   `id_solicitud_detalle_comentario` bigint(20) NOT NULL,
   `id_solicitud` bigint(20) NOT NULL,
   `id_comentario` bigint(20) NOT NULL,
-  `id_usuario` bigint(20) NOT NULL,
+  `numero_control` bigint(20) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
   `estatus` bit(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -197,7 +208,7 @@ CREATE TABLE `solicitud_detalle_comentario` (
 
 CREATE TABLE `solicitud_detalle_validacion` (
   `id_solicitud_detalle_validacion` bigint(20) NOT NULL,
-  `id_usuario` bigint(20) NOT NULL,
+  `numero_control` bigint(20) NOT NULL,
   `id_firma` bigint(20) NOT NULL,
   `id_solicitud` bigint(20) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
@@ -211,11 +222,10 @@ CREATE TABLE `solicitud_detalle_validacion` (
 --
 
 CREATE TABLE `usuario` (
-  `id_usuario` bigint(20) NOT NULL,
+  `numero_control` int(11) NOT NULL,
   `nombre_usuario` varchar(50) NOT NULL,
   `apellido_paterno` varchar(30) NOT NULL,
   `apellido_materno` varchar(30) DEFAULT NULL,
-  `numero_control` int(11) NOT NULL,
   `prioridad` int(11) NOT NULL,
   `contraseña` varchar(10) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
@@ -230,7 +240,7 @@ CREATE TABLE `usuario` (
 
 CREATE TABLE `usuario_carrera` (
   `id_usuario_carrera` bigint(20) NOT NULL,
-  `id_usuario` bigint(20) NOT NULL,
+  `numero_control` bigint(20) NOT NULL,
   `id_carrera` bigint(20) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
   `estatus` bit(1) DEFAULT NULL
@@ -244,7 +254,7 @@ CREATE TABLE `usuario_carrera` (
 
 CREATE TABLE `usuario_evidencia` (
   `id_usuario_evidencia` bigint(20) NOT NULL,
-  `id_usuario` bigint(20) DEFAULT NULL,
+  `numero_control` bigint(20) DEFAULT NULL,
   `id_solicitud` bigint(20) DEFAULT NULL,
   `evidencia` varchar(50) DEFAULT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
@@ -271,6 +281,13 @@ CREATE TABLE `reunion_solicitud` (
 CREATE TABLE `recomendacion` (
   `id_recomendacion` int(11) NOT NULL,
   `id_solicitud` bigint(20) NOT NULL,
+  `fecha_creacion` datetime DEFAULT NULL,
+  `estatus` bit(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `estatus` (
+  `id_estatus` int(11) NOT NULL,
+  `estatus` varchar(20) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
   `estatus` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -304,6 +321,9 @@ ALTER TABLE `comentario`
 --
 ALTER TABLE `departamento`
   ADD PRIMARY KEY (`id_departamento`);
+  
+  ALTER TABLE `comentario_solicitud`
+  ADD PRIMARY KEY (`id_comentario_solicitud`);
 
 --
 -- Indices de la tabla `departamento_acta`
@@ -336,14 +356,14 @@ ALTER TABLE `prioridad`
 --
 ALTER TABLE `reunion`
   ADD PRIMARY KEY (`id_reunion`),
-  ADD KEY `FK_reunion_usuario` (`id_usuario`);
+  ADD KEY `FK_reunion_usuario` (`numero_control`);
 
 --
 -- Indices de la tabla `reunion_usuario`
 --
 ALTER TABLE `reunion_usuario`
   ADD PRIMARY KEY (`id_reunion_usuario`),
-  ADD KEY `FK_reunion_usuario_usuario` (`id_usuario`),
+  ADD KEY `FK_reunion_usuario_usuario` (`numero_control`),
   ADD KEY `FK_reunion_usuario_reunion` (`id_reunion`);
 
 --
@@ -360,7 +380,7 @@ ALTER TABLE `solicitud`
 --
 ALTER TABLE `solicitud_detalle_comentario`
   ADD PRIMARY KEY (`id_solicitud_detalle_comentario`),
-  ADD KEY `FK_solicitud_detalle_comentario_usuario` (`id_usuario`),
+  ADD KEY `FK_solicitud_detalle_comentario_usuario` (`numero_control`),
   ADD KEY `FK_solicitud_detalle_comentario_solicitud` (`id_solicitud`),
   ADD KEY `FK_solicitud_detalle_comentario_comentario` (`id_comentario`);
 
@@ -369,7 +389,7 @@ ALTER TABLE `solicitud_detalle_comentario`
 --
 ALTER TABLE `solicitud_detalle_validacion`
   ADD PRIMARY KEY (`id_solicitud_detalle_validacion`),
-  ADD KEY `FK_solicitud_detalle_validacion_usuario` (`id_usuario`),
+  ADD KEY `FK_solicitud_detalle_validacion_usuario` (`numero_control`),
   ADD KEY `FK_solicitud_detalle_validacion_firma` (`id_firma`),
   ADD KEY `FK_solicitud_detalle_validacion_solicitud` (`id_solicitud`);
 
@@ -377,23 +397,24 @@ ALTER TABLE `solicitud_detalle_validacion`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`),
-  ADD KEY `FK_usuario_prioridad` (`prioridad`);
+  ADD PRIMARY KEY (`numero_control`),
+  ADD KEY `FK_usuario_prioridad` (`prioridad`),
+  ADD KEY `FK_usuario_estatus` (`estatus`);
 
 --
 -- Indices de la tabla `usuario_carrera`
 --
 ALTER TABLE `usuario_carrera`
-  ADD PRIMARY KEY (`id_usuario_carrera`),
-  ADD KEY `FK_usuario_carrera_usuario` (`id_usuario`),
+  ADD PRIMARY KEY (`numero_control_carrera`),
+  ADD KEY `FK_usuario_carrera_usuario` (`numero_control`),
   ADD KEY `FK_usuario_carrera_carrera` (`id_carrera`);
 
 --
 -- Indices de la tabla `usuario_evidencia`
 --
 ALTER TABLE `usuario_evidencia`
-  ADD PRIMARY KEY (`id_usuario_evidencia`),
-  ADD KEY `FK_usuario_evidencia_usuario` (`id_usuario`),
+  ADD PRIMARY KEY (`numero_control_evidencia`),
+  ADD KEY `FK_usuario_evidencia_usuario` (`numero_control`),
   ADD KEY `FK_usuario_evidencia_solicitud` (`id_solicitud`);
   
 --
@@ -439,6 +460,9 @@ ALTER TABLE `comentario`
 ALTER TABLE `departamento`
   MODIFY `id_departamento` bigint(20) NOT NULL AUTO_INCREMENT;
 
+  
+ ALTER TABLE `comentario_solicitud`
+  MODIFY `id_comentario_solicitud`` bigint(20) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `departamento_acta`
 --
@@ -497,7 +521,7 @@ ALTER TABLE `solicitud_detalle_validacion`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `numero_control` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario_carrera`
@@ -545,22 +569,23 @@ ALTER TABLE `departamento_acta`
 -- Filtros para la tabla `reunion`
 --
 ALTER TABLE `reunion`
-  ADD CONSTRAINT `FK_reunion_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `FK_reunion_usuario` FOREIGN KEY (`numero_control`) REFERENCES `usuario` (`numero_control`);
 
 --
 -- Filtros para la tabla `reunion_usuario`
 --
 ALTER TABLE `reunion_usuario`
   ADD CONSTRAINT `FK_reunion_usuario_reunion` FOREIGN KEY (`id_reunion`) REFERENCES `reunion` (`id_reunion`),
-  ADD CONSTRAINT `FK_reunion_usuario_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `FK_reunion_usuario_usuario` FOREIGN KEY (`numero_control`) REFERENCES `usuario` (`numero_control`);
 
 --
 -- Filtros para la tabla `solicitud`
 --
 ALTER TABLE `solicitud`
   ADD CONSTRAINT `FK_solicitud_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `comentario` (`id_comentario`),
-  ADD CONSTRAINT `FK_solicitud_usuario_interesado` FOREIGN KEY (`interesado`) REFERENCES `usuario` (`id_usuario`),
-  ADD CONSTRAINT `FK_solictud_usuario_coordinador` FOREIGN KEY (`coordinador`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `FK_solicitud_usuario_interesado` FOREIGN KEY (`interesado`) REFERENCES `usuario` (`numero_control`),
+  ADD CONSTRAINT `FK_solictud_usuario_coordinador` FOREIGN KEY (`coordinador`) REFERENCES `usuario` (`numero_control`),
+    ADD CONSTRAINT `FK_solictud_estatus` FOREIGN KEY (`id_estatus`) REFERENCES `estatus` (`id_estatus`);
 
 --
 -- Filtros para la tabla `solicitud_detalle_comentario`
@@ -568,7 +593,7 @@ ALTER TABLE `solicitud`
 ALTER TABLE `solicitud_detalle_comentario`
   ADD CONSTRAINT `FK_solicitud_detalle_comentario_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `comentario` (`id_comentario`),
   ADD CONSTRAINT `FK_solicitud_detalle_comentario_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`),
-  ADD CONSTRAINT `FK_solicitud_detalle_comentario_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `FK_solicitud_detalle_comentario_usuario` FOREIGN KEY (`numero_control`) REFERENCES `usuario` (`numero_control`);
 
 --
 -- Filtros para la tabla `solicitud_detalle_validacion`
@@ -576,7 +601,7 @@ ALTER TABLE `solicitud_detalle_comentario`
 ALTER TABLE `solicitud_detalle_validacion`
   ADD CONSTRAINT `FK_solicitud_detalle_validacion_firma` FOREIGN KEY (`id_firma`) REFERENCES `firma` (`id_firma`),
   ADD CONSTRAINT `FK_solicitud_detalle_validacion_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`),
-  ADD CONSTRAINT `FK_solicitud_detalle_validacion_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `FK_solicitud_detalle_validacion_usuario` FOREIGN KEY (`numero_control`) REFERENCES `usuario` (`numero_control`);
 
 --
 -- Filtros para la tabla `usuario`
@@ -589,14 +614,14 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `usuario_carrera`
   ADD CONSTRAINT `FK_usuario_carrera_carrera` FOREIGN KEY (`id_carrera`) REFERENCES `carrera` (`id_carrera`),
-  ADD CONSTRAINT `FK_usuario_carrera_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `FK_usuario_carrera_usuario` FOREIGN KEY (`numero_control`) REFERENCES `usuario` (`numero_control`);
 
 --
 -- Filtros para la tabla `usuario_evidencia`
 --
 ALTER TABLE `usuario_evidencia`
   ADD CONSTRAINT `FK_usuario_evidencia_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`),
-  ADD CONSTRAINT `FK_usuario_evidencia_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`);
+  ADD CONSTRAINT `FK_usuario_evidencia_usuario` FOREIGN KEY (`numero_control`) REFERENCES `usuario` (`numero_control`);
   
 --
 -- Filtros para la tabla `reunion_solicitud`
@@ -611,6 +636,12 @@ COMMIT;
 --
 ALTER TABLE `recomendacion`
   ADD CONSTRAINT `FK_recomendacion_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
+  
+  ALTER TABLE `comentario_solicitud``
+  ADD CONSTRAINT `FK_comentario_solicitud_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `comentario` (`id_comentario`),
+  ADD CONSTRAINT `FK_comentario_solicitud_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
+  
+  
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
