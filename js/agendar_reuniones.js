@@ -6,28 +6,34 @@ $(document).ready(function(){
 	
 	$('#btn_aceptar_reunion').click(function(){
 		
-		alert($('#txt_hora_inicio').val());
-		alert($('#txt_hora_fin').val());
+		var datos = {
+			"hora_inicio" : $('#txt_hora_inicio').val(),
+			"hora_fin" : $('#txt_hora_fin').val()
+		};
 		
 		$.ajax({
 			url: '../api/api.php/cliente',
 			type: 'POST',
 			dataType: 'JSON',
+			data: datos,
 			success:function(data){
+				
+				$('#modal_reunion').modal('hide');
+				
 				if(data['error'] == false){
 					swal({
-						title: "Sesión aceptada",
-						text: "Enviado a página principal",
+						title: "Exito!",
+						text: "Reunión agendada correctamente",
 						type: "success",
-						timer: 3000
+						timer: 2500
 					});
 				}else{
 					
 					swal({
-						title: "Datos no válidos",
-						text: "El número de control o la contraseña no coinciden",
+						title: "Error",
+						text: "Fallo al agendar su reunión",
 						type: "error",
-						timer: 3000
+						timer: 2500
 					});
 					
 				}
@@ -74,6 +80,19 @@ $(document).ready(function(){
 			alert("click");
 		},
 		
+	});
+	
+	$(function(){  
+		$('input[type="time"][value="now"]').each(function(){    
+			var d = new Date(),        
+				h = d.getHours(),
+				m = d.getMinutes();
+			if(h < 10) h = '0' + h; 
+			if(m < 10) m = '0' + m; 
+			$(this).attr({
+				'value': h + ':' + m
+			});
+		});
 	});
 	
 });

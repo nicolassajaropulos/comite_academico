@@ -23,6 +23,8 @@
 									<th scope="col">#</th>
 									<th scope="col">Convocador</th>
 									<th scope="col">Fecha</th>
+									<th scope="col">Hora inicio</th>
+									<th scope="col">Hora fin</th>
 									<th scope="col"></th>
 								</tr>
 							</thead>
@@ -31,7 +33,9 @@
 								  <th scope="row">1</th>
 								  <td>Diego Payán López</td>
 								  <td>11/05/2018</td>
-								  <td><button class="btn btn-info btn-sm"> Orden del día</button></td>
+								  <td>11/05/2018</td>
+								  <td>11/05/2018</td>
+								  <td><button class="btn btn-info btn-sm"><i class="fa fa-list-alt"></i> Orden del día</button></td>
 								</tr>
 							</tbody>
 						</table>
