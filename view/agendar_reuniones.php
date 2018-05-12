@@ -36,14 +36,14 @@
 					<div class="row">
 						<div class="col-md-6 col-6">
 							<div class="form-group">
-								<label for="txt_hora_inicio"><h5>Hora inicio</h5></label>
-								<input type="time" id="txt_hora_inicio" class="form-control">
+								<label for="txt_hora_inicio">Hora inicio</label>
+								<input type="time" id="txt_hora_inicio" class="form-control" value="now">
 							</div>
 						</div>
 						<div class="col-md-6 col-6">
 							<div class="form-group">
-								<label for="txt_hora_fin"><h5>Hora fin</h5></label>
-								<input type="time" id="txt_hora_fin" class="form-control">
+								<label for="txt_hora_fin">Hora fin</label>
+								<input type="time" id="txt_hora_fin" class="form-control" value="now">
 							</div>
 						</div>
 					</div>
