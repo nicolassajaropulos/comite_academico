@@ -140,7 +140,7 @@ CREATE TABLE `prioridad` (
 CREATE TABLE `reunion` (
   `id_reunion` bigint(20) NOT NULL,
   `numero_control` bigint(20) NOT NULL,
-  `fecha_citada` datetime NOT NULL,
+  `fecha_citada` date NOT NULL,
   `hora_inicio` time NOT NULL,
   `hora_finalizada` time NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
@@ -275,6 +275,7 @@ CREATE TABLE `reunion_solicitud` (
   `estatus` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
 --
 -- Estructura de tabla para la tabla `recomendacion`
 --
