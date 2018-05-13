@@ -29,9 +29,3 @@ INSERT INTO `usuario` (`numero_control`, `nombre_usuario`, `apellido_paterno`, `
 	VALUES ('67890', 'Servicios', 'Escolares', NULL, '7', '123', CURRENT_DATE(), b'1');
 INSERT INTO `usuario` (`numero_control`, `nombre_usuario`, `apellido_paterno`, `apellido_materno`, `prioridad`, `contraseña`, `fecha_creacion`, `estatus`) 
 	VALUES ('24680', 'Director','Tecnologico', NULL, '8', '123', CURRENT_DATE(), b'1');
-	
-INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `id_usuario`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '1', '1', CURRENT_DATE(), b'1');
-INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `id_usuario`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '2', '1', CURRENT_DATE(), b'1');
-INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `id_usuario`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '3', '4', CURRENT_DATE(), b'1');
-INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `id_usuario`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '4', '1', CURRENT_DATE(), b'1');
-INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `id_usuario`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '5', '1', CURRENT_DATE(), b'1');

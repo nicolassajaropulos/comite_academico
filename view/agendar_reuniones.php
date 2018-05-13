@@ -14,6 +14,13 @@
 				<div id="calendar" class="m-3"></div>
 			</div>
 			
+			<div class="input-group date" data-provide="datepicker" data-date-format="yyyy-mm-dd">
+				<input type="text" id="txt_fecha" class="form-control">
+				<div class="input-group-addon">
+					<span class="fa fa-calendar"></span>
+				</div>
+			</div>
+							
 		</div>
 		</div>
 	</div>

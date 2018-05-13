@@ -1,22 +1,29 @@
 $(document).ready(function(){
 	
+	$('.input-group').hide();
+	
 	setTimeout(function(){
 		$('#calendar').fullCalendar('today');
 	},750);
 	
 	$('#btn_aceptar_reunion').click(function(){
 		
+		var fecha = $('#txt_fecha').val();
+		
 		var datos = {
+			"fecha" : fecha,
 			"hora_inicio" : $('#txt_hora_inicio').val(),
 			"hora_fin" : $('#txt_hora_fin').val()
 		};
 		
 		$.ajax({
-			url: '../api/api.php/cliente',
+			url: '../api/api.php/reunion',
 			type: 'POST',
 			dataType: 'JSON',
 			data: datos,
 			success:function(data){
+				
+				console.log(data);
 				
 				$('#modal_reunion').modal('hide');
 				
@@ -28,14 +35,12 @@ $(document).ready(function(){
 						timer: 2500
 					});
 				}else{
-					
 					swal({
 						title: "Error",
 						text: "Fallo al agendar su reunión",
 						type: "error",
 						timer: 2500
 					});
-					
 				}
 			},
 			error: function(xhr, desc, err){
@@ -52,13 +57,13 @@ $(document).ready(function(){
 		lang: 'es',
 		height: 550,
 		allDaySlot:false,
-		minTime: '06:00:00',
-		maxTime: '23:00:00',
+		minTime: '00:00:00',
+		maxTime: '23:59:00',
 		eventLimit: 4,
 		selectable: true,
 		defaultView: 'month',
 		
-		//events: '',
+		events: '../modelo/select/reuniones_fullcalendar.php',
 		
 		header: {
 			left: 'prev,next today',
@@ -68,8 +73,15 @@ $(document).ready(function(){
 		
 		select: function(start) {
 			
-			var fecha_seleccionada = $.fullCalendar.moment(start).format("YYYY MMMM DD");
+			var fecha_seleccionada = $.fullCalendar.moment(start).format("DD MMMM YYYY");
 			
+			var año = $.fullCalendar.moment(start).format("YYYY") ;
+			var mes =  $.fullCalendar.moment(start).format("MM");
+			var dia =  $.fullCalendar.moment(start).format("DD");
+			
+			$('#txt_fecha').val(año+"-"+mes+"-"+dia);
+			
+			$('#fecha_reunion').data("date",fecha_seleccionada);
 			$('#fecha_reunion').html('<div class="col-md-12 col-12 alert alert-info text-center" role="alert"><h5> Día seleccionado: <strong>'+fecha_seleccionada+'</strong></h5></div>');
 			
 			$('#modal_reunion').modal('toggle');

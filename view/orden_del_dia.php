@@ -29,14 +29,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-								  <th scope="row">1</th>
-								  <td>Diego Payán López</td>
-								  <td>11/05/2018</td>
-								  <td>11/05/2018</td>
-								  <td>11/05/2018</td>
-								  <td><button class="btn btn-info btn-sm"><i class="fa fa-list-alt"></i> Orden del día</button></td>
-								</tr>
+								
 							</tbody>
 						</table>
 						

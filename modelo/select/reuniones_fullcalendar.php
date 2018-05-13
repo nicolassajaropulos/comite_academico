@@ -1,5 +1,7 @@
 <?PHP
 
+	require_once '../conexion.php';
+	
 	$respuesta = array();
 	
 	$query = "SELECT 
@@ -17,15 +19,15 @@
 		$stmt->bind_result($id_reunion,$nombre_convocador,$fecha,$hora_inicio,$hora_fin);
 		while($stmt->fetch()){
 			$respuesta[] = array(
-				"id_reunion" => $id_reunion,
-				"nombre_convocador" => $nombre_convocador,
-				"fecha" => $fecha,
-				"hora_inicio" => $hora_inicio,
-				"hora_fin" => $hora_fin
+				"title" => "Reunion No.".$id_reunion,
+				"start" => $fecha."T".$hora_inicio,
+				"end" => $fecha."T".$hora_fin
 			);
 		}
 		$stmt->close();
 	
 	}
+	
+	echo json_encode($respuesta);
 	
 ?>
