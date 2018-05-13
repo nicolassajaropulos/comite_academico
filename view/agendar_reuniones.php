@@ -52,7 +52,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-				<button type="button" class="btn btn-success" id="btn_aceptar_reunion"><strong><i class="fa fa-check-circle"></i> Aceptar</strong></button>
+				<button type="button" class="btn btn-outline-success" id="btn_aceptar_reunion"><strong><i class="fa fa-check-circle"></i> Aceptar</strong></button>
 			</div>
 		</div>
 	</div>
