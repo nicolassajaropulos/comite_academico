@@ -48,7 +48,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-6 col-12 col-sm-12">
+								<div class="col-md-12 col-12 col-sm-12">
 									<div class="form-group">
 										<h5>Evidencias:</h5>
 										<input type="file" class="form-control" id="txt_evidencia" placeholder="Nombre de carrera">
@@ -128,7 +128,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-6 col-12 col-sm-12">
+								<div class="col-md-12 col-12 col-sm-12">
 									<div class="form-group">
 										<h5>Evidencias:</h5>
 										<input type="file" class="form-control" id="txt_evidencia" placeholder="Nombre de carrera">

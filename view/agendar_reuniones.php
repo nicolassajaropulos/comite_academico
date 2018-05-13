@@ -20,7 +20,7 @@
 					<span class="fa fa-calendar"></span>
 				</div>
 			</div>
-							
+
 		</div>
 		</div>
 	</div>

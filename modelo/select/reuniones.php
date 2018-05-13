@@ -9,7 +9,8 @@
 				INNER JOIN 
 					usuario u
 				ON 
-					r.numero_control = u.numero_control";
+					r.numero_control = u.numero_control
+				ORDER BY r.fecha_citada";
 					
 	if($stmt = $mysqli -> prepare($query)){
 		

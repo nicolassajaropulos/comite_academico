@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	$('.nav').on('click','.nav-link',function(){
 		
-		var nueva_vista = $(this).data('navi')+'.php';
+		var nueva_vista = $(this).data('navi');
 		
 		cargarDiv(nueva_vista);
 		
@@ -41,5 +41,5 @@ $(document).ready(function(){
 
 
 function cargarDiv(url){
-	$('#cuerpo').load(url);
+	$('#cuerpo').load(url+'.php');
 }

@@ -220,3 +220,7 @@ li{
 label {
 	font-size: 18px;
 }
+
+span.fc-title {
+    font-size: 16px!important;
+}

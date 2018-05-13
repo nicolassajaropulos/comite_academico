@@ -34,6 +34,10 @@ $(document).ready(function(){
 						type: "success",
 						timer: 2500
 					});
+					
+					setTimeout(function(){
+						cargarDiv("agendar_reuniones");
+					},2000);
 				}else{
 					swal({
 						title: "Error",
