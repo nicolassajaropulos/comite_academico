@@ -171,6 +171,10 @@ CREATE TABLE `solicitud` (
   `id_solicitud` bigint(20) NOT NULL,
   `interesado` bigint(20) NOT NULL,
   `coordinador` bigint(20) NOT NULL,
+  `solicitud` varchar(200) NOT NULL,
+  `motivo_academico` varchar(400)  NULL,
+  `motivo_personal` varchar(400)  NULL,
+  `motivo_otro` varchar(400) NULL, 
    `id_estatus` bigint(20) not NULL,
   `fecha_creacion` datetime DEFAULT NULL,
   `estatus` bit(1) DEFAULT NULL
@@ -178,13 +182,8 @@ CREATE TABLE `solicitud` (
 
 
 
-CREATE TABLE `comentario_solicitud` (
-  `id_comentario_solicitud` bigint(20) NOT NULL,
-  `id_comentario` bigint(20) NOT NULL,
-  `id_solicitud` bigint(20) NOT NULL,
-  `fecha_creacion` datetime DEFAULT NULL,
-  `estatus` bit(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 
 -- --------------------------------------------------------
 
@@ -262,6 +261,7 @@ CREATE TABLE `usuario_evidencia` (
   `estatus` bit(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
 --
 -- Estructura de tabla para la tabla `reunion_solicitud`
 --
@@ -301,7 +301,7 @@ CREATE TABLE `estatus` (
 --
 -- Indices de la tabla `acta_de_acuerdo`
 --
-ALTER TABLE `acta_de_acuerdo`
+ALTER TABLE `acta_de_acuerdo``
   ADD PRIMARY KEY (`id_acta_de_acuerdo`),
   ADD KEY `FK_acta_de_acuerdo_reunion` (`id_reunion`),
   ADD KEY `FK_acta_de_acuerdo_lugar` (`id_lugar`);
@@ -324,8 +324,8 @@ ALTER TABLE `comentario`
 ALTER TABLE `departamento`
   ADD PRIMARY KEY (`id_departamento`);
   
-  ALTER TABLE `comentario_solicitud`
-  ADD PRIMARY KEY (`id_comentario_solicitud`);
+ 
+ 
   
   ALTER TABLE `estatus`
   ADD PRIMARY KEY (`id_estatus`);
@@ -464,8 +464,7 @@ ALTER TABLE `departamento`
   MODIFY `id_departamento` bigint(20) NOT NULL AUTO_INCREMENT;
 
   
- ALTER TABLE `comentario_solicitud`
-  MODIFY `id_comentario_solicitud` bigint(20) NOT NULL AUTO_INCREMENT;
+ 
 --
 -- AUTO_INCREMENT de la tabla `departamento_acta`
 --
@@ -639,10 +638,7 @@ COMMIT;
 ALTER TABLE `recomendacion`
   ADD CONSTRAINT `FK_recomendacion_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
   
-  ALTER TABLE `comentario_solicitud`
-  ADD CONSTRAINT `FK_comentario_solicitud_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `comentario` (`id_comentario`),
-  ADD CONSTRAINT `FK_comentario_solicitud_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
-  
+ 
   
 COMMIT;
 
