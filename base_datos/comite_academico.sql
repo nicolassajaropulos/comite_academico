@@ -301,7 +301,7 @@ CREATE TABLE `estatus` (
 --
 -- Indices de la tabla `acta_de_acuerdo`
 --
-ALTER TABLE `acta_de_acuerdo``
+ALTER TABLE `acta_de_acuerdo`
   ADD PRIMARY KEY (`id_acta_de_acuerdo`),
   ADD KEY `FK_acta_de_acuerdo_reunion` (`id_reunion`),
   ADD KEY `FK_acta_de_acuerdo_lugar` (`id_lugar`);
