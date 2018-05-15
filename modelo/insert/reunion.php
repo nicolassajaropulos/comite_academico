@@ -23,7 +23,7 @@
 		
 		$stmt->close();
 		
-		$respuesta = $fecha;
+		$respuesta = $id_reunion;
 	}
 
 ?>

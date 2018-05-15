@@ -1,3 +1,0 @@
-<?php
-	$respuesta = 'Insert cliente';
-?>

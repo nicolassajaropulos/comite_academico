@@ -43,7 +43,7 @@
 									<div class="form-group">
 										<h5>Por los siguientes motivos:</h5><br>
 										<h5>Motivos académicos:</h5>
-										<textarea class="form-control" rows="4" id="txt_motivos_profesor" placeholder="Motivos académicos"></textarea>
+										<textarea class="form-control" rows="4" id="txt_motivos_academicos_profesor" placeholder="Motivos académicos"></textarea>
 									</div>
 								</div>
 							</div>
@@ -75,19 +75,13 @@
 						<div class="col-md-1 col-1 estudiante"></div>
 						<div class="col-md-10 col-10 mt-3" id="estudiante">
 							<div class="row">
-								<div class="col-md-5 col-12 col-sm-12">
+								<div class="col-md-6 col-12 col-sm-12">
 									<div class="form-group">
 										<h5>El que suscribe:</h5>
 										<input type="text" class="form-control" id="txt_nombre_estudiante" placeholder="Nombre del estudiante">
 									</div>
 								</div>
-								<div class="col-md-2 col-12 col-sm-12">
-									<div class="form-group">
-										<h5>Del semestre:</h5>
-										<input type="number" class="form-control" id="txt_semestre_estudiante" value="1">
-									</div>
-								</div>
-								<div class="col-md-5 col-12 col-sm-12">
+								<div class="col-md-6 col-12 col-sm-12">
 									<div class="form-group">
 										<h5>Estudiante de la carrera de:</h5>
 										<input type="text" class="form-control" id="txt_carrera_estudiante" placeholder="Nombre de carrera">
@@ -107,7 +101,7 @@
 									<div class="form-group">
 										<h5>Por los siguientes motivos:</h5><br>
 										<h5>Motivos académicos:</h5>
-										<textarea class="form-control" rows="4" id="txt_motivos_estudiante" placeholder="Motivos académicos"></textarea>
+										<textarea class="form-control" rows="4" id="txt_motivos_academicos_estudiante" placeholder="Motivos académicos"></textarea>
 									</div>
 								</div>
 							</div>
@@ -115,7 +109,7 @@
 								<div class="col-md-12 col-12">
 									<div class="form-group">
 										<h5>Motivos personales:</h5>
-										<textarea class="form-control" rows="4" id="txt_motivos_personales" placeholder="Motivos personales"></textarea>
+										<textarea class="form-control" rows="4" id="txt_motivos_personales_estudiante" placeholder="Motivos personales"></textarea>
 									</div>
 								</div>
 							</div>
@@ -123,7 +117,7 @@
 								<div class="col-md-12 col-12">
 									<div class="form-group">
 										<h5>Otros:</h5>
-										<textarea class="form-control" rows="4" id="txt_motivos_otros" placeholder="Otros motivos"></textarea>
+										<textarea class="form-control" rows="4" id="txt_motivos_otros_estudiante" placeholder="Otros motivos"></textarea>
 									</div>
 								</div>
 							</div>
@@ -161,7 +155,7 @@
 					<h4>Acciones</h4><hr>
 				</div>
 				<div class="col-md-12 col-12 mt-2 mb-2">
-					<button class="btn btn-outline-success btn-block" id="btn_aceptar"> Aceptar</button>
+					<button class="btn btn-outline-success btn-block" id="btn_aceptar" data-session=" <?PHP $_SESSION['prioridad'] ?> "> Aceptar</button>
 				</div>
 			</div>
 		</div>
