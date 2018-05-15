@@ -177,7 +177,7 @@ CREATE TABLE `solicitud` (
   `motivo_otro` varchar(400) NULL, 
    `id_estatus` bigint(20) not NULL,
   `fecha_creacion` datetime DEFAULT NULL,
-  `estatus` bit(1) DEFAULT NULL
+  `ultima_modificacion` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
