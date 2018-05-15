@@ -227,6 +227,7 @@ CREATE TABLE `usuario` (
   `nombre_usuario` varchar(50) NOT NULL,
   `apellido_paterno` varchar(30) NOT NULL,
   `apellido_materno` varchar(30) DEFAULT NULL,
+  `puesto` varchar(40) NOT NULL,
   `prioridad` int(11) NOT NULL,
   `contraseña` varchar(10) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
