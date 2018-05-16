@@ -1,14 +1,14 @@
 <?PHP
 
-	$numero_control = $_SESSION['numero_control'];
+	$estatus = $_GET['estatus'];
 	
 	$respuesta = array();
 	
-	$query = "Call consulta_por_usuario(?)";
+	$query = "Call consulta_por_estatus(?)";
 	
 	if($stmt = $mysqli->prepare($query)){
 		
-		$stmt->bind_param("i",$numero_control);
+		$stmt->bind_param("i",$estatus);
 		
 		$stmt->execute();
 		

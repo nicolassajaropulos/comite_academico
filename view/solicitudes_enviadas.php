@@ -10,29 +10,21 @@
 	<div class="row">
 	
 		<div class="col-md-12 mt-2">
-			<div class="card">
+			<div class="card mod_panel">
 				<div class="row ml-2">
 					<div class="col-md-11 ml-5">
-						<table class="table carga_solicitudes mt-3 table-hover">
+						<table class="table carga_solicitudes mt-3 table-bordered">
 							<thead>
 								<tr>
-									<th scope="col">No. Solicitud</th>
+									<th scope="col">Folio Solicitud</th>
 									<th scope="col">Solicitud</th>
 									<th scope="col">Solicitante</th>
-									<th scope="col">Carrera</th>
 									<th scope="col">Fecha</th>
 									<th scope="col">Acción</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-								  	<th scope="row">1</th>
-								  	<td>Baja de semestre</td>
-								  	<td>Orlando Beltrán Ornelas</td>
-								  	<td>Ing. en Sistemas</td>
-								  	<td>09/05/2018</td>
-								  	<td><button class="btn btn-success btn-sm">Aceptar</button><button class="btn btn-danger btn-sm">Declinar</button></td>
-								</tr>
+								
 							</tbody>
 						</table>
 					</div>
@@ -44,4 +36,140 @@
 	
 </div>
 
-<script src="../js/acta_acuerdos.js"></script>
+<div class="modal" id="modal_visualizar_solicitud_estudiante" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Vista de Solicitud No.</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="col-md-12 col-12">
+					<div class="row">
+						<div class="col-md-12 col-12">
+							<div class="form-group">
+								<h5>Nombre del estudiante:</h5>
+								<input type="text" class="form-control" id="txt_nombre_estudiante">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12">
+							<div class="form-group">
+								<h5>Carrera del estudiante:</h5>
+								<input type="text" class="form-control" id="txt_carrera_estudiante">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12">
+							<div class="form-group">
+								<h5>Solicitud:</h5>
+								<textarea class="form-control" rows="4" id="txt_solicitud_estudiante"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12">
+							<div class="form-group">
+								<h5>Motivos académicos:</h5>
+								<textarea class="form-control" rows="4" id="txt_motivos_academicos_estudiante"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12">
+							<div class="form-group">
+								<h5>Motivos personales:</h5>
+								<textarea class="form-control" rows="4" id="txt_motivos_personales_estudiante"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12">
+							<div class="form-group">
+								<h5>Otros:</h5>
+								<textarea class="form-control" rows="4" id="txt_motivos_otros_estudiante"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12 col-sm-12">
+							<div class="form-group">
+								<h5>Evidencias:</h5>
+								<input type="file" class="form-control" id="txt_evidencia">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal" id="modal_visualizar_solicitud_profesor" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Vista de Solicitud No.</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="col-md-12 col-12">
+					<div class="row">
+						<div class="col-md-12 col-12">
+							<div class="form-group">
+								<h5>Nombre del Profesor:</h5>
+								<input type="text" class="form-control" id="txt_nombre_profesor">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12">
+							<div class="form-group">
+								<h5>Carrera del Profesor:</h5>
+								<input type="text" class="form-control" id="txt_carrera_profesor">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12">
+							<div class="form-group">
+								<h5>Solicitud:</h5>
+								<textarea class="form-control" rows="4" id="txt_solicitud_profesor"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12">
+							<div class="form-group">
+								<h5>Motivos académicos:</h5>
+								<textarea class="form-control" rows="4" id="txt_motivos_academicos_profesor"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12 col-sm-12">
+							<div class="form-group">
+								<h5>Evidencias:</h5>
+								<input type="file" class="form-control" id="txt_evidencia">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="../js/solicitudes_enviadas.js"></script>
