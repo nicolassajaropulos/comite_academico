@@ -33,3 +33,5 @@ INSERT INTO `usuario` (`numero_control`, `nombre_usuario`, `apellido_paterno`, `
 INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `numero_control`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '15171078', '1', CURRENT_DATE(), b'1');
 INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `numero_control`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '8870560', '1', CURRENT_DATE(), b'1');
 INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `numero_control`, `id_carrera`, `fecha_creacion`, `estatus`) VALUES (NULL, '12345', '1', CURRENT_DATE(), b'1');
+
+INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('1', 'Solicitud Activa', CURRENT_DATE(), b'1');

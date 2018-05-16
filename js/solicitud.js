@@ -42,7 +42,7 @@ $(document).ready(function(){
 	
 	$('#btn_aceptar').click(function(){
 		
-		if($(this).data("session") == 4){
+		if($(this).data("session") == "4"){
 			var datos = {
 				"session" : $(this).data("session"),
 				"id_estudiante" : $('#txt_nombre_estudiante').data("id"),
@@ -67,7 +67,12 @@ $(document).ready(function(){
 			type: "POST",
 			data: datos,
 			success:function(data){
-				console.log(data);
+				swal({
+					title: "Solicitud creada con éxito",
+					text: "Solicitud enviada a coordinador de carrera para validación",
+					type: "success",
+					timer: 2500
+				});
 			},
 			error:function(xhr, desc, err){
 				console.log(xhr);

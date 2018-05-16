@@ -155,7 +155,11 @@
 					<h4>Acciones</h4><hr>
 				</div>
 				<div class="col-md-12 col-12 mt-2 mb-2">
-					<button class="btn btn-outline-success btn-block" id="btn_aceptar" data-session=" <?PHP $_SESSION['prioridad'] ?> "> Aceptar</button>
+				<?PHP if($_SESSION['prioridad'] == 4){ ?>
+					<button class="btn btn-outline-success btn-block" id="btn_aceptar" data-session="4"> Aceptar</button>
+				<?PHP } else { ?>
+					<button class="btn btn-outline-success btn-block" id="btn_aceptar" data-session="5"> Aceptar</button>
+				<?PHP } ?>
 				</div>
 			</div>
 		</div>

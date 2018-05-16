@@ -1,19 +1,23 @@
 <?PHP
 
-	if($_POST['session'] == 4){
+	if($_POST['session'] == "4"){
+		
 		$id_usuario = $_POST['id_estudiante'];
 		$coordinador = $_POST['coordinador'];
 		$solicitud = $_POST['solicitud'];
 		$motivos_academicos = $_POST['motivos_academicos'];
 		$motivos_personales = $_POST['motivos_personales'];
 		$motivos_otros = $_POST['motivos_otros'];
+
 	}else{
+		
 		$id_usuario = $_POST['id_profesor'];
 		$coordinador = $_POST['coordinador'];
 		$solicitud = $_POST['solicitud'];
 		$motivos_academicos = $_POST['motivos_academicos'];
 		$motivos_personales = "";
 		$motivos_otros = "";
+		
 	}
 	
 
@@ -29,5 +33,5 @@
 		
 	}
 	
-	$respuesta = 1;
+	$respuesta = $_POST['session'];
 ?>

@@ -12,7 +12,7 @@
 		
 		$stmt->execute();
 		
-		$stmt->bind_result($nombre_usuario, $id_carrera, $nombre_carrera, $solicitud, $fecha_creacion, $ultima_modificacion, $estatus);
+		$stmt->bind_result($nombre_usuario, $id_carrera, $nombre_carrera, $id_solicitud, $solicitud, $fecha_creacion, $ultima_modificacion, $estatus);
 		
 		while($stmt->fetch()){
 			
@@ -20,6 +20,7 @@
 				"nombre_usuario" => $nombre_usuario,
 				"id_carrera" => $id_carrera,
 				"nombre_carrera" => $nombre_carrera,
+				"id_solicitud" => $id_solicitud,
 				"solicitud" => $solicitud,
 				"fecha_creacion" => $fecha_creacion,
 				"ultima_modificacion" => $ultima_modificacion,
