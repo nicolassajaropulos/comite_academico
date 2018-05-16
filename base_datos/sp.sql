@@ -3,7 +3,7 @@ CREATE PROCEDURE consulta_por_estatus (
 	IN id__estatus tinyint
 )
 BEGIN
-	select concat_ws(" ", u.nombre_usuario,u.apellido_paterno, u.apellido_materno) as nombre_usuario, c.id_carrera, c.nombre_carrera, s.fecha_creacion, e.nombre_estatus
+	select concat_ws(" ", u.nombre_usuario,u.apellido_paterno, u.apellido_materno)as nombre_usuario, s.interesado, u.prioridad, c.id_carrera, c.nombre_carrera, s.id_solicitud, s.solicitud, s.fecha_creacion, s.ultima_modificacion, e.nombre_estatus
 	from solicitud s
 	INNER JOIN usuario u
 	ON s.interesado  = u.numero_control
@@ -16,6 +16,10 @@ BEGIN
 	where s.id_estatus = id__estatus;
 END $$
 ------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 
 DELIMITER $$
 CREATE PROCEDURE almacenar_solicitud (
@@ -38,7 +42,7 @@ CREATE PROCEDURE consulta_por_carrera (
 	IN id__carrera bigint(20)
 )
 BEGIN
-	select concat_ws(" ", u.nombre_usuario,u.apellido_paterno, u.apellido_materno) as nombre_usuario, c.id_carrera, c.nombre_carrera, s.fecha_creacion, e.nombre_estatus
+	select concat_ws(" ", u.nombre_usuario,u.apellido_paterno, u.apellido_materno)as nombre_usuario, s.interesado, u.prioridad, c.id_carrera, c.nombre_carrera, s.id_solicitud, s.solicitud, s.fecha_creacion, s.ultima_modificacion, e.nombre_estatus
 	from solicitud s
 	INNER JOIN usuario u
 	ON s.interesado  = u.numero_control
@@ -57,8 +61,7 @@ CREATE PROCEDURE consulta_solicitud_por_id_solicitud (
 	IN id__solicitud bigint(20)
 )
 BEGIN
-	select concat_ws(" ", u.nombre_usuario,u.apellido_paterno, u.apellido_materno) as nombre_usuario, c.id_carrera, c.nombre_carrera, s.fecha_creacion, e.nombre_estatus
-	,r.id_reunion, r.fecha_citada,r.hora_inicio
+	select concat_ws(" ", u.nombre_usuario,u.apellido_paterno, u.apellido_materno)as nombre_usuario, c.nombre_carrera, s.solicitud, s.motivo_personal, s.motivo_academico, s.motivo_otro
 	from solicitud s
 	INNER JOIN usuario u
 	ON s.interesado  = u.numero_control
@@ -66,24 +69,16 @@ BEGIN
 	ON uc.numero_control = u.numero_control
 	INNER JOIN carrera c
 	ON c.id_carrera= uc.id_carrera
-	INNER JOIN reunion_solicitud rs
-	ON  s.id_solicitud = rs.id_solicitud
-	INNER JOIN estatus e
-	ON s.id_estatus = e.id_estatus
-	INNER JOIN reunion r
-	ON  r.id_reunion = rs.id_reunion
 	where s.id_solicitud= id__solicitud;
 END $$
 ----------------------------------------------------------------------------------------------------------
-
-
 
 DELIMITER $$
 CREATE PROCEDURE consulta_por_usuario (
 	IN numero__control bigint(20)
 )
 BEGIN
-	select concat_ws(" ", u.nombre_usuario,u.apellido_paterno, u.apellido_materno)as nombre_usuario, c.id_carrera, c.nombre_carrera,s.solicitud, s.fecha_creacion, s.ultima_modificacion, e.nombre_estatus
+	select concat_ws(" ", u.nombre_usuario,u.apellido_paterno, u.apellido_materno)as nombre_usuario, s.interesado, u.prioridad, c.id_carrera, c.nombre_carrera, s.id_solicitud, s.solicitud, s.fecha_creacion, s.ultima_modificacion, e.nombre_estatus
 	from solicitud s
 	INNER JOIN usuario u
 	ON s.interesado  = u.numero_control
