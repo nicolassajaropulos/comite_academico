@@ -15,7 +15,7 @@ $(document).ready(function(){
 											  +'<td>'
 											  +'<button class="btn btn-info btn-sm mr-1" data-id="'+v.id_solicitud+'" id="btn_visualizar" data-user="'+v.nombre_usuario+'" data-priori="'+v.prioridad+'"><i class="fa fa-search"></i> Visualizar</button>'
 											  +'<button class="btn btn-success btn-sm mr-1" data-id="'+v.id_solicitud+'" id="btn_aceptar" data-user="'+v.nombre_usuario+'"><i class="fa fa-check"></i> Aceptar</button>'
-											  +'<button class="btn btn-danger btn-sm" data-id="'+v.id_solicitud+'" id="btn_rechazar"><i class="fa fa-times"></i> Rechazar</button>'
+											  +'<button class="btn btn-danger btn-sm" data-id="'+v.id_solicitud+'" id="btn_rechazar" data-user="'+v.nombre_usuario+'"><i class="fa fa-times"></i> Rechazar</button>'
 											  +'</td>'
 											+'</tr>');
 			});
@@ -94,46 +94,52 @@ $(document).ready(function(){
 	
 	$('.carga_solicitudes').on("click","#btn_aceptar",function(){
 		
+		var id_solicitud = $(this).data("id");
+		
 		swal({
 			title: "¿Desea aceptar la solicitud de " + $(this).data("user") + "?",
 			text: "La solicitud será enviada al comité para su revisión",
 			type: "warning",
 			showCancelButton: true,
 			cancelButtonClass: "btn-secondary",
-			confirmButtonColor: "#37be37",
+			confirmButtonColor: "#5cb85c",
 			confirmButtonText: "Aceptar solicitud",
 			cancelButtonText: "Cancelar operacion",
-			closeOnConfirm: false,
+			closeOnConfirm: true,
 			closeOnCancel: true
 		},
 		function(isConfirm) {
 			
 			if (isConfirm) {
 				
-				// $.ajax({
-					// url: "../api/api.php/actualizar_estatus_solicitud",
-					// type: "PUT",
-					// data: {
-						// "id_solicitud" : $(this).data("id"),
-						// "estatus" : "2"
-					// },
-					// success: function(data){
+				$.ajax({
+					url: "../api/api.php/actualizar_estatus_solicitud",
+					type: "PUT",
+					data: {
+						"id_solicitud" : id_solicitud,
+						"estatus" : "2"
+					},
+					success: function(data){
 						
-						// console.log(data);
+						setTimeout(function(){
+							swal({
+								title: "Exito!", 
+								text: "Solicitud enviada al comite",
+								type: "success",
+								timer: 2000
+							});
+						},100);
 						
-						/*swal({
-							title: "Exito!", 
-							text: "Solicitud enviada al comite",
-							type: "success",
-							timer: 2000
-						});*/
+						setTimeout(function(){
+							cargarDiv("solicitudes_enviadas");
+						},2000);
 						
-					// },
-					// error: function(xhr, desc, err){
-						// console.log(xhr);
-						// console.log("Descripcion: " + desc + "\nError: "  + err);
-					// }
-				// });
+					},
+					error: function(xhr, desc, err){
+						console.log(xhr);
+						console.log("Descripcion: " + desc + "\nError: "  + err);
+					}
+				});
 				
 			}
 		  
@@ -143,7 +149,70 @@ $(document).ready(function(){
 	
 	$('.carga_solicitudes').on("click","#btn_rechazar",function(){
 		
+		var usuario = $(this).data("user");
+		var id_solicitud = $(this).data("id");
 		
+		$('.titulo_rechazar').html("¿Desea rechazar la solicitud de " + usuario + "?",);
+		
+		$('#modal_rechazar_solicitud').modal("toggle");
+		
+		$('#btn_aceptar_rechazar_solicitud').data('id', id_solicitud);
+		
+	});
+	
+	$('#btn_aceptar_rechazar_solicitud').click(function(){
+		
+		var id_solicitud = $(this).data("id");
+		var estatus = $('#txt_motivo').val();
+		
+		$.ajax({
+			url: "../api/api.php/actualizar_estatus_solicitud",
+			type: "PUT",
+			data: {
+				"id_solicitud" : id_solicitud,
+				"estatus" : estatus
+			},
+			success: function(data){
+				
+				var comentario = $('#txt_comentario').val();
+				
+				$.ajax({
+					url: "../api/api.php/comentario_solicitud",
+					type: "POST",
+					data: {
+						"id_solicitud" : id_solicitud,
+						"comentario" : comentario
+					},
+					success: function(data){
+						
+						console.log(data);
+						
+						// setTimeout(function(){
+							// swal({
+								// title: "Exito!", 
+								// text: "Solicitud enviada al comite",
+								// type: "success",
+								// timer: 2000
+							// });
+						// },100);
+						
+						// setTimeout(function(){
+							// cargarDiv("solicitudes_enviadas");
+						// },2000);
+						
+					},
+					error: function(xhr, desc, err){
+						console.log(xhr);
+						console.log("Descripcion: " + desc + "\nError: "  + err);
+					}
+				});
+				
+			},
+			error: function(xhr, desc, err){
+				console.log(xhr);
+				console.log("Descripcion: " + desc + "\nError: "  + err);
+			}
+		});
 		
 	});
 	

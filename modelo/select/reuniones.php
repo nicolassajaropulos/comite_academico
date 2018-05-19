@@ -1,5 +1,7 @@
 <?PHP
 
+	$estatus = 1;
+	
 	$respuesta = array();
 	
 	$query = "SELECT 
@@ -10,12 +12,19 @@
 					usuario u
 				ON 
 					r.numero_control = u.numero_control
-				ORDER BY r.fecha_citada";
+				WHERE
+					r.estatus = ?
+				ORDER BY 
+					r.fecha_citada";
 					
 	if($stmt = $mysqli -> prepare($query)){
 		
+		$stmt->bind_param("i",$estatus);
+		
 		$stmt->execute();
+		
 		$stmt->bind_result($id_reunion,$nombre_convocador,$fecha,$hora_inicio,$hora_fin);
+		
 		while($stmt->fetch()){
 			$respuesta[] = array(
 				"id_reunion" => $id_reunion,
@@ -25,6 +34,7 @@
 				"hora_fin" => $hora_fin
 			);
 		}
+		
 		$stmt->close();
 	
 	}

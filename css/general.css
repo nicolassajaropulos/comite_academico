@@ -224,3 +224,26 @@ label {
 span.fc-title {
     font-size: 16px!important;
 }
+
+.btn_agendar_solicitud{
+	color: #5cb85c;
+	border: 1pt solid #5cb85c !important;
+	background-color: #f5f5f5 !important;
+}
+
+.btn_agendar_solicitud :hover {
+	color: #ffffff;
+	background-color: #5cb85c !important;
+	transition: color 0.8s;
+	transition: background-color 0.8s;
+}
+
+.btn_agendar_solicitud :active {
+	background-color: #3c8a3c !important;
+	transition: background-color 0.1s !important;
+}
+
+.btn_agendar_solicitud :not(:hover){
+	transition: color 0.8s;
+	transition: background-color 0.8s;
+}

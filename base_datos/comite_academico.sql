@@ -291,7 +291,7 @@ CREATE TABLE `recomendacion` (
 
 CREATE TABLE `estatus` (
   `id_estatus` bigint(20) NOT NULL,
-  `nombre_estatus` varchar(20) NOT NULL,
+  `nombre_estatus` varchar(50) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
   `estatus` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

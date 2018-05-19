@@ -90,3 +90,25 @@ BEGIN
 	ON s.id_estatus = e.id_estatus
 	where s.interesado = numero__control;
 END $$
+
+----------------------------------------------------------------------------------------------------------
+
+DELIMITER $$
+CREATE PROCEDURE consulta_por_reunion (
+	IN id__reunion bigint(20)
+)
+BEGIN
+	select concat_ws(" ", u.nombre_usuario,u.apellido_paterno, u.apellido_materno)as nombre_usuario, s.interesado, u.prioridad, c.id_carrera, c.nombre_carrera, s.id_solicitud, s.solicitud, s.fecha_creacion, s.ultima_modificacion, e.nombre_estatus
+	from solicitud s
+	INNER JOIN reunion_solicitud rs
+	ON s.id_solicitud = rs.id_solicitud
+	INNER JOIN usuario u
+	ON s.interesado = u.numero_control
+	INNER JOIN usuario_carrera uc
+	ON uc.numero_control = u.numero_control
+	INNER JOIN carrera c
+	ON c.id_carrera=uc.id_carrera
+	INNER JOIN estatus e
+	ON s.id_estatus = e.id_estatus
+	WHERE rs.id_reunion = id__reunion;
+END $$

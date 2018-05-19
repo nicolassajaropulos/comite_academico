@@ -5,7 +5,7 @@
 				<h2>Orden del día</h2>
 			</div>
 			<div class="row">
-				<h5>Utilice este módulo para consultar las solicitudes del día</h5>
+				<h5>Utilice este módulo para consultar las solicitudes a tratar en reuniones del comité</h5>
 			</div>
 		</div>
 	</div>
@@ -14,7 +14,7 @@
 			<div class="card mod_panel">
 				<div class="row ml-2">
 					<div class="col-md-11 ml-5">
-						<table class="table carga_reuniones mt-3 table-striped table-hover">
+						<table class="table carga_reuniones mt-3 table-hover table-bordered">
 							<thead>
 								<tr>
 									<th scope="col">#</th>
@@ -28,25 +28,18 @@
 							<tbody>							
 							</tbody>
 						</table>	
-						<table class="table carga_solicitudes mt-3 table-striped table-hover">
+						<table class="table carga_solicitudes mt-3 table-hover table-bordered">
 							<thead>
 								<tr>
 									<th scope="col">#</th>
+									<th scope="col">Solicitud</th>
 									<th scope="col">Interesado</th>
-									<th scope="col">Comentario</th>
-									<th scope="col">Fecha</th>
+									<th scope="col">Fecha emitida</th>
 									<th scope="col"></th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<th scope="row">1</th>
-								  	<td>Jesús Arturo Ayón</td>
-								  	<td>Cambio de calificación</td>
-								  	<td>09/05/2018</td>
-								  	<td><button class="btn btn-info btn-sm"><i class="fa fa-arrow-circle-up"></i></button><button class="btn btn-info btn-sm"><i class="fa fa-arrow-circle-down"></i></button></td>
-								</tr>
-								</tbody>
+							</tbody>
 						</table>	
 					</div>
 				</div>	
@@ -58,17 +51,46 @@
 					<h4>Acciones</h4><hr>
 				</div>
 				<div class="col-md-12 col-12 mt-2 mb-2">
-					<button class="btn btn-outline-success btn-block" id="btn_aceptar"> Aceptar</button>
+					<button class="btn btn-outline-success btn-block" id="btn_aceptar"><i class="fa fa-check-circle"></i> Aceptar</button>
 				</div>
 				<div class="col-md-12 col-12 mt-2 mb-2 back-action">
-					<button class="btn btn-outline-danger btn-block" id="btn_regresar"> Regresar</button>
+					<button class="btn btn-outline-danger btn-block" id="btn_regresar"><i class="fa fa-arrow-circle-left"></i> Regresar</button>
 				</div>
 				<div class="col-md-12 col-12 mt-2 mb-2">
-					<button class="btn btn-outline-info btn-block" id="btn_filtrar" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#dlg_filtro"> Filtrar</button>
+					<button class="btn btn-outline-info btn-block" id="btn_filtrar" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#dlg_filtro"><i class="fa fa-search"></i> Filtrar</button>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="modal fade" id="modal_solicitudes_pendientes" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  	<div class="modal-dialog modal-lg" role="document">
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-calendar-times"></i> Solicitudes sin reunión asignada</h5>
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          			<span aria-hidden="true">&times;</span>
+        		</button>
+      		</div>
+	      	<div class="modal-body">
+	      		<table class="table carga_solicitudes_pendientes mt-3 table-striped table-hover">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Interesado</th>
+							<th scope="col">Comentario</th>
+							<th scope="col">Fecha</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>	
+	      	</div>
+    	</div>
+  	</div>
 </div>
 
 <!-- MODAL FILTRO -->

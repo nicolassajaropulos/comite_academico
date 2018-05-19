@@ -15,7 +15,7 @@ $(document).ready(function(){
 											  +'<td>'+(v.fecha).substring(0, 10)+'</td>'
 											  +'<td>'+v.hora_inicio+'</td>'
 											  +'<td>'+v.hora_fin+'</td>'
-											  +'<td><button class="btn btn-info btn-sm" data-id="'+v.id_reunion+'" id="btn_orden_dia"><i class="fa fa-list-alt"></i> Solicitudes</button></td>'
+											  +'<td class="text-center"><button class="btn btn-info btn-sm" data-id="'+v.id_reunion+'" id="btn_orden_dia"><i class="fa fa-list-alt"></i> Solicitudes</button></td>'
 											+'</tr>');
 			});
 		},
@@ -35,7 +35,23 @@ $(document).ready(function(){
 			type: 'GET',
 			dataType: 'JSON',
 			success:function(data){
-				console.log(data);
+				$(data.data).each(function(i,v){
+					$('.carga_solicitudes').append('<tr>'
+												  +'<td>'+v.id_solicitud+'</td>'
+												  +'<td>'+v.solicitud+'</td>'
+												  +'<td>'+v.nombre_usuario+'</td>'
+												  +'<td>'+v.fecha_creacion+'</td>'
+												  +'<td class="text-center">'
+												  +'<button class="btn btn-info btn-sm mr-1" data-id="'+v.id_solicitud+'" id="btn_visualizar" data-user="'+v.nombre_usuario+'" data-priori="'+v.prioridad+'"><i class="fa fa-search"></i> Visualizar</button>'
+												  +'<button class="btn btn-success btn-sm mr-1" data-id="'+v.id_solicitud+'" id="btn_aceptar" data-user="'+v.nombre_usuario+'"><i class="fa fa-check"></i> Aceptar</button>'
+												  +'<button class="btn btn-danger btn-sm" data-id="'+v.id_solicitud+'" id="btn_rechazar"><i class="fa fa-times"></i> Rechazar</button>'
+												  +'</td>'
+												+'</tr>');
+				});
+				
+				$('.carga_solicitudes').append('<tr class="btn_agendar_solicitud">'+
+													'<td colspan="5" class="text-center"><strong><i class="fa fa-calendar-plus"></i> Agendar solicitud en esta reunión</strong></td>'+
+												'</tr>');
 			},
 			error: function(xhr, desc, err){
 				console.log(xhr);
@@ -49,6 +65,10 @@ $(document).ready(function(){
 		$('#btn_aplicar_filtro').data('table', '1');
 	});
 
+	$('.carga_solicitudes').on("click",".btn_agendar_solicitud",function(){
+		$('#modal_solicitudes_pendientes').modal('toggle');
+	});
+	
 	// MENU DE NAVEGACIÓN DE LA DERECHA
 
 	$('#btn_aceptar').click(function(){
