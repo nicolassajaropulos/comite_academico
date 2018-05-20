@@ -187,18 +187,18 @@ $(document).ready(function(){
 						
 						console.log(data);
 						
-						// setTimeout(function(){
-							// swal({
-								// title: "Exito!", 
-								// text: "Solicitud enviada al comite",
-								// type: "success",
-								// timer: 2000
-							// });
-						// },100);
+						setTimeout(function(){
+							swal({
+								title: "Exito!", 
+								text: "Solicitud enviada al comite",
+								type: "success",
+								timer: 2000
+							});
+						},100);
 						
-						// setTimeout(function(){
-							// cargarDiv("solicitudes_enviadas");
-						// },2000);
+						setTimeout(function(){
+							cargarDiv("solicitudes_enviadas");
+						},2000);
 						
 					},
 					error: function(xhr, desc, err){

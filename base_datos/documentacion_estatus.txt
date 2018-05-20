@@ -1,26 +1,26 @@
 
 == Caminos de exito
 
-	1 - Enviada a Coordinador								1 - Estado inicial
+x	1 - Enviada a Coordinador								1 - Estado inicial
 	
-	2 - En espera de ser agendada							2 - Aceptada por coordinador
+x	2 - En espera de ser agendada							2 - Aceptada por coordinador
 	
 	3 - En espera de fecha de reunion						3 - Agendada en reunión
 	
-	4 - En evaluacion en comite								4 - Dia de la reunion
+x	4 - En espera de recomendacion							4 - Aceptada por el comite
 	
-	5 - En espera de recomendacion							5 - Aceptada por el comite
+	5 - En espera de validacion de recomendacion			5 - Enviada al presidente del comite
 	
-	6 -En espera de validacion de recomendacion				6 - Enviada al presidente del comite
+	6 - En espera de dictamen oficial						6 - Aceptada por el presidente del comite
 	
-	7 - En espera de dictamen oficial						7 - Aceptada por el presidente del comite
+	7 - Dictamen oficial generado							7 - Aceptada por el director del planel - Envida a dpto correspondiente
 	
-	8 - Dictamen oficial generado							8 - Aceptada por el director del planel - Envida a dpto correspondiente
-	
-	9 - Ejecutada											9 - Ejecutada por el departamento
+	8 - Ejecutada											8 - Ejecutada por el departamento
 	
 
 == Casos extras
 	
-	11 - Rechazada por coordinador por evidencia 
-	12 - Rechazada por coordinador con motivo
+x	11 - Rechazada por coordinador por evidencia 
+x	12 - Rechazada por coordinador con motivo
+x	13 - Rechazada por comité por evidencia 
+x	14 - Rechazada por comité con motivo
