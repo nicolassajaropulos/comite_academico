@@ -110,5 +110,6 @@ BEGIN
 	ON c.id_carrera=uc.id_carrera
 	INNER JOIN estatus e
 	ON s.id_estatus = e.id_estatus
-	WHERE rs.id_reunion = id__reunion;
+	WHERE rs.id_reunion = id__reunion
+	AND s.id_estatus = 3;
 END $$

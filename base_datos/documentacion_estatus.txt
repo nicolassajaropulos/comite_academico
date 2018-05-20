@@ -5,7 +5,7 @@ x	1 - Enviada a Coordinador								1 - Estado inicial
 	
 x	2 - En espera de ser agendada							2 - Aceptada por coordinador
 	
-	3 - En espera de fecha de reunion						3 - Agendada en reunión
+x	3 - En espera de fecha de reunion						3 - Agendada en reunión
 	
 x	4 - En espera de recomendacion							4 - Aceptada por el comite
 	

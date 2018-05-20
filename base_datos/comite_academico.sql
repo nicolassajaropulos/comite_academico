@@ -272,7 +272,6 @@ CREATE TABLE `reunion_solicitud` (
   `id_reunion_solicitud` int(11) NOT NULL,
   `id_reunion` bigint(20) NOT NULL,
   `id_solicitud` bigint(20) NOT NULL,
-  `orden` int(11) DEFAULT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
   `estatus` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

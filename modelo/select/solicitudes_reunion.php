@@ -2,6 +2,8 @@
 
 	$id_reunion = $_GET['id_reunion'];
 	
+	$respuesta = array();
+	
 	$query = "CALL consulta_por_reunion(?)";
 
 	if($stmt = $mysqli->prepare($query)){
@@ -31,6 +33,6 @@
 		
 		$stmt->close();
 	}
-
+	
 	return $respuesta;
 ?>

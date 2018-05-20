@@ -49,7 +49,7 @@ $(document).ready(function(){
 												+'</tr>');
 				});
 				
-				$('.carga_solicitudes').append('<tr class="btn_agendar_solicitud">'+
+				$('.carga_solicitudes').append('<tr class="btn_agendar_solicitud" data-id="'+id_reunion+'">'+
 													'<td colspan="5" class="text-center"><strong><i class="fa fa-calendar-plus"></i> Agendar solicitud en esta reunión</strong></td>'+
 												'</tr>');
 			},
@@ -69,6 +69,8 @@ $(document).ready(function(){
 		
 		$('.carga_solicitudes_pendientes tbody tr').remove();
 		
+		var id_reunion = $(this).data('id');
+		
 		$.ajax({
 			url: "../api/api.php/solicitudes_estatus",
 			type: "GET",
@@ -86,7 +88,7 @@ $(document).ready(function(){
 												  +'<td>'+v.fecha_creacion+'</td>'
 												  +'<td class="text-center">'
 												  +'<button class="btn btn-info btn-block btn-sm mr-1" data-id="'+v.id_solicitud+'" id="btn_visualizar" data-user="'+v.nombre_usuario+'" data-priori="'+v.prioridad+'"><i class="fa fa-search"></i> Visualizar</button>'
-												  +'<button class="btn btn-success btn-block btn-sm mr-1" data-id="'+v.id_solicitud+'" id="btn_agendar" data-user="'+v.nombre_usuario+'"><i class="fa fa-calendar-alt"></i> Agendar</button>'
+												  +'<button class="btn btn-success btn-block btn-sm mr-1" data-id-solicitud="'+v.id_solicitud+'" data-id-reunion="'+id_reunion+'" id="btn_agendar_solicitud_pendiente" data-user="'+v.nombre_usuario+'"><i class="fa fa-calendar-alt"></i> Agendar</button>'
 												  +'</td>'
 												+'</tr>');
 				});
@@ -99,6 +101,58 @@ $(document).ready(function(){
 		});
 		
 		$('#modal_solicitudes_pendientes').modal('toggle');
+		
+	});
+	
+	$('.carga_solicitudes_pendientes').on("click","#btn_agendar_solicitud_pendiente",function(){
+		
+		var id_reunion = $(this).data('id-reunion');
+		var id_solicitud = $(this).data('id-solicitud');
+		
+		$.ajax({
+			url: "../api/api.php/solicitud_reunion",
+			type: "POST",
+			data: {
+				"id_solicitud" : id_solicitud,
+				"id_reunion" : id_reunion
+			},
+			success: function(data){
+				
+				$.ajax({
+					url: "../api/api.php/actualizar_estatus_solicitud",
+					type: "PUT",
+					data: {
+						"id_solicitud" : id_solicitud,
+						"estatus" : "3"
+					},
+					success: function(data){
+						
+						setTimeout(function(){
+							swal({
+								title: "Exito!", 
+								text: "Solicitud agendada en reunion",
+								type: "success",
+								timer: 2000
+							});
+						},100);
+						
+						setTimeout(function(){
+							cargarDiv("solicitudes_enviadas");
+						},2000);
+						
+					},
+					error: function(xhr, desc, err){
+						console.log(xhr);
+						console.log("Descripcion: " + desc + "\nError: "  + err);
+					}
+				});
+				
+			},
+			error: function(xhr, desc, err){
+				console.log(xhr);
+				console.log("Descripcion: " + desc + "\nError: "  + err);
+			}
+		});
 		
 	});
 	
@@ -262,7 +316,7 @@ $(document).ready(function(){
 						setTimeout(function(){
 							swal({
 								title: "Exito!", 
-								text: "Solicitud enviada al comite",
+								text: "Solicitud aceptada",
 								type: "success",
 								timer: 2000
 							});
@@ -323,13 +377,11 @@ $(document).ready(function(){
 					},
 					success: function(data){
 						
-						console.log(data);
-						
 						setTimeout(function(){
 							swal({
 								title: "Exito!", 
-								text: "Solicitud enviada al comite",
-								type: "success",
+								text: "Solicitud rechazada",
+								type: "error",
 								timer: 2000
 							});
 						},100);
