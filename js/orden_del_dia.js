@@ -164,7 +164,7 @@ $(document).ready(function(){
 			$('#modal_visualizar_solicitud_profesor').modal('toggle');
 		}
 		
-		$('.modal-title').html("Vista de Solicitud No. <strong>" + $(this).data('id') + "</strong>");
+		$('.titulo_modal').html("Vista de Solicitud No. <strong>" + $(this).data('id') + "</strong>");
 		
 		$.ajax({
 			url: "../api/api.php/datos_solicitud",
@@ -228,7 +228,7 @@ $(document).ready(function(){
 			$('#modal_visualizar_solicitud_profesor').modal('toggle');
 		}
 		
-		$('.modal-title').html("Vista de Solicitud No. <strong>" + $(this).data('id') + "</strong>");
+		$('.titulo_modal').html("Vista de Solicitud No. <strong>" + $(this).data('id') + "</strong>");
 		
 		$.ajax({
 			url: "../api/api.php/datos_solicitud",
