@@ -128,7 +128,7 @@ $(document).ready(function(){
 								type: "success",
 								timer: 2000
 							});
-						},100);
+						},200);
 						
 						setTimeout(function(){
 							cargarDiv("solicitudes_enviadas");
@@ -185,16 +185,16 @@ $(document).ready(function(){
 					},
 					success: function(data){
 						
-						console.log(data);
+						$('#modal_rechazar_solicitud').modal('hide');
 						
 						setTimeout(function(){
 							swal({
 								title: "Exito!", 
-								text: "Solicitud enviada al comite",
-								type: "success",
+								text: "Solicitud rechazada",
+								type: "error",
 								timer: 2000
 							});
-						},100);
+						},200);
 						
 						setTimeout(function(){
 							cargarDiv("solicitudes_enviadas");

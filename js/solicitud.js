@@ -73,6 +73,8 @@ $(document).ready(function(){
 					type: "success",
 					timer: 2500
 				});
+				
+				cargarDiv('solicitud');
 			},
 			error:function(xhr, desc, err){
 				console.log(xhr);
@@ -81,4 +83,5 @@ $(document).ready(function(){
 		});
 		
 	});
+	
 });

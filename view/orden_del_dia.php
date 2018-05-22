@@ -50,9 +50,6 @@
 				<div class="col-md-12 col-12 mt-2">
 					<h4>Acciones</h4><hr>
 				</div>
-				<div class="col-md-12 col-12 mt-2 mb-2">
-					<button class="btn btn-outline-success btn-block" id="btn_aceptar"><i class="fa fa-check-circle"></i> Aceptar</button>
-				</div>
 				<div class="col-md-12 col-12 mt-2 mb-2 back-action">
 					<button class="btn btn-outline-danger btn-block" id="btn_regresar"><i class="fa fa-arrow-circle-left"></i> Regresar</button>
 				</div>
