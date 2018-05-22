@@ -4,10 +4,11 @@ $(document).ready(function(){
 	$('.back-action').hide();
 	
 	$.ajax({
-		url: '../api/api.php/reuniones',
+		url: '../api/api.php/reunion_miembros',
 		type: 'GET',
 		dataType: 'JSON',
 		success:function(data){
+			
 			$(data.data).each(function(i,v){
 				$('.carga_reuniones').append('<tr>'
 											  +'<th scopre="row">'+(i+1)+'</th>'
