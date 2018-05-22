@@ -10,13 +10,13 @@ $(document).ready(function(){
 		lang: 'es',
 		height: 550,
 		allDaySlot:false,
-		minTime: '06:00:00',
-		maxTime: '23:00:00',
+		minTime: '00:00:00',
+		maxTime: '23:59:00',
 		eventLimit: 4,
 		selectable: true,
 		defaultView: 'month',
 		
-		//events: '',
+		events: '../modelo/select/reuniones_fullcalendar.php',
 		
 		header: {
 			left: 'prev,next today',
@@ -24,16 +24,21 @@ $(document).ready(function(){
 			right: 'month,agendaWeek,agendaDay'
 		},
 		
-		select: function(start) {
-			alert("select");
-		},
-		
 		eventClick: function(event) {
-			alert("click");
+			
+			var fecha_seleccionada = $.fullCalendar.moment(event).format("DD MMMM YYYY");
+			
+			var año = $.fullCalendar.moment(event).format("YYYY") ;
+			var mes =  $.fullCalendar.moment(event).format("MM");
+			var dia =  $.fullCalendar.moment(event).format("DD");
+			
+			$('#txt_fecha').val(año+"-"+mes+"-"+dia);
+			
+			$('#fecha_reunion').data("date",fecha_seleccionada);
+			$('#fecha_reunion').html('<div class="col-md-12 col-12 alert alert-info text-center" role="alert"><h5> Día seleccionado: <strong>'+fecha_seleccionada+'</strong></h5></div>');
+			
+			$('#modal_reunion').modal('toggle');
 		},
-		
-		/*eventDrop: function(event, delta, revertFunc) {alert(event.title + " was dropped on " + event.start.format());if (!confirm("Are you sure about this change?")) {revertFunc();}},
-		eventResize: function(event) {swal({title: "Cuidado",text: "No se puede modificar la duración de la reservación",type: "error",timer: "2000"});revertFunc();}*/
 		
 	});
 	

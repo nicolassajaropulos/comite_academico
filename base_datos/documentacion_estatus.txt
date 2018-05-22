@@ -7,7 +7,7 @@ x	2 - En espera de ser agendada							2 - Aceptada por coordinador
 	
 x	3 - En espera de fecha de reunion						3 - Agendada en reunión
 	
-x	4 - En espera de recomendacion							4 - Aceptada por el comite
+	4 - En espera de recomendacion							4 - Aceptada por el comite
 	
 	5 - En espera de validacion de recomendacion			5 - Enviada al presidente del comite
 	
