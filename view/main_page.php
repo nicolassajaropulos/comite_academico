@@ -60,7 +60,7 @@
 					
 						<a class="nav-link active" href="#" data-navi="reportes_agenda"><i class="fa fa-calendar-check"></i> Revisar agenda de reuniones</a>
 						<img src="../imagenes/dot.png">
-						<a class="nav-link" href="#" data-navi="evidencias"><i class="fa fa-upload"></i> Registro de evidencias</a>
+						<a class="nav-link" href="#" data-navi="solicitud_voto"><i class="fa fa-list-alt"></i> Validar solicitudes</a>
 
 				<?php }else if($_SESSION['prioridad'] == 4 || $_SESSION['prioridad'] == 5){ $prioridad = "Interesado";?>
 					
@@ -87,8 +87,6 @@
 							<i class="fa fa-user"></i> <?PHP echo $prioridad; ?>
 						</button>
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" href="#"><i class="fa fa-pencil-alt"></i> Actualizar datos</a>
-							<a class="dropdown-item" href="#"><i class="fa fa-unlock-alt"></i> Actualizar contraseña</a>
 							<a class="dropdown-item logout" href="#"><i class="fa fa-times"></i> Cerrar sesión</a>
 						</div>
 					</div>

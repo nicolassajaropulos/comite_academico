@@ -6,6 +6,8 @@
 	* @Desarrollador: Payan Lopez Diego
 	**/
 	
+	date_default_timezone_set('America/Mazatlan');
+
 	require ('../modelo/conexion.php');
 	
 	session_start();
