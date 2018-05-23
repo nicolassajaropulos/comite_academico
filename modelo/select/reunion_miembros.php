@@ -1,9 +1,9 @@
 <?PHP
-
+	
 	$estatus = 1;
 	
 	$fecha_actual = date('Y-m-d');
-	$hora_actual = date("Y-m-d H:i:s");
+	$hora_actual = date("H:i:s");
 
 	$respuesta = array();
 	

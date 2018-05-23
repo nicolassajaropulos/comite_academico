@@ -201,7 +201,7 @@
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title titulo_rechazar">¿Desea rechazar la solicitud de ?</h5>
+				<h5 class="modal-title titulo_validar">¿Qué decidió sobre esta solicitud?</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -211,27 +211,23 @@
 					<div class="row">
 						<div class="col-md-12 col-12">
 							<div class="form-group">
-								<h5>Motivo</h5>
-								<select class="form-control" id="txt_motivo">
-									<option value="13">Evidencia rechazada</option>
-									<option value="14">Solicitud rechazada por otro motivo</option>
-								</select>
+								<h5>Comentario:</h5>
+								<textarea class="form-control" id="txt_comentario" placeholder="Comentario" rows="5"></textarea>
 							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-12 col-12">
-							<div class="form-group">
-								<h5>Comentario</h5>
-								<textarea class="form-control" id="txt_comentario" placeholder="Comentario" rows="5"></textarea>
-							</div>
+						<div class="col-md-6 col-6">
+							<button class="btn btn-danger btn-block" id="btn_rechazar_solicitud"><strong><i class="fa fa-times-circle"></i> Rechazar</strong></button>
+						</div>
+						<div class="col-md-6 col-6">
+							<button class="btn btn-success btn-block" id="btn_aceptar_solicitud"><strong><i class="fa fa-check-circle"></i> Aceptar</strong></button>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-				<button type="button" class="btn btn-danger" id="btn_aceptar_rechazar_solicitud"><i class="fa fa-times"></i> Rechazar</button>
 			</div>
 		</div>
 	</div>

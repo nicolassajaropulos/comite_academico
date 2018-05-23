@@ -8,7 +8,6 @@ $(document).ready(function(){
 		type: 'GET',
 		dataType: 'JSON',
 		success:function(data){
-			
 			$(data.data).each(function(i,v){
 				$('.carga_reuniones').append('<tr>'
 											  +'<th scopre="row">'+(i+1)+'</th>'
@@ -127,7 +126,118 @@ $(document).ready(function(){
 	});
 	
 	$('.carga_solicitudes').on("click","#btn_votar",function(){
+		
+		var interesado = $(this).data('user');
+		
+		$('.titulo_validar').html('¿Qué decidió sobre la solicitud de '+ interesado +'?');
+		
 		$('#modal_votar').modal('toggle');
+	});
+	
+	$('#btn_rechazar_solicitud').click(function(){
+		
+		$('#modal_votar').modal('hide');
+		
+		swal({
+			title: "¿Desea rechazar la solicitud?",
+			text: "Se emitirá su voto y no habrá vuelta atrás",
+			type: "warning",
+			showCancelButton: true,
+			cancelButtonClass: "btn-secondary",
+			confirmButtonColor: "#d9534f",
+			confirmButtonText: "Rechazar solicitud",
+			cancelButtonText: "Cancelar operacion",
+			closeOnConfirm: true,
+			closeOnCancel: true
+		},
+		function(isConfirm) {
+			
+			if (isConfirm) {
+				
+				alert("Rechazada");
+				
+				// $.ajax({
+					// url: "../api/api.php/actualizar_estatus_solicitud",
+					// type: "PUT",
+					// data: {
+						// "id_solicitud" : id_solicitud,
+						// "estatus" : "4"
+					// },
+					// success: function(data){
+						
+						// setTimeout(function(){
+							// swal({
+								// title: "Exito!", 
+								// text: "Solicitud aceptada",
+								// type: "success",
+								// timer: 2000
+							// });
+						// },200);
+						
+					// },
+					// error: function(xhr, desc, err){
+						// console.log(xhr);
+						// console.log("Descripcion: " + desc + "\nError: "  + err);
+					// }
+				// });
+				
+			}
+		  
+		});
+		
+	});
+	
+	$('#btn_aceptar_solicitud').click(function(){
+		
+		$('#modal_votar').modal('hide');
+		
+		swal({
+			title: "¿Desea aceptar la solicitud?",
+			text: "Se emitirá su voto y no habrá vuelta atrás",
+			type: "success",
+			showCancelButton: true,
+			cancelButtonClass: "btn-secondary",
+			confirmButtonColor: "#5cb85c",
+			confirmButtonText: "Aceptar solicitud",
+			cancelButtonText: "Cancelar operacion",
+			closeOnConfirm: true,
+			closeOnCancel: true
+		},
+		function(isConfirm) {
+			
+			if (isConfirm) {
+				
+				alert("Aceptada");
+				
+				// $.ajax({
+					// url: "../api/api.php/actualizar_estatus_solicitud",
+					// type: "PUT",
+					// data: {
+						// "id_solicitud" : id_solicitud,
+						// "estatus" : "4"
+					// },
+					// success: function(data){
+						
+						// setTimeout(function(){
+							// swal({
+								// title: "Exito!", 
+								// text: "Solicitud aceptada",
+								// type: "success",
+								// timer: 2000
+							// });
+						// },200);
+						
+					// },
+					// error: function(xhr, desc, err){
+						// console.log(xhr);
+						// console.log("Descripcion: " + desc + "\nError: "  + err);
+					// }
+				// });
+				
+			}
+		  
+		});
+		
 	});
 	
 	$('#btn_regresar').click(function(){
