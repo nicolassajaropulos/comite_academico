@@ -140,6 +140,7 @@ CREATE TABLE `prioridad` (
 CREATE TABLE `reunion` (
   `id_reunion` bigint(20) NOT NULL,
   `numero_control` bigint(20) NOT NULL,
+   `id_lugar` bigint(20) NOT NULL,
   `fecha_citada` date NOT NULL,
   `hora_inicio` time NOT NULL,
   `hora_finalizada` time NOT NULL,
@@ -572,6 +573,7 @@ ALTER TABLE `departamento_acta`
 -- Filtros para la tabla `reunion`
 --
 ALTER TABLE `reunion`
+  ADD CONSTRAINT `FK_reunion_lugar` FOREIGN KEY (`id_lugar`) REFERENCES `lugar` (`id_lugar`),
   ADD CONSTRAINT `FK_reunion_usuario` FOREIGN KEY (`numero_control`) REFERENCES `usuario` (`numero_control`);
 
 --
