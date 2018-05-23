@@ -92,15 +92,6 @@ CREATE TABLE `departamento_acta` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `firma`
---
-
-CREATE TABLE `firma` (
-  `id_firma` bigint(20) NOT NULL,
-  `firma` varchar(30) NOT NULL,
-  `fecha_creacion` datetime DEFAULT NULL,
-  `estatus` bit(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -150,17 +141,6 @@ CREATE TABLE `reunion` (
 
 -- --------------------------------------------------------
 
---
--- Estructura de tabla para la tabla `reunion_usuario`
---
-
-CREATE TABLE `reunion_usuario` (
-  `id_reunion_usuario` bigint(20) NOT NULL,
-  `numero_control` bigint(20) NOT NULL,
-  `id_reunion` bigint(20) NOT NULL,
-  `fecha_creacion` datetime DEFAULT NULL,
-  `estatus` bit(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -211,7 +191,6 @@ CREATE TABLE `solicitud_detalle_comentario` (
 CREATE TABLE `solicitud_detalle_validacion` (
   `id_solicitud_detalle_validacion` bigint(20) NOT NULL,
   `numero_control` bigint(20) NOT NULL,
-  `id_firma` bigint(20) NOT NULL,
   `id_solicitud` bigint(20) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
   `estatus` bit(1) DEFAULT NULL
@@ -279,15 +258,6 @@ CREATE TABLE `reunion_solicitud` (
 
 --
 --
--- Estructura de tabla para la tabla `recomendacion`
---
-
-CREATE TABLE `recomendacion` (
-  `id_recomendacion` int(11) NOT NULL,
-  `id_solicitud` bigint(20) NOT NULL,
-  `fecha_creacion` datetime DEFAULT NULL,
-  `estatus` bit(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `estatus` (
   `id_estatus` bigint(20) NOT NULL,
@@ -340,11 +310,6 @@ ALTER TABLE `departamento_acta`
   ADD KEY `FK_departamento_acta_departamento` (`id_departamento`),
   ADD KEY `FK_departamento_acta_acta` (`id_acta_de_acuerdo`);
 
---
--- Indices de la tabla `firma`
---
-ALTER TABLE `firma`
-  ADD PRIMARY KEY (`id_firma`);
 
 --
 -- Indices de la tabla `lugar`
@@ -364,14 +329,6 @@ ALTER TABLE `prioridad`
 ALTER TABLE `reunion`
   ADD PRIMARY KEY (`id_reunion`),
   ADD KEY `FK_reunion_usuario` (`numero_control`);
-
---
--- Indices de la tabla `reunion_usuario`
---
-ALTER TABLE `reunion_usuario`
-  ADD PRIMARY KEY (`id_reunion_usuario`),
-  ADD KEY `FK_reunion_usuario_usuario` (`numero_control`),
-  ADD KEY `FK_reunion_usuario_reunion` (`id_reunion`);
 
 --
 -- Indices de la tabla `solicitud`
@@ -395,7 +352,6 @@ ALTER TABLE `solicitud_detalle_comentario`
 ALTER TABLE `solicitud_detalle_validacion`
   ADD PRIMARY KEY (`id_solicitud_detalle_validacion`),
   ADD KEY `FK_solicitud_detalle_validacion_usuario` (`numero_control`),
-  ADD KEY `FK_solicitud_detalle_validacion_firma` (`id_firma`),
   ADD KEY `FK_solicitud_detalle_validacion_solicitud` (`id_solicitud`);
 
 --
@@ -430,12 +386,6 @@ ALTER TABLE `reunion_solicitud`
   ADD KEY `FK_reunion_solicitud_reunion` (`id_reunion`),
   ADD KEY `FK_reunion_solicitud_solicitud` (`id_solicitud`);
   
---
--- Indices de la tabla `recomendacion`
---
-ALTER TABLE `recomendacion`
-  ADD PRIMARY KEY (`id_recomendacion`),
-  ADD KEY `FK_recomendacion_solicitud` (`id_solicitud`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -473,11 +423,6 @@ ALTER TABLE `departamento`
 ALTER TABLE `departamento_acta`
   MODIFY `id_departamento_acta` bigint(20) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT de la tabla `firma`
---
-ALTER TABLE `firma`
-  MODIFY `id_firma` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `lugar`
@@ -497,11 +442,7 @@ ALTER TABLE `prioridad`
 ALTER TABLE `reunion`
   MODIFY `id_reunion` bigint(20) NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT de la tabla `reunion_usuario`
---
-ALTER TABLE `reunion_usuario`
-  MODIFY `id_reunion_usuario` bigint(20) NOT NULL AUTO_INCREMENT;
+
 
 --
 -- AUTO_INCREMENT de la tabla `solicitud`
@@ -546,10 +487,7 @@ ALTER TABLE `reunion_solicitud`
   MODIFY `id_reunion_solicitud` bigint(20) NOT NULL AUTO_INCREMENT;
   
 --
--- AUTO_INCREMENT de la tabla `reunion_solicitud`
---
-ALTER TABLE `recomendacion`
-  MODIFY `id_recomendacion` bigint(20) NOT NULL AUTO_INCREMENT;
+
 
 --
 -- Restricciones para tablas volcadas
@@ -576,12 +514,6 @@ ALTER TABLE `reunion`
   ADD CONSTRAINT `FK_reunion_lugar` FOREIGN KEY (`id_lugar`) REFERENCES `lugar` (`id_lugar`),
   ADD CONSTRAINT `FK_reunion_usuario` FOREIGN KEY (`numero_control`) REFERENCES `usuario` (`numero_control`);
 
---
--- Filtros para la tabla `reunion_usuario`
---
-ALTER TABLE `reunion_usuario`
-  ADD CONSTRAINT `FK_reunion_usuario_reunion` FOREIGN KEY (`id_reunion`) REFERENCES `reunion` (`id_reunion`),
-  ADD CONSTRAINT `FK_reunion_usuario_usuario` FOREIGN KEY (`numero_control`) REFERENCES `usuario` (`numero_control`);
 
 --
 -- Filtros para la tabla `solicitud`
@@ -603,7 +535,6 @@ ALTER TABLE `solicitud_detalle_comentario`
 -- Filtros para la tabla `solicitud_detalle_validacion`
 --
 ALTER TABLE `solicitud_detalle_validacion`
-  ADD CONSTRAINT `FK_solicitud_detalle_validacion_firma` FOREIGN KEY (`id_firma`) REFERENCES `firma` (`id_firma`),
   ADD CONSTRAINT `FK_solicitud_detalle_validacion_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`),
   ADD CONSTRAINT `FK_solicitud_detalle_validacion_usuario` FOREIGN KEY (`numero_control`) REFERENCES `usuario` (`numero_control`);
 
@@ -636,11 +567,7 @@ ALTER TABLE `reunion_solicitud`
 COMMIT;
 
 --
--- Filtros para la tabla `recomendacion`
---
-ALTER TABLE `recomendacion`
-  ADD CONSTRAINT `FK_recomendacion_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`);
-  
+
  
   
 COMMIT;
