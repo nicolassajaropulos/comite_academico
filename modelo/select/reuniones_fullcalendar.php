@@ -21,7 +21,8 @@
 			$respuesta[] = array(
 				"title" => "Reunion No.".$id_reunion,
 				"start" => $fecha."T".$hora_inicio,
-				"end" => $fecha."T".$hora_fin
+				"end" => $fecha."T".$hora_fin,
+				"id_reunion" => $id_reunion
 			);
 		}
 		$stmt->close();

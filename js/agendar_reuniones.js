@@ -93,7 +93,37 @@ $(document).ready(function(){
 		},
 		
 		eventClick: function(event) {
-			alert("click");
+			swal({
+				title: '¿Desea desagendar esta reunión?',
+				type: 'question',
+				confirmButtonText: '<i class="far fa-calendar-times"></i> Desagendar',
+				confirmButtonColor: '#3085d6',
+				showCancelButton: true,
+				cancelButtonText: '<i class="fas fa-reply"></i> Regresar'
+			}).then((result) => {
+				if (result.value) {
+
+					$.ajax({
+						url: '../api/api.php/reunion',
+						data: {
+							'id_reunion': event.id_reunion
+						},
+						type: 'PUT',
+						dataType: 'json',
+						success: (data) => {
+							swal(
+						      	'¡Listo! ' + data.data,
+						      	'Reunión desagendada con éxito.',
+						      	'success'
+						    );
+						},
+						error: (xhr, desc, err) => {
+							console.log(xhr);
+							console.log("Detalles: " + desc + "\nError:" + err);
+						}
+					});
+				}
+			});
 		},
 		
 	});
