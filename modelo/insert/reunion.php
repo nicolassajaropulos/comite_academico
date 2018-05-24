@@ -8,14 +8,34 @@
 	
 	$fecha_completa = date("Y/m/d", strtotime($fecha));
 	
+	// $query = "INSERT INTO 
+						// lugar(id_lugar, nombre_lugar, calle, numero_exterior, colonia, fecha_creacion, estatus) 
+					// VALUES 
+						// (Null,?,?,?,?,Now(),?)";
+	
+	// if($stmt = $mysqli->prepare($query)){
+		
+		// $stmt->bind_param("iisssi",$numero_control, $id_lugar, $fecha, $hora_inicio, $hora_fin, $estatus);
+		
+		// $stmt->execute();
+		
+		// $id_reunion = $stmt->insert_id;
+		
+		// $stmt->close();
+		
+		// $respuesta = $id_reunion;
+	// }
+	
+	$id_lugar = 1;
+	
 	$query = "INSERT INTO 
-						reunion(id_reunion, numero_control, fecha_citada, hora_inicio, hora_finalizada, fecha_creacion, estatus) 
+						reunion(id_reunion, numero_control, id_lugar, fecha_citada, hora_inicio, hora_finalizada, fecha_creacion, estatus) 
 					VALUES 
-						(null,?,?,?,?,now(),?)";
+						(null,?,?,?,?,?,now(),?)";
 	
 	if($stmt = $mysqli->prepare($query)){
 		
-		$stmt->bind_param("isssi",$numero_control, $fecha, $hora_inicio, $hora_fin, $estatus);
+		$stmt->bind_param("iisssi",$numero_control, $id_lugar, $fecha, $hora_inicio, $hora_fin, $estatus);
 		
 		$stmt->execute();
 		
@@ -25,5 +45,7 @@
 		
 		$respuesta = $id_reunion;
 	}
+	
+	return $respuesta;
 
 ?>

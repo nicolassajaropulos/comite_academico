@@ -62,7 +62,7 @@ $(document).ready(function(){
 								var mensaje = "Inactiva";
 							}
 							
-							$('#estatus_reunion').html('<div class="col-md-12 col-12 alert alert-danger text-center" role="alert"><h5> Lugar: <strong>'+ mensaje +'</strong></h5></div>');
+							$('#estatus_reunion').html('<div class="col-md-12 col-12 alert alert-danger text-center" role="alert"><h5> Estado: <strong>'+ mensaje +'</strong></h5></div>');
 							
 						});
 						

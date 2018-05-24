@@ -26,7 +26,7 @@
 	</div>
 	
 </div>
-
+  
 <div class="modal" id="modal_reunion" tabindex="-1" role="dialog">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -51,6 +51,14 @@
 							<div class="form-group">
 								<label for="txt_hora_fin">Hora fin</label>
 								<input type="time" id="txt_hora_fin" class="form-control" value="now">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-12">
+							<div class="autocomplete form-group">
+								<label for="txt_lugar">Lugar</label>
+								<input type="text" id="txt_lugar" class="form-control" placeholder="Lugar">
 							</div>
 						</div>
 					</div>
