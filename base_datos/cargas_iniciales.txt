@@ -116,8 +116,7 @@ INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatu
 
 INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('11', 'Rechazada por coordinador por evidencia' ,CURRENT_DATE(), b'1');
 INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('12', 'Rechazada por coordinador con motivo', CURRENT_DATE(), b'1');
-INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('13', 'Rechazada por comite por evidencia', CURRENT_DATE(), b'1');
-INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('14', 'Rechazada por comite con motivo', CURRENT_DATE(), b'1');
+INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('13', 'Rechazada por comite', CURRENT_DATE(), b'1');
 
 INSERT INTO `lugar` (`id_lugar`, `nombre_lugar`, `calle`, `numero_exterior`, `colonia`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Sala de reuniones', NULL, NULL, NULL, CURRENT_DATE(), b'1');
 INSERT INTO `lugar` (`id_lugar`, `nombre_lugar`, `calle`, `numero_exterior`, `colonia`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Oficina del plantel', NULL, NULL, NULL, CURRENT_DATE(), b'1');

@@ -32,7 +32,7 @@ $(document).ready(function(){
 		var id_reunion = $(this).data("id");
 		
 		$.ajax({
-			url: '../api/api.php/solicitudes_reunion?id_reunion='+id_reunion,
+			url: '../api/api.php/solicitudes_reunion_miembro?id_reunion='+id_reunion,
 			type: 'GET',
 			dataType: 'JSON',
 			success:function(data){
@@ -127,7 +127,11 @@ $(document).ready(function(){
 	
 	$('.carga_solicitudes').on("click","#btn_votar",function(){
 		
+		var id_solicitud = $(this).data('id');
 		var interesado = $(this).data('user');
+		
+		$('#btn_rechazar_solicitud').data('id',id_solicitud);
+		$('#btn_aceptar_solicitud').data('id',id_solicitud);
 		
 		$('.titulo_validar').html('¿Qué decidió sobre la solicitud de '+ interesado +'?');
 		
@@ -137,6 +141,9 @@ $(document).ready(function(){
 	$('#btn_rechazar_solicitud').click(function(){
 		
 		$('#modal_votar').modal('hide');
+		
+		var id_solicitud = $(this).data('id');
+		var comentario = $('#txt_comentario').val();
 		
 		swal({
 			title: "¿Desea rechazar la solicitud?",
@@ -154,33 +161,34 @@ $(document).ready(function(){
 			
 			if (isConfirm) {
 				
-				alert("Rechazada");
-				
-				// $.ajax({
-					// url: "../api/api.php/actualizar_estatus_solicitud",
-					// type: "PUT",
-					// data: {
-						// "id_solicitud" : id_solicitud,
-						// "estatus" : "4"
-					// },
-					// success: function(data){
+				$.ajax({
+					url: "../api/api.php/comentario_solicitud",
+					type: "POST",
+					data: {
+						"id_solicitud" : id_solicitud,
+						"comentario" : comentario,
+						"estatus" : 3
+					},
+					success: function(data){
 						
-						// setTimeout(function(){
-							// swal({
-								// title: "Exito!", 
-								// text: "Solicitud aceptada",
-								// type: "success",
-								// timer: 2000
-							// });
-						// },200);
+						setTimeout(function(){
+							swal({
+								title: "Voto negativo emitido!", 
+								type: "error",
+								timer: 2000
+							});
+						},200);
 						
-					// },
-					// error: function(xhr, desc, err){
-						// console.log(xhr);
-						// console.log("Descripcion: " + desc + "\nError: "  + err);
-					// }
-				// });
-				
+						setTimeout(function(){
+							cargarDiv("solicitud_voto");
+						},2000);
+						
+					},
+					error: function(xhr, desc, err){
+						console.log(xhr);
+						console.log("Descripcion: " + desc + "\nError: "  + err);
+					}
+				});
 			}
 		  
 		});
@@ -188,6 +196,9 @@ $(document).ready(function(){
 	});
 	
 	$('#btn_aceptar_solicitud').click(function(){
+		
+		var id_solicitud = $(this).data('id');
+		var comentario = $('#txt_comentario').val();
 		
 		$('#modal_votar').modal('hide');
 		
@@ -207,32 +218,34 @@ $(document).ready(function(){
 			
 			if (isConfirm) {
 				
-				alert("Aceptada");
-				
-				// $.ajax({
-					// url: "../api/api.php/actualizar_estatus_solicitud",
-					// type: "PUT",
-					// data: {
-						// "id_solicitud" : id_solicitud,
-						// "estatus" : "4"
-					// },
-					// success: function(data){
+				$.ajax({
+					url: "../api/api.php/comentario_solicitud",
+					type: "POST",
+					data: {
+						"id_solicitud" : id_solicitud,
+						"comentario" : comentario,
+						"estatus" : 2
+					},
+					success: function(data){
 						
-						// setTimeout(function(){
-							// swal({
-								// title: "Exito!", 
-								// text: "Solicitud aceptada",
-								// type: "success",
-								// timer: 2000
-							// });
-						// },200);
+						setTimeout(function(){
+							swal({
+								title: "Voto positivo emitido!", 
+								type: "success",
+								timer: 2000
+							});
+						},200);
 						
-					// },
-					// error: function(xhr, desc, err){
-						// console.log(xhr);
-						// console.log("Descripcion: " + desc + "\nError: "  + err);
-					// }
-				// });
+						setTimeout(function(){
+							cargarDiv("solicitud_voto");
+						},2000);
+						
+					},
+					error: function(xhr, desc, err){
+						console.log(xhr);
+						console.log("Descripcion: " + desc + "\nError: "  + err);
+					}
+				});
 				
 			}
 		  

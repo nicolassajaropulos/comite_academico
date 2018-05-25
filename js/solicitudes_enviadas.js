@@ -181,7 +181,8 @@ $(document).ready(function(){
 					type: "POST",
 					data: {
 						"id_solicitud" : id_solicitud,
-						"comentario" : comentario
+						"comentario" : comentario,
+						"estatus" : '1'
 					},
 					success: function(data){
 						

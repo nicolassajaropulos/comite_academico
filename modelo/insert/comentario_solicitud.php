@@ -6,6 +6,7 @@
 	$comentario = $_POST['comentario'];
 	
 	$estatus = 1;
+	
 	$id_comentario = 0;
 	
 	$query = "INSERT INTO 
@@ -25,6 +26,8 @@
 		
 	}
 	
+	$estatus_detalle_comentario = $_POST['estatus'];
+	
 	$query2 = "INSERT INTO 
 					solicitud_detalle_comentario(id_solicitud_detalle_comentario, id_solicitud, id_comentario, numero_control, fecha_creacion, estatus) 
 				VALUES 
@@ -32,7 +35,7 @@
 
 	if($stmt = $mysqli->prepare($query2)){
 		
-		$stmt->bind_param("iiii", $id_solicitud, $id_comentario, $numero_control, $estatus);
+		$stmt->bind_param("iiii", $id_solicitud, $id_comentario, $numero_control, $estatus_detalle_comentario);
 		
 		$stmt->execute();
 		

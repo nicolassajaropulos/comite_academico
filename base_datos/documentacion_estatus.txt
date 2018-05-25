@@ -1,5 +1,5 @@
 
-== Caminos de exito
+== Estatus solicitud
 
 x	1 - Enviada a Coordinador								1 - Estado inicial
 	
@@ -17,10 +17,14 @@ x	3 - En espera de fecha de reunion						3 - Agendada en reunión
 	
 	8 - Ejecutada											8 - Ejecutada por el departamento
 	
-
-== Casos extras
 	
 x	11 - Rechazada por coordinador por evidencia 
 x	12 - Rechazada por coordinador con motivo
-x	13 - Rechazada por comité por evidencia 
-x	14 - Rechazada por comité con motivo
+x	13 - Rechazada por comité
+
+== Estatus solicitud_detalle_comentario
+	
+	0 -  Inactivo
+	1 -  Validación de coordinador
+	2 -  Aceptada de miembro
+	3 -  Rechazada de miembro
