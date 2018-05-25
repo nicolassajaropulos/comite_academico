@@ -24,7 +24,8 @@ x	13 - Rechazada por comité
 
 == Estatus solicitud_detalle_comentario
 	
-	0 -  Inactivo
-	1 -  Validación de coordinador
-	2 -  Aceptada de miembro
-	3 -  Rechazada de miembro
+	0 - Inactivo
+	1 - Validación de coordinador
+	2 - Aceptada de miembro
+	3 - Rechazada de miembro
+	4 - Recomendacion del secretario tecnico

@@ -15,9 +15,9 @@
 				<div class="row ml-2">
 					<div class="col-md-11 ml-5">
 						<table class="table carga_reuniones mt-3 table-hover table-bordered">
-							<thead>
+							<thead>							
 								<tr>
-									<th scope="col">#</th>
+									<th scope="col">Folio Reunión</th>
 									<th scope="col">Convocador</th>
 									<th scope="col">Fecha</th>
 									<th scope="col">Hora inicio</th>
@@ -31,7 +31,7 @@
 						<table class="table carga_solicitudes mt-3 table-hover table-bordered">
 							<thead>
 								<tr>
-									<th scope="col">Folio</th>
+									<th scope="col">Folio Solicitud</th>
 									<th scope="col">Solicitud</th>
 									<th scope="col">Interesado</th>
 									<th scope="col">Fecha emitida</th>
@@ -51,7 +51,7 @@
 					<h4>Acciones</h4><hr>
 				</div>
 				<div class="col-md-12 col-12 mt-2 mb-2 back-action">
-					<button class="btn btn-outline-danger btn-block" id="btn_regresar"><i class="fa fa-arrow-circle-left"></i> Regresar</button>
+					<button class="btn btn-outline-danger btn-block" id="btn_regresar"><i class="fa fa-arrow-circle-left"></i> Reuniones</button>
 				</div>
 				<div class="col-md-12 col-12 mt-2 mb-2">
 					<button class="btn btn-outline-info btn-block" id="btn_filtrar" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#dlg_filtro"><i class="fa fa-search"></i> Filtrar</button>
