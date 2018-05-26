@@ -90,6 +90,7 @@ $(document).ready(function(){
 				});
 				
 				$('#btn_almacenar_recomendacion').data('id', id_solicitud);
+				$('#btn_almacenar_recomendacion').data('response', solicitud_estatus);
 				
 			},
 			error: function(xhr, desc, err){
@@ -181,18 +182,34 @@ $(document).ready(function(){
 			},
 			success: function(data){
 				
-				setTimeout(function(){
-					swal({
-						title: "Exito!", 
-						text: "Recomendacion almacenada",
-						type: "success",
-						timer: 2000
-					});
-				},200);
-				
-				setTimeout(function(){
-					cargarDiv("recomendacion");
-				},2000);
+				$.ajax({
+					url: "../api/api.php/actualizar_estatus_solicitud",
+					type: "PUT",
+					data: {
+						"id_solicitud" : id_solicitud,
+						"estatus" : "4"
+					},
+					success: function(data){
+						
+						setTimeout(function(){
+							swal({
+								title: "Exito!", 
+								text: "Solicitud agendada en reunion",
+								type: "success",
+								timer: 2000
+							});
+						},200);
+						
+						setTimeout(function(){
+							cargarDiv("recomendacion");
+						},2000);
+						
+					},
+					error: function(xhr, desc, err){
+						console.log(xhr);
+						console.log("Descripcion: " + desc + "\nError: "  + err);
+					}
+				});
 				
 			},
 			error: function(xhr, desc, err){

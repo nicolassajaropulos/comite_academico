@@ -152,7 +152,7 @@ $(document).ready(function(){
 		var usuario = $(this).data("user");
 		var id_solicitud = $(this).data("id");
 		
-		$('.titulo_rechazar').html("¿Desea rechazar la solicitud de " + usuario + "?",);
+		$('.titulo_rechazar').html("¿Desea rechazar la solicitud de " + usuario + "?");
 		
 		$('#modal_rechazar_solicitud').modal("toggle");
 		

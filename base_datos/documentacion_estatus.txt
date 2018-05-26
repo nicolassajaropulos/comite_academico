@@ -7,20 +7,18 @@ x	2 - En espera de ser agendada							2 - Aceptada por coordinador
 	
 x	3 - En espera de fecha de reunion						3 - Agendada en reunión
 	
-	4 - En espera de recomendacion							4 - Aceptada por el comite
+x	4 - Recomendacion elaborada por secretario				4 -	Validada por el comite - Enviada al presidente del comite
 	
-	5 - En espera de validacion de recomendacion			5 - Enviada al presidente del comite
+x	5 - En espera de dictamen oficial						5 - Aceptada por presidente - Enviada al director
 	
-	6 - En espera de dictamen oficial						6 - Aceptada por el presidente del comite
+	6 - Dictamen oficial generado							6 - Aceptada por el director del planel - Envida a dpto correspondiente
 	
-	7 - Dictamen oficial generado							7 - Aceptada por el director del planel - Envida a dpto correspondiente
+	7 - Ejecutada											7 - Ejecutada por el departamento
 	
-	8 - Ejecutada											8 - Ejecutada por el departamento
 	
 	
 x	11 - Rechazada por coordinador por evidencia 
 x	12 - Rechazada por coordinador con motivo
-x	13 - Rechazada por comité
 
 == Estatus solicitud_detalle_comentario
 	

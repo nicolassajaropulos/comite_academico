@@ -43,6 +43,8 @@
 					<a class="nav-link active" href="#" data-navi="agendar_reuniones"><i class="fa fa-calendar-alt"></i> Agendar Reuniones</a>
 					<img src="../imagenes/dot.png">
 					<a class="nav-link" href="#" data-navi="orden_del_dia"><i class="fa fa-folder-open"></i> Orden del día</a>
+					<img src="../imagenes/dot.png">
+					<a class="nav-link" href="#" data-navi="recomendacion_presidente"><i class="fa fa-folder-open"></i> Recomendaciónes</a>
 						
 				<?php }else if($_SESSION['prioridad'] == 2){ $prioridad = "Secretario";?>
 					
