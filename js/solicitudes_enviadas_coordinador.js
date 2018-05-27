@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	$.ajax({
-		url: "../api/api.php/solicitudes_estatus?estatus=1",
+		url: "../api/api.php/solicitudes_carrera",
 		type: "GET",
 		dataType: "JSON",
 		success: function(data){
@@ -131,7 +131,7 @@ $(document).ready(function(){
 						},200);
 						
 						setTimeout(function(){
-							cargarDiv("solicitudes_enviadas");
+							cargarDiv("solicitudes_enviadas_coordinador");
 						},2000);
 						
 					},
@@ -152,7 +152,7 @@ $(document).ready(function(){
 		var usuario = $(this).data("user");
 		var id_solicitud = $(this).data("id");
 		
-		$('.titulo_rechazar').html("¿Desea rechazar la solicitud de " + usuario + "?",);
+		$('.titulo_rechazar').html("¿Desea rechazar la solicitud de " + usuario + "?");
 		
 		$('#modal_rechazar_solicitud').modal("toggle");
 		
@@ -198,7 +198,7 @@ $(document).ready(function(){
 						},200);
 						
 						setTimeout(function(){
-							cargarDiv("solicitudes_enviadas");
+							cargarDiv("solicitudes_enviadas_coordinador");
 						},2000);
 						
 					},

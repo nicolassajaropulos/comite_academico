@@ -2,10 +2,10 @@
 	<div class="row">
 		<div class="col-md-12 col-12 mt-3 ml-5">
 			<div class="row">
-				<h2>Recomendaciones</h2>
+				<h2>Dictamen oficial</h2>
 			</div>
 			<div class="row">
-				<h5>Utilice este módulo para generar las recomendaciones para las solicitudes tratadas por comité</h5>
+				<h5>Utilice este módulo para efectuar el voto final a una solicitud de comité académico.</h5>
 			</div>
 		</div>
 	</div>
@@ -14,20 +14,6 @@
 			<div class="card mod_panel">
 				<div class="row ml-2">
 					<div class="col-md-11 ml-5">
-						<table class="table carga_reuniones mt-3 table-hover table-bordered">
-							<thead>							
-								<tr>
-									<th scope="col">Folio Reunión</th>
-									<th scope="col">Convocador</th>
-									<th scope="col">Fecha</th>
-									<th scope="col">Hora inicio</th>
-									<th scope="col">Hora fin</th>
-									<th scope="col"></th>
-								</tr>
-							</thead>
-							<tbody>							
-							</tbody>
-						</table>	
 						<table class="table carga_solicitudes mt-3 table-hover table-bordered">
 							<thead>
 								<tr>
@@ -50,9 +36,6 @@
 				<div class="col-md-12 col-12 mt-2">
 					<h4>Acciones</h4><hr>
 				</div>
-				<div class="col-md-12 col-12 mt-2 mb-2 back-action">
-					<button class="btn btn-outline-danger btn-block" id="btn_regresar"><i class="fa fa-arrow-circle-left"></i> Reuniones</button>
-				</div>
 				<div class="col-md-12 col-12 mt-2 mb-2">
 					<button class="btn btn-outline-info btn-block" id="btn_filtrar" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#dlg_filtro"><i class="fa fa-search"></i> Filtrar</button>
 				</div>
@@ -61,11 +44,11 @@
 	</div>
 </div>
 
-<div class="modal" id="modal_recomendacion" tabindex="-1" role="dialog">
+<div class="modal" id="modal_desicion_final" tabindex="-1" role="dialog">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title titulo_recomendacion">Recomendación para la solicitud con folio: </h5>
+				<h5 class="modal-title titulo_recomendacion">Dicamen oficial de solicitud </h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -96,11 +79,15 @@
 							</div>
 						</div>
 					</div>
+					<div class="row empate">
+						<div class="col-md-6 col-6">
+							<button class="btn btn-danger btn-block" id="btn_rechazar_validar_solicitud"><i class="fa fa-times"></i> Rechazar</button>
+						</div>
+						<div class="col-md-6 col-6">
+							<button class="btn btn-success btn-block" id="btn_aceptar_validar_solicitud"><i class="fa fa-check"></i> Aceptar</button>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-				<button type="button" class="btn btn-success" data-dismiss="modal" id="btn_almacenar_recomendacion"><strong><i class="fa fa-check-circle"></i> Enviar</strong></button>
 			</div>
 		</div>
 	</div>
@@ -242,4 +229,4 @@
 	</div>
 </div>
 
-<script type="text/javascript" src="../js/recomendacion.js"></script>
+<script type="text/javascript" src="../js/dictamen_oficial.js"></script>
