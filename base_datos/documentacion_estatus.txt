@@ -21,7 +21,7 @@ x	9 - Ejecutada											9 - Ejecutada por el departamento
 	
 	
 	
-x	11 - Rechazada por coordinador por evidencia 
+x	11 - Rechazada por coordinador por evidencia
 x	12 - Rechazada por coordinador con motivo
 x	13 - Rechazada por director de plantel
 
@@ -36,6 +36,6 @@ x	4 - Recomendacion del secretario tecnico
 == Tareas pendientes por prioridades
 	
 x	Verificar módulo para validar solicitudes por parte de los coordinadores
-	Módulo de verificar estatus solicitud por interesado
+x	Módulo de verificar estatus solicitud por interesado
 	Acta de acuerdos
 	En caso de haber tiempo - Portal de informacion de usuario en pagina inicio
