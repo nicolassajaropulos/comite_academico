@@ -224,8 +224,6 @@ $(document).ready(function(){
 		var id_solicitud = $(this).data('id');
 		var comentario = $('#txt_recomendacion').val();
 		
-		alert($(this).data('id'));
-		
 		swal({
 			title: "¿Desea rechazar la solicitud?",
 			text: "Se emitirá su voto y no habrá vuelta atrás",
@@ -324,8 +322,6 @@ $(document).ready(function(){
 						"estatus" : 2
 					},
 					success: function(data){
-						
-						console.log(data);
 						
 						$.ajax({
 							url: "../api/api.php/actualizar_estatus_solicitud",

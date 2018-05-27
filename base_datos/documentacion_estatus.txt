@@ -19,11 +19,12 @@ x	5 - En espera de dictamen oficial						5 - Aceptada por presidente - Enviada a
 	
 x	11 - Rechazada por coordinador por evidencia 
 x	12 - Rechazada por coordinador con motivo
+x	13 - Rechazada por director de plantel
 
 == Estatus solicitud_detalle_comentario
 	
-	0 - Inactivo
-	1 - Validación de coordinador
-	2 - Aceptada de miembro
-	3 - Rechazada de miembro
-	4 - Recomendacion del secretario tecnico
+x	0 - Inactivo
+x	1 - Validación de coordinador
+x	2 - Aceptada de miembro
+x	3 - Rechazada de miembro
+x	4 - Recomendacion del secretario tecnico

@@ -50,7 +50,7 @@
 					
 					<a class="nav-link active" href="#" data-navi="recomendacion"><i class="fa fa-clipboard-check"></i> Recomendaciónes</a>
 					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
-					<a class="nav-link active" href="#" data-navi="acta_acuerdos"><i class="fa fa-clipboard-list"></i> Actas de acuerdos</a>
+					<a class="nav-link active" href="#" data-navi="acta_acuerdos"><i class="fa fa-briefcase"></i> Actas de acuerdos</a>
 					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
 					<a class="nav-link" href="#" data-navi="orden_del_dia"><i class="fa fa-folder-open"></i> Orden del día</a>
 					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
@@ -78,7 +78,7 @@
 				
 				<?php } else if($_SESSION['prioridad'] == 8){ $prioridad = "Director del plantel";?>
 
-					<a class="nav-link active" href="#" data-navi="solicitudes_validas_por_comite"><i class="fas fa-clipboard-check"></i> Solicitudes aceptadas por comité</a>
+					<a class="nav-link active" href="#" data-navi="dictamen_oficial"><i class="fas fa-clipboard-check"></i> Dictamen oficial</a>
 
 				<?php } ?>
 

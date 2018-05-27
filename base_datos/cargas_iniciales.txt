@@ -108,15 +108,14 @@ INSERT INTO `usuario_carrera` (`id_usuario_carrera`, `numero_control`, `id_carre
 INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('1', 'Enviada a Coordinador', CURRENT_DATE(), b'1');
 INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('2', 'En espera de ser agendada', CURRENT_DATE(), b'1');
 INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('3', 'En espera de fecha de reunion', CURRENT_DATE(), b'1');
-INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('4', 'En espera de recomendacion', CURRENT_DATE(), b'1');
-INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('5', 'En espera de validacion de recomendacion', CURRENT_DATE(), b'1');
-INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('6', 'En espera de dictamen oficial', CURRENT_DATE(), b'1');
-INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('7', 'Dictamen oficial generado', CURRENT_DATE(), b'1');
-INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('8', 'Ejecutada', CURRENT_DATE(), b'1');
+INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('4', 'Validada por comite', CURRENT_DATE(), b'1');
+INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('5', 'En espera de dictamen oficial', CURRENT_DATE(), b'1');
+INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('6', 'Dictamen oficial generado', CURRENT_DATE(), b'1');
+INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('7', 'Ejecutada', CURRENT_DATE(), b'1');
 
 INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('11', 'Rechazada por coordinador por evidencia' ,CURRENT_DATE(), b'1');
 INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('12', 'Rechazada por coordinador con motivo', CURRENT_DATE(), b'1');
-INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('13', 'Rechazada por comite', CURRENT_DATE(), b'1');
+INSERT INTO `estatus` (`id_estatus`, `nombre_estatus`, `fecha_creacion`, `estatus`) VALUES ('13', 'Rechazada por director del plantel', CURRENT_DATE(), b'1');
 
 INSERT INTO `lugar` (`id_lugar`, `nombre_lugar`, `calle`, `numero_exterior`, `colonia`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Sala de reuniones', NULL, NULL, NULL, CURRENT_DATE(), b'1');
 INSERT INTO `lugar` (`id_lugar`, `nombre_lugar`, `calle`, `numero_exterior`, `colonia`, `fecha_creacion`, `estatus`) VALUES (NULL, 'Oficina del plantel', NULL, NULL, NULL, CURRENT_DATE(), b'1');
