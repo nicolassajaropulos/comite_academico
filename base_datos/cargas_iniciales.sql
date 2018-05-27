@@ -1,5 +1,5 @@
 ﻿
---Prioridades
+-- Prioridades
 INSERT INTO prioridad (id_prioridad, prioridad, fecha_creacion, estatus) VALUES (NULL, 'Presidente', CURRENT_DATE(), b'1');
 INSERT INTO prioridad (id_prioridad, prioridad, fecha_creacion, estatus) VALUES (NULL, 'Secretario', CURRENT_DATE(), b'1');
 INSERT INTO prioridad (id_prioridad, prioridad, fecha_creacion, estatus) VALUES (NULL, 'Miembro', CURRENT_DATE(), b'1');
@@ -10,7 +10,7 @@ INSERT INTO prioridad (id_prioridad, prioridad, fecha_creacion, estatus) VALUES 
 INSERT INTO prioridad (id_prioridad, prioridad, fecha_creacion, estatus) VALUES (NULL, 'Director', CURRENT_DATE(), b'1');
 INSERT INTO prioridad (id_prioridad, prioridad, fecha_creacion, estatus) VALUES (NULL, 'Divison de estudio profesionales', CURRENT_DATE(), b'1');
 
---Carreras
+-- Carreras
 INSERT INTO carrera (id_carrera, nombre_carrera, fecha_creacion, estatus) VALUES (NULL, 'Sistemas Computacionales', CURRENT_DATE(), b'1');
 INSERT INTO carrera (id_carrera, nombre_carrera, fecha_creacion, estatus) VALUES (NULL, 'Mecatronica', CURRENT_DATE(), b'1');
 INSERT INTO carrera (id_carrera, nombre_carrera, fecha_creacion, estatus) VALUES (NULL, 'Electrica', CURRENT_DATE(), b'1');
@@ -81,6 +81,27 @@ INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_
 
 -- 5 - Profesores
 INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51111', 'Norma', 'Rebeca', 'Godoy', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('52222', 'Elizabeth', 'Ceceña', 'Niebla', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('53333', 'Ricardo', 'Bautizta', 'Quintero', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('54444', 'Oswaldo', 'Cuen', 'Tellez', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('55555', 'Sandra', 'Castro', 'Graciano', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('56666', 'David Enrique', 'Castro', 'Palazuelos', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('57777', 'Carlos', 'Aguilar', 'Diaz', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('58888', 'Rosa Icela', 'Amador', 'Cazares', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('59999', 'Evangelina', 'Avila', 'Gaxiola', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51112', 'Juan Pedro', 'Campos', 'Sauceda', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51113', 'Jose Luis' , 'Lopez', 'Audeves', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51114', 'Felipe', 'Muñiz', 'Ramos', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51115', 'Cresensio', 'Ruvalcaba', 'Cazares', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51116', 'Usiel', 'Rivera', 'Allan', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51117', 'Hilda Karina', 'Ramirez', 'Medina', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51118', 'Julio', 'Zepeda', '', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51119', 'Gerardo', 'Rojas', '', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51120', 'Jesus', 'Aguilar', 'Virgen', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51121', 'Jose', 'Toledo', '', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51122', 'Alejandro', 'Triunfo', '', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51123', 'Gabriela', 'Szeiffova', '', 'Profesor','5', '123', CURRENT_DATE(), b'1');
+INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('51124', 'Baltazar', 'Urquidez', '', 'Profesor','5', '123', CURRENT_DATE(), b'1');
 
 -- 6 - Coordinadores de carrera
 INSERT INTO usuario (numero_control, nombre_usuario, apellido_paterno, apellido_materno, puesto, prioridad, contraseña, fecha_creacion, estatus) VALUES ('61111', 'Carlos Rafael', 'Lizarraga', 'Arreoloa', 'Coordinador de Ing. Mecanica','6', '123', CURRENT_DATE(), b'1');
@@ -148,7 +169,32 @@ INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fec
 INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '15171047', '11', CURRENT_DATE(), b'1');
 INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '16170680', '11', CURRENT_DATE(), b'1');
 
---Estatus de solicitudes aceptadas
+-- Carrera de profesores
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51111', '1', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '52222', '1', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '53333', '2', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '54444', '2', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '55555', '3', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '56666', '3', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '57777', '4', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '58888', '4', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '59999', '5', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51112', '5', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51113', '6', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51114', '6', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51115', '7', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51116', '7', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51117', '8', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51118', '8', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51119', '9', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51120', '9', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51121', '10', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51122', '10', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51123', '11', CURRENT_DATE(), b'1');
+INSERT INTO usuario_carrera (id_usuario_carrera, numero_control, id_carrera, fecha_creacion, estatus) VALUES (NULL, '51124', '11', CURRENT_DATE(), b'1');
+
+
+-- Estatus de solicitudes aceptadas
 INSERT INTO estatus (id_estatus, nombre_estatus, fecha_creacion, estatus) VALUES ('1', 'Enviada a Coordinador', CURRENT_DATE(), b'1');
 INSERT INTO estatus (id_estatus, nombre_estatus, fecha_creacion, estatus) VALUES ('2', 'En espera de ser agendada', CURRENT_DATE(), b'1');
 INSERT INTO estatus (id_estatus, nombre_estatus, fecha_creacion, estatus) VALUES ('3', 'En espera de fecha de reunion', CURRENT_DATE(), b'1');
@@ -159,12 +205,12 @@ INSERT INTO estatus (id_estatus, nombre_estatus, fecha_creacion, estatus) VALUES
 INSERT INTO estatus (id_estatus, nombre_estatus, fecha_creacion, estatus) VALUES ('8', 'Enviada a estudios profesionales', CURRENT_DATE(), b'1');
 INSERT INTO estatus (id_estatus, nombre_estatus, fecha_creacion, estatus) VALUES ('9', 'Ejecutada', CURRENT_DATE(), b'1');
 
---Estatus de solicitudes rechazadas
+-- Estatus de solicitudes rechazadas
 INSERT INTO estatus (id_estatus, nombre_estatus, fecha_creacion, estatus) VALUES ('11', 'Rechazada por coordinador por evidencia' ,CURRENT_DATE(), b'1');
 INSERT INTO estatus (id_estatus, nombre_estatus, fecha_creacion, estatus) VALUES ('12', 'Rechazada por coordinador con motivo', CURRENT_DATE(), b'1');
 INSERT INTO estatus (id_estatus, nombre_estatus, fecha_creacion, estatus) VALUES ('13', 'Rechazada por director del plantel', CURRENT_DATE(), b'1');
 
---Lugares
+-- Lugares
 INSERT INTO lugar (id_lugar, nombre_lugar, calle, numero_exterior, colonia, fecha_creacion, estatus) VALUES (NULL, 'Sala de reuniones', NULL, NULL, NULL, CURRENT_DATE(), b'1');
 INSERT INTO lugar (id_lugar, nombre_lugar, calle, numero_exterior, colonia, fecha_creacion, estatus) VALUES (NULL, 'Oficina del plantel', NULL, NULL, NULL, CURRENT_DATE(), b'1');
 INSERT INTO lugar (id_lugar, nombre_lugar, calle, numero_exterior, colonia, fecha_creacion, estatus) VALUES (NULL, 'Biblioteca', NULL, NULL, NULL, CURRENT_DATE(), b'1');
