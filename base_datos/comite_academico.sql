@@ -179,22 +179,12 @@ CREATE TABLE `solicitud_detalle_comentario` (
   `id_comentario` bigint(20) NOT NULL,
   `numero_control` bigint(20) NOT NULL,
   `fecha_creacion` datetime DEFAULT NULL,
-  `estatus` bit(1) DEFAULT NULL
+  `estatus` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `solicitud_detalle_validacion`
---
-
-CREATE TABLE `solicitud_detalle_validacion` (
-  `id_solicitud_detalle_validacion` bigint(20) NOT NULL,
-  `numero_control` bigint(20) NOT NULL,
-  `id_solicitud` bigint(20) NOT NULL,
-  `fecha_creacion` datetime DEFAULT NULL,
-  `estatus` bit(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -347,12 +337,6 @@ ALTER TABLE `solicitud_detalle_comentario`
   ADD KEY `FK_solicitud_detalle_comentario_solicitud` (`id_solicitud`);
   
 --
--- Indices de la tabla `solicitud_detalle_validacion`
---
-ALTER TABLE `solicitud_detalle_validacion`
-  ADD PRIMARY KEY (`id_solicitud_detalle_validacion`),
-  ADD KEY `FK_solicitud_detalle_validacion_usuario` (`numero_control`),
-  ADD KEY `FK_solicitud_detalle_validacion_solicitud` (`id_solicitud`);
 
 --
 -- Indices de la tabla `usuario`
@@ -457,10 +441,6 @@ ALTER TABLE `solicitud_detalle_comentario`
   MODIFY `id_solicitud_detalle_comentario` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `solicitud_detalle_validacion`
---
-ALTER TABLE `solicitud_detalle_validacion`
-  MODIFY `id_solicitud_detalle_validacion` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -530,13 +510,6 @@ ALTER TABLE `solicitud_detalle_comentario`
   ADD CONSTRAINT `FK_solicitud_detalle_comentario_comentario` FOREIGN KEY (`id_comentario`) REFERENCES `comentario` (`id_comentario`),
   ADD CONSTRAINT `FK_solicitud_detalle_comentario_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`),
   ADD CONSTRAINT `FK_solicitud_detalle_comentario_usuario` FOREIGN KEY (`numero_control`) REFERENCES `usuario` (`numero_control`);
-
---
--- Filtros para la tabla `solicitud_detalle_validacion`
---
-ALTER TABLE `solicitud_detalle_validacion`
-  ADD CONSTRAINT `FK_solicitud_detalle_validacion_solicitud` FOREIGN KEY (`id_solicitud`) REFERENCES `solicitud` (`id_solicitud`),
-  ADD CONSTRAINT `FK_solicitud_detalle_validacion_usuario` FOREIGN KEY (`numero_control`) REFERENCES `usuario` (`numero_control`);
 
 --
 -- Filtros para la tabla `usuario`
