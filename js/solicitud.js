@@ -83,5 +83,28 @@ $(document).ready(function(){
 		});
 		
 	});
+
+	/* DROPZONE */
+	// Disabling autoDiscover, otherwise Dropzone will try to attach twice.
+	Dropzone.autoDiscover = false;
+
+	Dropzone.options.myDropzone = {
+	  	init: function() {
+	    	this.on("addedfile", (file) => { console.log('Added: ' + file.name) });
+	    	this.on('success', (file, response) => { console.log(response); });
+	  	}
+	};
+
+	var myDropzone = new Dropzone('.dropzone', {
+		url: '../api/api.php/imagenes',
+		dictDefaultMessage: 'Arrastra archivos aquí para cargar o da click para seleccionar uno.',
+		acceptedFiles: 'image/*',
+		autoProccessQueue: false,
+		autoQueue: false
+	});
+
+	$('#upload').click((event) => {
+		myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
+	});
 	
 });

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../css/dropzone.css">
 <div class="col-md-12 col-12 mt-3 ml-5">
 	<div class="row">
 		<h2>Generar solicitud</h2>
@@ -121,27 +122,16 @@
 									</div>
 								</div>
 							</div>
+							<!-- DROPZONE -->
+							
+							<form class="dropzone" id="my-dropzone" method="POST" enctype="multipart/form-data"></form>
+
 							<div class="row">
-								<div class="col-md-12 col-12 col-sm-12">
-									<div class="form-group">
-										<h5>Evidencias:</h5>
-										<input type="file" class="form-control" id="txt_evidencia" placeholder="Nombre de carrera">
-									</div>
+								<div class="col-md-12">
+									<button class="btn btn-outline-primary btn-block" id="upload"><i class="fas fa-cloud-upload-alt"></i> Cargar Evidencias</button>
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-md-12 col-12 text-center">
-									<div class="form-group">
-										<h5>Atentamente</h5>
-										<textarea class="form-control" rows="4" id="firma"></textarea>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12 col-12 text-center">
-									<h5>Nombre y firma del Estudiante</h5>										
-								</div>
-							</div>
+
 						</div>
 					</div>
 				<?PHP } ?>
@@ -167,4 +157,5 @@
 	
 </div>
 
+<script src="../js/dropzone.js"></script>
 <script src="../js/solicitud.js"></script>

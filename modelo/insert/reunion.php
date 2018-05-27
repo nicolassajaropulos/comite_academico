@@ -3,6 +3,7 @@
 	$fecha = $_POST['fecha'];
 	$hora_inicio = $_POST['hora_inicio'];
 	$hora_fin = $_POST['hora_fin'];
+	$id_lugar = $_POST['id_lugar'];
 	$numero_control = $_SESSION['numero_control'];
 	$estatus = 1;
 	
@@ -25,8 +26,6 @@
 		
 		// $respuesta = $id_reunion;
 	// }
-	
-	$id_lugar = 1;
 	
 	$query = "INSERT INTO 
 						reunion(id_reunion, numero_control, id_lugar, fecha_citada, hora_inicio, hora_finalizada, fecha_creacion, estatus) 

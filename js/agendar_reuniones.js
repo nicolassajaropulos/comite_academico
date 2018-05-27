@@ -9,11 +9,13 @@ $(document).ready(function(){
 	$('#btn_aceptar_reunion').click(function(){
 		
 		var fecha = $('#txt_fecha').val();
+		var id_lugar = $(this).data('id');
 		
 		var datos = {
 			"fecha" : fecha,
 			"hora_inicio" : $('#txt_hora_inicio').val(),
-			"hora_fin" : $('#txt_hora_fin').val()
+			"hora_fin" : $('#txt_hora_fin').val(),
+			"id_lugar": id_lugar
 		};
 		
 		$.ajax({
@@ -128,17 +130,40 @@ $(document).ready(function(){
 		
 	});
 	
-	$(function(){  
-		$('input[type="time"][value="now"]').each(function(){    
-			var d = new Date(),        
-				h = d.getHours(),
-				m = d.getMinutes();
-			if(h < 10) h = '0' + h; 
-			if(m < 10) m = '0' + m; 
-			$(this).attr({
-				'value': h + ':' + m
-			});
+	$('input[type="time"][value="now"]').each(function(){    
+		var d = new Date(),        
+			h = d.getHours(),
+			m = d.getMinutes();
+		if(h < 10) h = '0' + h; 
+		if(m < 10) m = '0' + m; 
+		$(this).attr({
+			'value': h + ':' + m
 		});
+	});
+
+	/* BLOODHOUND PARA LUGARES */
+
+	var lugares = new Bloodhound({
+		datumTokenizer: Bloodhound.tokenizers.obj.whitespace("nombre_lugar"),
+		queryTokenizer: Bloodhound.tokenizers.whitespace,
+		prefetch: '../modelo/select/lugares.php'
+	});
+
+	console.log(lugares);
+
+	/* TYPEAHEAD PARA LUGARES */
+
+	$('#txt_lugar').typeahead({
+		hint: true,
+		highlight: true,
+		minLength: 1
+	},
+	{
+		name: 'lugares',
+		source: lugares,
+		displayKey: "nombre_lugar"
+	}).bind("typeahead:selected", function(obj, datum, name) {
+		$('#btn_aceptar_reunion').data('id', datum.id_lugar);
 	});
 	
 });

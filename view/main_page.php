@@ -7,6 +7,7 @@
     	<title>Comité Academico</title>
     	<link href="https://sitec.itculiacan.edu.mx/wp-content/themes/fuente/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
     	<link rel="stylesheet" href="../librerias/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="../librerias/typeahead.js-bootstrap4-css/typeaheadjs.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
 		<link rel="stylesheet" href="../librerias/datepicker/bootstrap-datepicker.min.css">
 		<link rel="stylesheet" href="../css/fullcalendar.min.css">
@@ -107,7 +108,9 @@
 	<script type="text/javascript" src="../librerias/datepicker/bootstrap-datepicker.es.min.js"></script>
 	<script type="text/javascript" src='../js/fullcalendar.min.js'></script>
 	<script type="text/javascript" src='../js/es.js'></script>
-	<script src="../js/sweetalert.min.js"></script>
+	<script src="../librerias/typeahead.js/dist/bloodhound.min.js"></script>
+  	<script src="../librerias/typeahead.js/dist/typeahead.jquery.min.js"></script>
+	<script src="../js/sweetalert2.min.js"></script>
   	<script src="../js/main_page.js"></script>
 	
 </html>
