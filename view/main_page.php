@@ -48,13 +48,15 @@
 						
 				<?php }else if($_SESSION['prioridad'] == 2){ $prioridad = "Secretario";?>
 					
+					<a class="nav-link active" href="#" data-navi="reportes_agenda"><i class="fa fa-calendar-alt"></i> Agenda</a>
+					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
+					<a class="nav-link" href="#" data-navi="orden_del_dia"><i class="fa fa-folder-open"></i> Orden del día</a>
+					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
 					<a class="nav-link active" href="#" data-navi="recomendacion"><i class="fa fa-clipboard-check"></i> Recomendaciónes</a>
 					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
 					<a class="nav-link active" href="#" data-navi="acta_acuerdos"><i class="fa fa-briefcase"></i> Actas de acuerdos</a>
 					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
-					<a class="nav-link" href="#" data-navi="orden_del_dia"><i class="fa fa-folder-open"></i> Orden del día</a>
-					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
-					<a class="nav-link active" href="#" data-navi="reportes_agenda"><i class="fa fa-calendar-check"></i> Agenda</a>
+					<a class="nav-link active" href="#" data-navi="dictamen_enviado"><i class="fa fa-newspaper"></i> Dictamenes</a>
 						
 				<?php }else if($_SESSION['prioridad'] == 3){ $prioridad = "Miembro";?>
 					
@@ -74,11 +76,15 @@
 					
 				<?php } else if($_SESSION['prioridad'] == 7){ $prioridad = "Servicios Escolares";?>
 
-					<a class="nav-link active" href="#" data-navi="solicitudes_validas"><i class="fas fa-clipboard-check"></i> Solicitudes aceptadas</a>
+					<a class="nav-link active" href="#" data-navi="solicitudes_servicios_escolares"><i class="fas fa-clipboard-check"></i> Solicitudes aceptadas</a>
 				
 				<?php } else if($_SESSION['prioridad'] == 8){ $prioridad = "Director del plantel";?>
 
 					<a class="nav-link active" href="#" data-navi="dictamen_oficial"><i class="fas fa-clipboard-check"></i> Dictamen oficial</a>
+
+				<?php } else if($_SESSION['prioridad'] == 9){ $prioridad = "Estudios profesionales";?>
+
+					<a class="nav-link active" href="#" data-navi="solicitudes_estudios_profesionales"><i class="fas fa-clipboard-check"></i> Solicitudes aceptadas</a>
 
 				<?php } ?>
 

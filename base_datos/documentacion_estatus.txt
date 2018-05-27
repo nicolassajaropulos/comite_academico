@@ -11,9 +11,13 @@ x	4 - Recomendacion elaborada por secretario				4 -	Validada por el comite - Env
 	
 x	5 - En espera de dictamen oficial						5 - Aceptada por presidente - Enviada al director
 	
-	6 - Dictamen oficial generado							6 - Aceptada por el director del planel - Envida a dpto correspondiente
+x	6 - Dictamen oficial generado							6 - Aceptada por el director del planel - Envida a presidente del comite
 	
-	7 - Ejecutada											7 - Ejecutada por el departamento
+x	7 - Enviada a servicios escolares						7 - Reenviada por presidente
+	
+x	8 - Enviada a estudios profesionales					8 - Reenviada por presidente
+	
+x	9 - Ejecutada											9 - Ejecutada por el departamento
 	
 	
 	
@@ -28,3 +32,10 @@ x	1 - Validación de coordinador
 x	2 - Aceptada de miembro
 x	3 - Rechazada de miembro
 x	4 - Recomendacion del secretario tecnico
+
+== Tareas pendientes por prioridades
+	
+	Verificar módulo para validar solicitudes por parte de los coordinadores
+	Módulo de verificar estatus solicitud por interesado
+	Acta de acuerdos
+	En caso de haber tiempo - Portal de informacion de usuario en pagina inicio
