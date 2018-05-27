@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	$.ajax({
-		url: "../api/api.php/solicitudes_estatus?estatus=1",
+		url: "../api/api.php/solicitudes_carrera",
 		type: "GET",
 		dataType: "JSON",
 		success: function(data){
@@ -131,7 +131,7 @@ $(document).ready(function(){
 						},200);
 						
 						setTimeout(function(){
-							cargarDiv("solicitudes_enviadas");
+							cargarDiv("solicitudes_enviadas_coordinador");
 						},2000);
 						
 					},
@@ -198,7 +198,7 @@ $(document).ready(function(){
 						},200);
 						
 						setTimeout(function(){
-							cargarDiv("solicitudes_enviadas");
+							cargarDiv("solicitudes_enviadas_coordinador");
 						},2000);
 						
 					},

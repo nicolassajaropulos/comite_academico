@@ -212,4 +212,4 @@
 	</div>
 </div>
 
-<script src="../js/solicitudes_enviadas.js"></script>
+<script src="../js/solicitudes_enviadas_coordinador.js"></script>

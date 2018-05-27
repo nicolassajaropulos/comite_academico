@@ -70,9 +70,9 @@
 					<img src="../imagenes/dot.png">
 					<a class="nav-link" href="#" data-navi="reportes_solicitud"><i class="fa fa-tasks"></i> Estado de solicidud</a>
 				
-				<?php } else if($_SESSION['prioridad'] == 6){ $prioridad = "Coordinador";?>
+				<?php } else if($_SESSION['prioridad'] == 6){ $prioridad = "Coordinador de carrera";?>
 
-					<a class="nav-link active" href="#" data-navi="solicitudes_enviadas"><i class="fas fa-clipboard-check"></i> Solicitudes</a>
+					<a class="nav-link active" href="#" data-navi="solicitudes_enviadas_coordinador"><i class="fas fa-clipboard-check"></i> Solicitudes</a>
 					
 				<?php } else if($_SESSION['prioridad'] == 7){ $prioridad = "Servicios Escolares";?>
 

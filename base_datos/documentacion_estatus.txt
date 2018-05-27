@@ -35,7 +35,7 @@ x	4 - Recomendacion del secretario tecnico
 
 == Tareas pendientes por prioridades
 	
-	Verificar módulo para validar solicitudes por parte de los coordinadores
+x	Verificar módulo para validar solicitudes por parte de los coordinadores
 	Módulo de verificar estatus solicitud por interesado
 	Acta de acuerdos
 	En caso de haber tiempo - Portal de informacion de usuario en pagina inicio
