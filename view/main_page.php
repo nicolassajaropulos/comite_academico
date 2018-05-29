@@ -104,7 +104,35 @@
 			</div>
 		</div>
 		<div id="cuerpo">
-			
+			<div class="row mt-4">
+				<div class="col-md-2 col-2">
+				</div>
+				<div class="col-md-8 col-8" style="border:1px solid #d9d9d9; border-radius: 5px;">
+					<div class="col-md-12 col-12">
+						<div class="row">
+							<div class="col-md-4 col-4">
+								<img src="../imagenes/user.png" class="mt-2 mb-2" style="width:90%;">
+							</div>
+							<div class="col-md-8 col-8 mt-5">
+								<div class="row mb-2 mt-4">
+									<h4><strong><i class="fa fa-hashtag"></i> Número de control:</strong> <span id="numero_control"></span></h4>
+								</div>
+								<div class="row mb-2">
+									<h4><strong><i class="fa fa-user"></i> Nombre de usuario:</strong> <span id="nombre_usuario"></span></h4>
+								</div>
+								<div class="row mb-2">
+									<h4><strong><i class="fa fa-building"></i> Puesto:</strong> <span id="puesto"></span></h4>
+								</div>
+								<div class="row">
+									<h4><strong><i class="fa fa-sticky-note"></i> Papel que desempeña en comité:</strong> <span id="papel_comite"></span></h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2 col-2">
+				</div>
+			</div>
 		</div>
   	</body>
 	
