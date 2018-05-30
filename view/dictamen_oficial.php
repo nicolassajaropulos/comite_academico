@@ -79,7 +79,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row empate">
+					<div class="row">
 						<div class="col-md-6 col-6">
 							<button class="btn btn-danger btn-block" id="btn_rechazar_validar_solicitud"><i class="fa fa-times"></i> Rechazar</button>
 						</div>
