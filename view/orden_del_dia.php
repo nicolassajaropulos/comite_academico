@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../css/dropzone.css">
 <div class="col-12">	
 	<div class="row">
 		<div class="col-md-12 col-12 mt-3 ml-5">
@@ -149,18 +150,21 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12 col-12 col-sm-12">
-							<div class="form-group">
-								<h5>Evidencias:</h5>
-								<input type="file" class="form-control" id="txt_evidencia">
-							</div>
+					<h5>Evidencias:</h5>
+					<form class="dropzone" id="my-dropzone" method="POST" enctype="multipart/form-data">
+						<input type="hidden" id="btn_id_solicitud_estudiante" name="id_solicitud">
+					</form>
+
+					<div class="row mt-2">
+						<div class="col-md-12">
+							<button class="btn btn-outline-primary btn-block upload"><i class="fas fa-cloud-upload-alt"></i> Cargar Evidencias</button>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				<button type="button" class="btn btn-primary btn_guardar_cambios" data-dismiss="modal">Guardar</button>
 			</div>
 		</div>
 	</div>
@@ -209,18 +213,21 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12 col-12 col-sm-12">
-							<div class="form-group">
-								<h5>Evidencias:</h5>
-								<input type="file" class="form-control" id="txt_evidencia">
-							</div>
+					<h5>Evidencias:</h5>
+					<form class="dropzone" id="my-dropzone" method="POST" enctype="multipart/form-data">
+						<input type="hidden" id="btn_id_solicitud_profesor" name="id_solicitud">
+					</form>
+
+					<div class="row mt-2">
+						<div class="col-md-12">
+							<button class="btn btn-outline-primary btn-block upload"><i class="fas fa-cloud-upload-alt"></i> Cargar Evidencias</button>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				<button type="button" class="btn btn-primary btn_guardar_cambios" data-dismiss="modal">Guardar</button>
 			</div>
 		</div>
 	</div>
@@ -309,4 +316,5 @@
   	</div>
 </div>
 
+<script src="../js/dropzone.js"></script>
 <script type="text/javascript" src="../js/orden_del_dia.js"></script>

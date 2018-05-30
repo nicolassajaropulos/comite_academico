@@ -25,6 +25,31 @@ $(document).ready(function(){
 		}
 
 	});
+
+	/* DROPZONE */
+	// Disabling autoDiscover, otherwise Dropzone will try to attach twice.
+	Dropzone.autoDiscover = false;
+
+	Dropzone.options.myDropzone = {
+	  	init: function() {
+	    	this.on("addedfile", (file) => { console.log('Added: ' + file.name); });
+	    	this.on('success', (file, response) => { console.log('Success: ' + response); });
+	  	}
+	};
+
+	var myDropzone = new Dropzone('.dropzone', {
+		url: '../api/api.php/imagenes',
+		dictDefaultMessage: 'Arrastra archivos aquí para cargar o da click para seleccionar uno.',
+		acceptedFiles: 'image/*',
+		autoProccessQueue: false,
+		autoQueue: false
+	});
+
+	$('.upload').click((event) => {
+		console.log($('#btn_id_solicitud_profesor').val());
+		console.log($('#btn_id_solicitud_estudiante').val());
+		// myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
+	});
 	
 	$('.carga_reuniones').on("click","#btn_orden_dia",function(){
 		
@@ -159,11 +184,15 @@ $(document).ready(function(){
 		var prioridad_interesado = $(this).data("priori");
 		
 		if(prioridad_interesado == 4){
-			$('#modal_visualizar_solicitud_estudiante').modal('toggle');
+			$('#modal_visualizar_solicitud_estudiante').modal('show');
 		}else{
-			$('#modal_visualizar_solicitud_profesor').modal('toggle');
+			$('#modal_visualizar_solicitud_profesor').modal('show');
 		}
 		
+		var id_solicitud = $(this).data('id');
+		$('#btn_id_solicitud_profesor').val(id_solicitud);
+		$('#btn_id_solicitud_estudiante').val(id_solicitud);
+
 		$('.titulo_modal').html("Vista de Solicitud No. <strong>" + $(this).data('id') + "</strong>");
 		
 		$.ajax({

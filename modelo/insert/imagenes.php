@@ -22,19 +22,33 @@
 
 		if(move_uploaded_file($tempFile,$targetFile)){
 
-			$query = "INSERT INTO `usuario_evidencia`(`id_usuario_evidencia`, `numero_control`, `id_solicitud`, `evidencia`, `fecha_creacion`, `estatus`) VALUES 
+			if (isset($_POST['id_solicitud']) && $_POST['id_solicitud'] > 0) {
+				
+				$query = "INSERT INTO `usuario_evidencia`(`id_usuario_evidencia`, `numero_control`, `id_solicitud`, `evidencia`, `fecha_creacion`, `estatus`) VALUES 
+					(NULL, ?, ?, ?, NOW(), 1)";
+
+				if ($stmt = $mysqli->prepare($query)) {
+					$stmt->bind_param("iis", $id_usuario, $_POST['id_solicitud'], $nombre_archivo_adjunto);
+					$stmt->execute();
+					$id_evidencia = $mysqli->insert_id;
+					$stmt->close();
+				}
+
+			} else {
+				$query = "INSERT INTO `usuario_evidencia`(`id_usuario_evidencia`, `numero_control`, `id_solicitud`, `evidencia`, `fecha_creacion`, `estatus`) VALUES 
 					(NULL, ?, NULL, ?, NOW(), 1)";
 
-			if ($stmt = $mysqli->prepare($query)) {
-				$stmt->bind_param("is", $id_usuario, $nombre_archivo_adjunto);
-				$stmt->execute();
-				$id_evidencia = $mysqli->insert_id;
-				$stmt->close();
+				if ($stmt = $mysqli->prepare($query)) {
+					$stmt->bind_param("is", $id_usuario, $nombre_archivo_adjunto);
+					$stmt->execute();
+					$id_evidencia = $mysqli->insert_id;
+					$stmt->close();
+				}
 			}
 
 		}
 
-		$respuesta = $id_evidencia;
+		$respuesta = json_encode(Array("evidencia" => $id_evidencia, "solicitud" => $_POST['id_solicitud']));
 
 	}
 
