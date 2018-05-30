@@ -128,7 +128,7 @@ $(document).ready(function(){
 						},800);
 						
 						setTimeout(function(){
-							cargarDiv("solicitud_servicios_escolares");
+							cargarDiv("solicitudes_servicios_escolares");
 						},2000);
 						
 					},
