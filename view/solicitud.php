@@ -48,9 +48,11 @@
 									</div>
 								</div>
 							</div>
+							
+							<h5>Evidencias:</h5>
 							<form class="dropzone" id="my-dropzone" method="POST" enctype="multipart/form-data"></form>
 
-							<div class="row">
+							<div class="row mt-2">
 								<div class="col-md-12">
 									<button class="btn btn-outline-primary btn-block" id="upload"><i class="fas fa-cloud-upload-alt"></i> Cargar Evidencias</button>
 								</div>
@@ -109,10 +111,10 @@
 								</div>
 							</div>
 							<!-- DROPZONE -->
-							
+							<h5>Evidencias:</h5>
 							<form class="dropzone" id="my-dropzone" method="POST" enctype="multipart/form-data"></form>
 
-							<div class="row">
+							<div class="row mt-2">
 								<div class="col-md-12">
 									<button class="btn btn-outline-primary btn-block" id="upload"><i class="fas fa-cloud-upload-alt"></i> Cargar Evidencias</button>
 								</div>
