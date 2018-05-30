@@ -19,6 +19,23 @@ $(document).ready(function(){
 			console.log("Detalles: " + desc + "\nError:" + err);
 		}
 	});
+
+	$.ajax({
+		url: '../api/api.php/proxima_reunion',
+		type: 'GET',
+		dataType: 'JSON',
+		success:function(data){
+			
+			$(data.data).each(function(i,v){
+				$('#fecha_reunion').html(v.fecha+" "+ v.hora_inicio);
+			});
+			
+		},
+		error: function(xhr, desc, err){
+			console.log(xhr);
+			console.log("Detalles: " + desc + "\nError:" + err);
+		}
+	});
 	
 	$('.nav').on('click','.nav-link',function(){
 		

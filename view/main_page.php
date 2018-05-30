@@ -133,6 +133,19 @@
 				<div class="col-md-2 col-2">
 				</div>
 			</div>
+			<?PHP if($_SESSION['prioridad'] == 1 || $_SESSION['prioridad'] == 2 || $_SESSION['prioridad'] == 3){?>
+				<div class="row mt-3">
+					<div class="col-md-2 col-2">
+					</div>
+					<div class="col-md-8 col-8" style="border:1px solid #d9d9d9; border-radius: 5px;">
+						<div class="col-md-12 col-12 mt-2 text-center">
+							<h3><i class="fa fa-calendar-alt"></i> Próxima reunión: <span id="fecha_reunion"></span></h3>
+						</div>
+					</div>
+					<div class="col-md-2 col-2">
+					</div>
+				</div>
+			<?PHP }?>
 		</div>
   	</body>
 	
