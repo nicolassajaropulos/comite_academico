@@ -1,3 +1,4 @@
+<script src="../js/sweetalert2.min.js"></script>
 <div class="col-md-12 col-12 mt-3 ml-5">
 	<div class="row">
 		<h2>Agendar reuniones</h2>

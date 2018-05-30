@@ -146,7 +146,7 @@
 	<script type="text/javascript" src='../js/es.js'></script>
 	<script src="../librerias/typeahead.js/dist/bloodhound.min.js"></script>
   	<script src="../librerias/typeahead.js/dist/typeahead.jquery.min.js"></script>
-	<script src="../js/sweetalert2.min.js"></script>
+	<script src="../js/sweetalert.min.js"></script>
   	<script src="../js/main_page.js"></script>
 	
 </html>

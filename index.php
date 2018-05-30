@@ -55,7 +55,7 @@
 						<h1>Bienvenido al Sistema de Comité académico.</h1>
 						<h5>En este sistema, se llevará a cabo al realización y el proceso de la solicitudes que correspondan al comité académico.</h5><br>
 						<h5><i class="fas fa-desktop"></i> Para acceder, utiliza tu Número de Control correspondiente y tu contraseña. </h5><br>
-						<h5><i class="fas fa-unlock-alt"></i> Si tu sesión es nueva, deberás utilizar una contraseña representada por una sucesión numérica del 1 al 8, una vez inicies sesión, 
+						<h5><i class="fas fa-unlock-alt"></i> Si tu sesión es nueva, deberás utilizar una contraseña representada por una sucesión numérica del 1 al 3, una vez inicies sesión, 
 							asegúrate de dirijirte al módulo de cambio de contraseña para garantizar la privacidad y seguridad de tus datos.</h5><br>
 						<span style="color:#00BFFF;font-size:22px;font-weight: 500;"><i class="fas fa-phone"></i> Para soporte</span>
 						<span style="font-size:22px;font-weight: 500;"> Llame al teléfono +52 (667) 266-72-00</span>	
