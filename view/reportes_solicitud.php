@@ -32,4 +32,32 @@
 	</div>
 </div>
 
+<div class="modal" id="modal_comentario" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title titulo_validar">Motivo del rechazo</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="col-md-12 col-12">
+					<div class="row">
+						<div class="col-md-12 col-12">
+							<div class="form-group">
+								<h5>Comentario:</h5>
+								<textarea class="form-control" id="txt_comentario" placeholder="Comentario" rows="5"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <script type="text/javascript" src="../js/reportes_solicitud.js">
