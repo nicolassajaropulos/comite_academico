@@ -11,7 +11,8 @@ $(document).ready(function(){
 				var boton_accion = "";
 				
 				if(v.estatus == "Rechazada por coordinador por evidencia"){
-					boton_accion = '<td><button class="btn btn-info btn-sm" data-id="'+v.id_solicitud+'" id="btn_evidencia"><i class="fa fa-upload"></i> Subir evidencia</button></td>';
+					boton_accion = '<td><button class="btn btn-info btn-sm mr-1" data-id="'+v.id_solicitud+'" id="btn_evidencia"><i class="fa fa-upload"></i> Subir evidencia</button>'
+									+'<button class="btn btn-primary btn-sm" id="btn_ver_comentario" data-id="'+v.id_solicitud+'"><i class="fa fa-comment"></i> Ver motivo</button></td>';
 				}else if(v.estatus == "Rechazada por coordinador con motivo"){
 					boton_accion = '<td><button class="btn btn-info btn-sm mr-1" id="btn_nueva_solicitud"><i class="fa fa-newspaper"></i> Nueva Solicitud</button>'
 									+'<button class="btn btn-primary btn-sm" id="btn_ver_comentario" data-id="'+v.id_solicitud+'"><i class="fa fa-comment"></i> Ver motivo</button></td>';
