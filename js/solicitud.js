@@ -42,7 +42,7 @@ $(document).ready(function(){
 	
 	$('#btn_aceptar').click(function(){
 		
-		if($.trim($('#txt_solicitud_estudiante').val()) != '' && $.trim($('#txt_solicitud_profesor').val()) != ''){
+		if($('#txt_solicitud_estudiante').val().length > 0 || $('#txt_solicitud_profesor').length > 0){
 			
 			if($(this).data("session") == "4"){
 				var datos = {
