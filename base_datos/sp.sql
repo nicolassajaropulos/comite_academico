@@ -28,12 +28,14 @@ CREATE PROCEDURE almacenar_solicitud (
 	IN solicitud varchar(200),
 	IN motivo__academico varchar(400),
 	IN motivo__personal varchar(400)  ,
-    IN motivo__otro varchar(400) 
+    IN motivo__otro varchar(400),
+    OUT id__solicitud bigint(20)
 	
 )
 BEGIN
 
 INSERT INTO solicitud (interesado, coordinador,solicitud,motivo_academico, motivo_personal, motivo_otro, id_estatus, fecha_creacion)VALUES (numero_interesado,numero_coordinador, solicitud, motivo__academico, motivo__personal, motivo__otro,1, NOW());	
+SET id__solicitud = LAST_INSERT_ID();
 
 END $$
 ----------------------------------------------------------------------------------------------------------------
