@@ -48,25 +48,11 @@
 									</div>
 								</div>
 							</div>
+							<form class="dropzone" id="my-dropzone" method="POST" enctype="multipart/form-data"></form>
+
 							<div class="row">
-								<div class="col-md-12 col-12 col-sm-12">
-									<div class="form-group">
-										<h5>Evidencias:</h5>
-										<input type="file" class="form-control" id="txt_evidencia" placeholder="Nombre de carrera">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12 col-12 text-center">
-									<div class="form-group">
-										<h5>Atentamente</h5>
-										<textarea class="form-control" rows="4" id="firma"></textarea>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12 col-12 text-center">
-									<h5>Nombre y firma del profesor</h5>										
+								<div class="col-md-12">
+									<button class="btn btn-outline-primary btn-block" id="upload"><i class="fas fa-cloud-upload-alt"></i> Cargar Evidencias</button>
 								</div>
 							</div>
 						</div>
