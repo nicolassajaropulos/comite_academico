@@ -53,11 +53,11 @@
 					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
 					<a class="nav-link" href="#" data-navi="orden_del_dia"><i class="fa fa-folder-open"></i> Orden del día</a>
 					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
-					<a class="nav-link active" href="#" data-navi="recomendacion"><i class="fa fa-clipboard-check"></i> Recomendaciónes</a>
+					<a class="nav-link active" href="#" data-navi="recomendacion"><i class="fa fa-clipboard-check"></i> Recomendación</a>
 					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
-					<a class="nav-link active" href="#" data-navi="acta_acuerdos"><i class="fa fa-briefcase"></i> Actas de acuerdos</a>
+					<a class="nav-link active" href="#" data-navi="acta_acuerdos"><i class="fa fa-briefcase"></i> Acta de acuerdos</a>
 					<img src="../imagenes/dot.png" style="width:30px; height:41px;">
-					<a class="nav-link active" href="#" data-navi="dictamen_enviado"><i class="fa fa-newspaper"></i> Dictamenes</a>
+					<a class="nav-link active" href="#" data-navi="dictamen_enviado"><i class="fa fa-newspaper"></i> Dictamen</a>
 						
 				<?php }else if($_SESSION['prioridad'] == 3){ $prioridad = "Miembro";?>
 					
@@ -149,6 +149,29 @@
 		</div>
   	</body>
 	
+	<div class="modal" id="modal_evidencia" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title titulo_validar"><i class="fa fa-picture"></i> Evidencia</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="col-md-12 col-12">
+						<div class="row" id="carga_vista_imagen">
+						
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
   	<script src="../librerias/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>

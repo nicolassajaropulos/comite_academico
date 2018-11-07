@@ -165,6 +165,36 @@ $(document).ready(function(){
 			}
 		});
 		
+		$.ajax({
+			url: "../api/api.php/evidencia_usuario?id_solicitud=" + $(this).data('id'),
+			type: "GET",
+			dataType: "JSON",
+			success: function(data){
+				
+				var cadena_evidencias = "";
+				
+				$(data.data).each(function(i,v){
+					cadena_evidencias += "<div class='col-md-3 col-3 mt-2'><img src='../imagenes/evidencias/"+v.evidencia+"' style='width:80%;' class='img_evidencia' data-evi='../imagenes/evidencias/"+v.evidencia+"'></div>";
+				});
+				
+				$('.carga_evidencias').html(cadena_evidencias);
+				
+			},
+			error: function(xhr, desc, err){
+				console.log(xhr);
+				console.log("Descripcion: " + desc + "\nError: "  + err);
+			}
+		});
+		
+	});
+	
+	$('.carga_evidencias').on("click",".img_evidencia",function(){
+		
+		var ruta = $(this).data('evi');
+		
+		$('#carga_vista_imagen').html('<img src="'+ruta+'" style="width:100%;">');
+		
+		$('#modal_evidencia').modal('toggle');
 	});
 	
 	$('#btn_almacenar_recomendacion').click(function(){

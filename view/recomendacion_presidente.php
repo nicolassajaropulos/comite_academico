@@ -160,7 +160,7 @@
 						<div class="col-md-12 col-12 col-sm-12">
 							<div class="form-group">
 								<h5>Evidencias:</h5>
-								<input type="file" class="form-control" id="txt_evidencia">
+								<div class="carga_evidencias row"></div>
 							</div>
 						</div>
 					</div>
@@ -220,7 +220,7 @@
 						<div class="col-md-12 col-12 col-sm-12">
 							<div class="form-group">
 								<h5>Evidencias:</h5>
-								<input type="file" class="form-control" id="txt_evidencia">
+								<div class="carga_evidencias row"></div>
 							</div>
 						</div>
 					</div>
